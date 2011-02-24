@@ -1,0 +1,7 @@
+.svn
+.buildpath
+.project
+.settings
+cache/*
+logs/
+temp/templates/**
