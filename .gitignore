@@ -4,4 +4,7 @@
 .settings
 cache/*
 logs/
-temp/templates/**
+temp/templates/*
+*.swp
+.DS_Store
+
