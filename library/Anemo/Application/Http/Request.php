@@ -114,37 +114,49 @@ class Request
   	} 	
   	
 
-  	public function issetGet($key) {
-    	return (isset($this->get[$key]));
+  	public function issetGet($key = null) {
+  		if($key === null)
+  			return (isset($this->get) && count($this->get) > 0);
+  			
+    	return isset($this->get[$key]);
   	}
 
-  	public function getGet($key) {
-    	if($this->issetGet($key)) {
+  	public function getGet($key = null) {
+  		if($key === null)
+  			return $this->get;
+  		
+    	if($this->issetGet($key))
       		return $this->get[$key];
-    	}
+		
     	return null;
-  	}
-  	public function getGetArray() {
-  		return $this->get;
   	}
   	public function setGet($key,$value) {
   		$this->get[$key] = $value;
   	}
 
   	
-  	public function issetPost($key) {
-    	return (isset($this->post[$key]));
+  	public function issetPost($key = null) {
+  		if($key === null)
+  			return (isset($this->post) && count($this->post) > 0);
+  		
+    	return isset($this->post[$key]);
   	}
-  	public function getPost($key) {
-    	if($this->issetPost($key)) {
+  	public function getPost($key = null) {
+  		if($key === null)
+  			return $this->post;
+  			
+    	if($this->issetPost($key))
       		return $this->post[$key];
-    	}
+    	
     	return null;
   	}
 
   	
-  	public function issetFile($key) {
-    	return (isset($this->file[$key]));
+  	public function issetFile($key = null) {
+  		if($key === null)
+  			return (isset($this->file) && count($this->file) > 0);
+  		
+    	return isset($this->file[$key]);
   	}
 
   	public function getFile($key) {
