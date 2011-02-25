@@ -17,6 +17,7 @@ class ACL
 	public function __construct() {}
 	
 	
+	
 	public function addSubject(\Anemo\ACL\Subject $subject, $parent = array()) {
 		if(!is_array($parent))
 			throw new ACL\Exception('Parent, expect array');

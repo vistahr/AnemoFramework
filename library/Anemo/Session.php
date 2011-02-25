@@ -15,7 +15,6 @@ class Session
 	public static function getSessionID() {
 		if(!session_start())
 			throw new Session\Exception('No session available');
-			
 		return session_id();
 	}
 	
@@ -27,6 +26,15 @@ class Session
 		    setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
 		}
 		session_destroy();
+	}
+	
+	 
+	public static function setSession($key, $value) {
+		$_SESSION[$key] = $value;
+	}
+	
+	public static function getSession($key) {
+		return $_SESSION[$key];
 	}
 	
 }
