@@ -1,7 +1,7 @@
 <?php
 namespace Anemo;
 
-
+use Import\Adapter;
 
 class Import
 {
@@ -10,7 +10,7 @@ class Import
 		
 		if(!is_string($adapter) || !trim($adapter) )
             throw new Import\Exception('No valid Adapter');
-            
+         
 		if(!$adapter = new $adapter($params))
 			throw new Import\Exception('Cannot instantiate the Adapter');
 		
