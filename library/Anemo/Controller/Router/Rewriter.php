@@ -13,6 +13,18 @@ class Rewriter
 		return $front->getRequest();
 	}
 	
+	
+	public static function toCamelCase($input) {
+		if($parts = explode('-', $input)) {
+			$parts    = $parts ? array_map('ucfirst', $parts) : array($input);
+		    $parts[0] = lcfirst($parts[0]);
+		    $input 	  = implode('', $parts);
+		    return $input;
+		}
+		return $input;
+	}
+
+	
 	public static function rewriteRequest() {
 		$front 		= Controller\Frontcontroller::getInstance();
 		$urlParams 	= preg_replace('#'.$front->getBasePath().'#','',Rewriter::getRequest()->getServer('REQUEST_URI'),1);
@@ -25,7 +37,7 @@ class Rewriter
 		$filteredUrlParamsArray = array();
 		for($i=0;$i<count($urlParamsArray);$i++) {
 			if($urlParamsArray[$i] != '')
-				$filteredUrlParamsArray[] = $urlParamsArray[$i];
+				$filteredUrlParamsArray[] = Rewriter::toCamelCase($urlParamsArray[$i]);
 		}
 		
 		// mindestens 3 Werte "/module/controller/action", sonst mit leer ("") auffüllen
@@ -35,7 +47,6 @@ class Rewriter
 		return $filteredUrlParamsArray;
 	}
 	
-	
-	
+
 }
 	

@@ -109,9 +109,9 @@ class Frontcontroller
 	
 	public function getBasePath() {
 		$basePath = $this->getRequest()->getServer("SCRIPT_NAME");
-		if(preg_match('#/[a-z_-]+.php#',$basePath)) {
+		if(preg_match('#/[a-z_-]+.php#',$basePath))
 			$basePath = preg_replace('#/[a-z_-]+.php#','',$basePath);
-		}
+		
 		return $basePath;
 	}
 	

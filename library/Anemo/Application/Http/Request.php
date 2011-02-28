@@ -43,9 +43,9 @@ class Request
   	}
 	
 	public static function getInstance(){
-		if(self::$instance === null){
+		if(self::$instance === null)
 	    	self::$instance = new Request();
-	    }
+	    
 	    return self::$instance;
 	}
 	
@@ -66,8 +66,18 @@ class Request
 		return $this->controller;
 	}
 	
+	public function toCamelCase($action) {
+		if($parts = explode('-', $action)) {
+			$parts = $parts ? array_map('ucfirst', $parts) : array($action);
+		    $parts[0] = lcfirst($parts[0]);
+		    $action = implode('', $parts);
+		    return $action;
+		}
+		return $action;
+	}
+	
 	public function setActionName($action) {
-		$this->action = $action;
+		$this->action = $action;//$this->toCamelCase($action);
 		return $this;
 	}
 	public function getActionName() {
