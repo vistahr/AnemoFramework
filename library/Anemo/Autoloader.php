@@ -53,7 +53,10 @@ class Autoloader
     protected function anemoLibraryAutoloader($className) {
     	if(preg_match("#(.+)\W[\w]+Abstract#",$className,$match))
     		$className = $match[1] . '\Abstract';
-		
+    		
+		if(preg_match("#(.+)\W[\w]+Interface#",$className,$match))
+    		$className = $match[1] . '\Interface';
+    		
     	$classPath = str_replace('\\', '/', $className) . '.php';
     	//echo $classPath."<br/>";
     	return $this->fileExists($classPath);
