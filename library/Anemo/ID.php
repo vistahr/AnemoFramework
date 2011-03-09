@@ -86,7 +86,7 @@ class ID
 		if($this->IDObject['defaultSubject'] === null)
 			throw new ID\Exception('Defaultsubject not set');
 		
-		if($this->IDObject['subject'] !== null && $this->IDObject['defaultSubject']->getSubject() != $this->IDObject['subject']->getSubject())
+		if(isset($this->IDObject['subject']) && $this->IDObject['subject'] !== null && $this->IDObject['defaultSubject']->getSubject() != $this->IDObject['subject']->getSubject())
 			return true;
 		
 		return false;
