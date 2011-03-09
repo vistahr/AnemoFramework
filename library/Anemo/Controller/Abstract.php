@@ -16,7 +16,10 @@ abstract class ControllerAbstract
 		$this->froncontroller = Frontcontroller::getInstance();
 		
 		// ModuleBootstrap
-		require_once $moduleConfigDir = $this->froncontroller->getModuleDirectory() . '/' . $this->froncontroller->getModuleName() . '/Bootstrap.php';
+		$moduleBootstrap = $moduleConfigDir = $this->froncontroller->getModuleDirectory() . '/' . $this->froncontroller->getModuleName() . '/Bootstrap.php';
+		if(!@include_once $moduleBootstrap)
+			throw new \Anemo\Exception('Modulebootstrap ' . $moduleBootstrap . ' not found');
+			
 		$moduleBootstrapClass = $this->froncontroller->getModuleName() . 'Bootstrap';
 		$moduleBootstrap = new $moduleBootstrapClass();
 		
@@ -72,7 +75,7 @@ abstract class ControllerAbstract
 		$actionMethodName = $actionName . 'Action';
 		
 		if(!method_exists($this,$actionMethodName)) 
-			throw new Exception('Action ' . $actionMethodName . ' does not exists.');
+			throw new Exception('Action ' . $actionMethodName . ' does not exists');
 			
 		$methodOutput = call_user_func(array($this,$actionMethodName));
 		
