@@ -99,26 +99,48 @@ class Router
 		
 		if(isset($this->requestData[0]) && $this->isModule($this->requestData[0]) && $this->isRoute($this->requestData[0]))
 			throw new Router\Exception('Controller and route has the same name.');
-
+		/*
+		 * for($g=2;$g<count($this->requestData);$g+2) {
+				$this->request->setGet($this->requestData[$g],$this->requestData[$g+1]);
+			}
+		 */
 			
 		// passende Route routen
 		if(isset($this->requestData[0]) && $this->isRoute($this->requestData[0])) {
 			$this->setModuleName($this->routes[$this->requestData[0]]['module']);
 			$this->setControllerName($this->routes[$this->requestData[0]]['controller']);
 			$this->setActionName($this->routes[$this->requestData[0]]['action']);
-		
+			// Get Params setzen
+			for($g=1;$g<count($this->requestData);$g=$g+2) {
+				if(!isset($this->requestData[$g+1]))
+					$this->requestData[$g+1] = null;
+				$this->request->setGet($this->requestData[$g],$this->requestData[$g+1]);
+			}			
+			
 		// URL Eingabe routen /module[/controller/action/*]
 		} else if(isset($this->requestData[0]) && $this->isModule($this->requestData[0])) {
 			$this->setModuleName($this->requestData[0]);
 			$this->setControllerName($this->requestData[1]);
 			$this->setActionName($this->requestData[2]);
-						
+			// Get Params setzen
+			for($g=3;$g<count($this->requestData);$g=$g+2) {
+				if(!isset($this->requestData[$g+1]))
+					$this->requestData[$g+1] = null;
+				$this->request->setGet($this->requestData[$g],$this->requestData[$g+1]);
+			}
+			
 		// URL Eingabe routen /controller[/action/*] (module = default)
 		} else  if(isset($this->requestData[0]) && $this->isController($this->requestData[0])) {	
 			$this->setModuleName($this->defaultModule);
 			$this->setControllerName($this->requestData[0]);
 			$this->setActionName($this->requestData[1]);	
-		
+			// Get Params setzen
+			for($g=2;$g<count($this->requestData);$g=$g+2) {
+				if(!isset($this->requestData[$g+1]))
+					$this->requestData[$g+1] = null;
+				$this->request->setGet($this->requestData[$g],$this->requestData[$g+1]);
+			}
+			
 		// URL Eingabe routen /action/* (module = default, controller = default) -> sonst 404 !
 		} else {
 			$this->setModuleName($this->defaultModule);
@@ -126,6 +148,12 @@ class Router
 			
 			if(isset($this->requestData[0]) && $this->isAction($this->requestData[0])) {
 				$this->setActionName($this->requestData[0]);
+				// Get Params setzen
+				for($g=1;$g<count($this->requestData);$g=$g+2) {
+					if(!isset($this->requestData[$g+1]))
+						$this->requestData[$g+1] = null;
+					$this->request->setGet($this->requestData[$g],$this->requestData[$g+1]);
+				}
 				
 			} else {
 				throw new Router\Exception('No module, controller or route found.',404);
