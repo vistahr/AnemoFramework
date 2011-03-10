@@ -67,12 +67,20 @@ class Module extends BootstrapAbstract
 				
 				if(is_array($internalScripts) && $action == 'script') {
 					foreach($internalScripts as $sc) {
-						$scripts[] = $this->layout->baseUrl('scripts/' . $sc);
+						if(preg_match("/http:/i", $sc)) {
+							$scripts[] = $sc;
+						} else {
+							$scripts[] = $this->layout->baseUrl('scripts/' . $sc);
+						}
 					}
 					
 				} else if(is_array($internalScripts) && $action == $this->request->getActionName()) {
 					foreach($internalScripts as $sc) {
-						$scripts[] = $this->layout->baseUrl('scripts/' . $sc);
+						if(preg_match("/http:/i", $sc)) {
+							$scripts[] = $sc;
+						} else {
+							$scripts[] = $this->layout->baseUrl('scripts/' . $sc);
+						}
 					}
 				}
 			}
@@ -96,12 +104,20 @@ class Module extends BootstrapAbstract
 				
 				if(is_array($internalStyle) && $action == 'style') {
 					foreach($internalStyle as $sc) {
-						$styles[] = $this->layout->baseUrl('layout/' . $sc);
+						if(preg_match("/http:/i", $sc)) {
+							$styles[] = $sc;
+						} else {
+							$styles[] = $this->layout->baseUrl('layout/' . $sc);
+						}
 					}
 					
 				} else if(is_array($internalStyle) && $action == $this->request->getActionName()) {
 					foreach($internalStyle as $sc) {
-						$styles[] = $this->layout->baseUrl('layout/' . $sc);
+						if(preg_match("/http:/i", $sc)) {
+							$styles[] = $sc;
+						} else {
+							$styles[] = $this->layout->baseUrl('layout/' . $sc);
+						}
 					}
 				}
 			}
