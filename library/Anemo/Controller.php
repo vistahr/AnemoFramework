@@ -64,6 +64,10 @@ class Controller extends Controller\ControllerAbstract
 		$this->disableTemplate(); 
 		return $response;
 	}
+	
+	public function getID() {
+		return \Anemo\ID::getInstance();
+	}
 
 }
 

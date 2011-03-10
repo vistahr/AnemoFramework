@@ -74,10 +74,9 @@ class Layout extends Layout\LayoutAbstract
 	}
 	
 
-	
-	
-	
-	
+	public function getID() {
+		return \Anemo\ID::getInstance();
+	}
 	
 	
 	
