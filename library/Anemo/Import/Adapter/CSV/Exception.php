@@ -31,6 +31,11 @@
 
 namespace Anemo\Import\Adapter\CSV;
 
+/**
+ * CSV exception
+ * @author vince
+ * @version 1.0
+ */
 class Exception extends \Anemo\Runtime\Exception
 {
 }

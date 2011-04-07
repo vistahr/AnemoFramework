@@ -31,7 +31,11 @@
 
 namespace Anemo;
 
-
+/**
+ * The router class routes incoming requests to the specified controllers and actions
+ * @author vince
+ * @version 1.0
+ */
 class Router 
 {
 	protected $routes = array();

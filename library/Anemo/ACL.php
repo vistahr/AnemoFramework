@@ -34,6 +34,11 @@ namespace Anemo;
 
 use Anemo\ACL;
 
+/**
+ * Access control list class which controls the acess by using sessions
+ * @author vince
+ * @version 1.0
+ */
 class ACL
 {
 	

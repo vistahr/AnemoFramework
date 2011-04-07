@@ -31,6 +31,12 @@
 
 namespace Anemo\Layout;
 
+/**
+ * Layout class with the basic layout-functions
+ * @abstract
+ * @author vince
+ * @version 1.0
+ */
 abstract class LayoutAbstract
 {
 	

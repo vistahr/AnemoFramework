@@ -31,6 +31,11 @@
 
 namespace Anemo\Config;
 
+/**
+ * Config exception
+ * @author vince
+ * @version 1.0
+ */
 class Exception extends \Anemo\Exception
 {
 }

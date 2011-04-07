@@ -31,6 +31,11 @@
 
 namespace Anemo\Import\Adapter;
 
+/**
+ * CSV import adapter which handels the csv files
+ * @author vince
+ * @version 1.0
+ */
 class CSV extends AdapterAbstract implements AdapterInterface
 {
 	

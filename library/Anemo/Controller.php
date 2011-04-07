@@ -31,7 +31,11 @@
 
 namespace Anemo;
 
-
+/**
+ * Controller class is the head of all controllers
+ * @author vince
+ * @version 1.0
+ */
 class Controller extends Controller\ControllerAbstract
 {
 	

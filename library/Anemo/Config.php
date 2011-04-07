@@ -31,6 +31,11 @@
 
 namespace Anemo;
 
+/**
+ * Config class handle ini files
+ * @author vince
+ * @version 1.0
+ */
 class Config 
 {
 	

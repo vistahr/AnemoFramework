@@ -33,6 +33,11 @@ namespace Anemo\Controller\Router;
 
 use Anemo\Controller;
 
+/**
+ * The rewriter rewrites the incoming request url 
+ * @author vince
+ * @version 1.0
+ */
 class Rewriter
 {
 	protected $request = null;

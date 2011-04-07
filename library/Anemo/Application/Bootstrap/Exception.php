@@ -31,6 +31,11 @@
 
 namespace Anemo\Application\Bootstrap;
 
+/**
+ * Bootstrap exception
+ * @author vince
+ * @version 1.0
+ */
 class Exception extends \Anemo\Exception
 {
 }

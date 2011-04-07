@@ -33,7 +33,11 @@ namespace Anemo\Controller;
 
 use Anemo\Application\Http;
 
-
+/**
+ * The frontcontroller is the main controller. Every request routes at first to the frontcontroller which calls futher controllers.
+ * @author vince
+ * @version 1.0
+ */
 class Frontcontroller
 {
 	

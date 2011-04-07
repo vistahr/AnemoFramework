@@ -31,7 +31,11 @@
 
 namespace Anemo;
 
-
+/**
+ * A wrapper class for the Session
+ * @author vince
+ * @version 1.0
+ */
 class Session
 {
 	

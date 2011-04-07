@@ -33,6 +33,11 @@ namespace Anemo;
 
 require_once 'Anemo/Autoloader/Exception.php';
 
+/**
+ * Autoloader class loads dynamically different libraryclasses
+ * @author vince
+ * @version 1.0
+ */
 class Autoloader
 {
 	

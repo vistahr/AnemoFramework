@@ -31,6 +31,11 @@
 
 namespace Anemo\Controller;
 
+/**
+ * Controller exception
+ * @author vince
+ * @version 1.0
+ */
 class Exception extends \Anemo\Runtime\Exception
 {
 }

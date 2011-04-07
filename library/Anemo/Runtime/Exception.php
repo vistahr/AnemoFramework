@@ -31,6 +31,11 @@
 
 namespace Anemo\Runtime;
 
+/**
+ * Runtime exception is used to throw exceptions after booting the application
+ * @author vince
+ * @version 1.0
+ */
 class Exception extends \Anemo\Exception
 {
 }

@@ -31,6 +31,11 @@
 
 namespace Anemo;
 
+/**
+ * Main exception class which overwrites the default class
+ * @author vince
+ * @version 1.0
+ */
 class Exception extends \Exception
 {
 	

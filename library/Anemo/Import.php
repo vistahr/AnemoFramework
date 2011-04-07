@@ -33,6 +33,11 @@ namespace Anemo;
 
 use Import\Adapter;
 
+/**
+ * The import class is the head of different import adapter
+ * @author vince
+ * @version 1.0
+ */
 class Import
 {
 

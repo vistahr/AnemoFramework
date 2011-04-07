@@ -33,6 +33,11 @@ namespace Anemo;
 
 require_once 'Anemo/Application/Bootstrap/Abstract.php';
 
+/**
+ * Main application dummy class
+ * @author vince
+ * @version 1.0
+ */
 class Application extends Application\Bootstrap\BootstrapAbstract
 {
 }

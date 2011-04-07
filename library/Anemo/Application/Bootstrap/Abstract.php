@@ -35,6 +35,12 @@ namespace Anemo\Application\Bootstrap;
 require_once 'Anemo/Exception.php';
 require_once 'Anemo/Autoloader.php';
 
+/**
+ * Abstract bootstrap class is the head of the framework and loads and run the application
+ * @abstract
+ * @author vince
+ * @version 1.0
+ */
 abstract class BootstrapAbstract
 {
 	public 		$config 	= array();

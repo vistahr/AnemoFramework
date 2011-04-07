@@ -33,6 +33,11 @@ namespace Anemo\Application\Bootstrap;
 
 use Anemo\Application;
 
+/**
+ * Bootstrap module class initialize the different modules
+ * @author vince
+ * @version 1.0
+ */
 class Module extends BootstrapAbstract
 {
 	

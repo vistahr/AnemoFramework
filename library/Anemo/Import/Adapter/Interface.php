@@ -32,7 +32,11 @@
 namespace Anemo\Import\Adapter;
 
 
-
+/**
+ * Import interface
+ * @author vince
+ * @version 1.0
+ */
 interface AdapterInterface
 {
 

@@ -31,6 +31,11 @@
 
 namespace Anemo;
 
+/**
+ * The layoutclass handles the layout
+ * @author vince
+ * @version 1.0
+ */
 class Layout extends Layout\LayoutAbstract
 {
 	

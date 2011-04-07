@@ -33,7 +33,11 @@ namespace Anemo;
 
 use Anemo\ID;
 
-
+/**
+ * The id class holds different user data, permanent in a session
+ * @author vince
+ * @version 1.0
+ */
 class ID
 {
 	private static $instance = null;

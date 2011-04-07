@@ -31,6 +31,11 @@
 
 namespace Anemo\Import\Adapter;
 
+/**
+ * XML adapter, which handles the xml files
+ * @author vince
+ * @version 1.0
+ */
 class XML extends AdapterAbstract implements AdapterInterface
 {
 	

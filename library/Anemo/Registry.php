@@ -32,14 +32,16 @@
 namespace Anemo;
 
 /**
- * Registry class to pass global variables between classes.
+ * Registry pattern allows to store objects permanent in a session
+ * @abstract
+ * @author vince
+ * @version 1.0
  */
 abstract class Registry
 {
 	
     /**
      * Object registry provides storage for shared objects
-     *
      * @var array 
      */
     private static $registry = array();
@@ -47,10 +49,9 @@ abstract class Registry
     
     /**
      * Adds a new variable to the Registry.
-     *
      * @param string $key Name of the variable
      * @param mixed $value Value of the variable
-     * @throws Exception
+     * @throws Registry\Exception
      * @return bool 
      */
     public static function set($key, &$value) {
@@ -64,7 +65,6 @@ abstract class Registry
 
     /**
      * Tests if given $key exists in registry
-     *
      * @param string $key
      * @return bool
      */
@@ -79,7 +79,6 @@ abstract class Registry
  
     /**
      * Returns the value of the specified $key in the Registry.
-     *
      * @param string $key Name of the variable
      * @return mixed Value of the specified $key
      */
@@ -93,7 +92,6 @@ abstract class Registry
  
     /**
      * Returns the whole Registry as an array.
-     *
      * @return array Whole Registry
      */
     public static function getAll()
@@ -103,7 +101,6 @@ abstract class Registry
  
     /**
      * Removes a variable from the Registry.
-     *
      * @param string $key Name of the variable
      * @return bool
      */
@@ -118,7 +115,6 @@ abstract class Registry
  
     /**
      * Removes all variables from the Registry.
-     *
      * @return void 
      */
     public static function removeAll()

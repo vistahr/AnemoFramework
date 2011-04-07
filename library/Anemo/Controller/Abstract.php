@@ -31,6 +31,12 @@
 
 namespace Anemo\Controller;
 
+/**
+ * The abstract controller body class holds the basic functions for the controller class
+ * @abstract
+ * @author vince
+ * @version 1.0
+ */
 abstract class ControllerAbstract
 {
 	

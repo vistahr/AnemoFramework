@@ -31,7 +31,12 @@
 
 namespace Anemo\Import\Adapter;
 
-
+/**
+ * Import Adapter
+ * @abstract
+ * @author vince
+ * @version 1.0
+ */
 abstract class AdapterAbstract
 {
 	

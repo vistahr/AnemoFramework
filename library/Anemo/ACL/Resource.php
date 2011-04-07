@@ -31,6 +31,11 @@
 
 namespace Anemo\ACL;
 
+/**
+ * ACL resource presents an object, where subjects can has different access levels
+ * @author vince
+ * @version 1.0
+ */
 class Resource 
 {
 	

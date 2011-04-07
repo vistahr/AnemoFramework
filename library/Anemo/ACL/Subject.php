@@ -31,6 +31,11 @@
 
 namespace Anemo\ACL;
 
+/**
+ * ACL subject presents a subject, e.g a person, or a group of persons, which can have access on resources
+ * @author vince
+ * @version 1.0
+ */
 class Subject
 {
 	
