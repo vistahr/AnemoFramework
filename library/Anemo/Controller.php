@@ -38,7 +38,12 @@ namespace Anemo;
  */
 class Controller extends Controller\ControllerAbstract
 {
-	
+	/**
+	 * Send a result with the given type
+	 * @param string $result
+	 * @param string $type
+	 * @return string $result
+	 */
 	protected function send($result,$type) {
 		$this->disableTemplate();
 		$this->getLayout()->disableLayout();
@@ -48,46 +53,91 @@ class Controller extends Controller\ControllerAbstract
 		return $result;
 	}
 	
+	/**
+	 * Send a ajax result
+	 * @param array $result
+	 * @return string
+	 */
 	protected function sendAjax(array $result) {
 		return json_encode($this->send($result,'application/json'));
 	}
 	
+	/**
+	 * Send a XML result
+	 * @param string $result
+	 * @return string
+	 */
 	protected function sendXML($result) {
 		$xml = simplexml_load_string($this->send($result,'text/xml'));
 		return $xml->asXML();
 	}	
 	
+	/**
+	 * Load another template
+	 * @param string $template
+	 * @return void
+	 */
 	protected function loadTemplate($template) {
 		$this->template = $template;
 	}
 	
-	
+	/**
+	 * Return the base url path
+	 * @param string $url
+	 * @return string
+	 */
 	public function baseUrl($url = "") {
 		return $this->getFrontcontroller()->getBasePath() . '/' . $url;
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Controller.ControllerAbstract::getFrontcontroller()
+	 */
 	public function getFrontcontroller() {
 		return $this->getResource('frontcontroller');
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Controller.ControllerAbstract::getView()
+	 */
 	public function getView() {
 		return $this->getResource('view');
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Controller.ControllerAbstract::getLayout()
+	 */
 	public function getLayout() {
 		return $this->getResource('layout');
 	}
 	
-	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Controller.ControllerAbstract::getRequest()
+	 */
 	public function getRequest() {
 		return $this->getFrontcontroller()->getRequest();
 	}
 	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Controller.ControllerAbstract::getResponse()
+	 */
 	public function getResponse() {
 		return $this->getFrontcontroller()->getResponse();
 	}
 		
-	
+	/**
+	 * Forward the request, disable the current template
+	 * @param string $module
+	 * @param string $controller
+	 * @param string $action
+	 * @param array $param
+	 * @return string $response
+	 */
 	public function forwardAndExit($module,$controller,$action,$param = array()) {
 		$this->getRequest()->setModuleName($module)
 						   ->setControllerName($controller)
@@ -99,6 +149,9 @@ class Controller extends Controller\ControllerAbstract
 		return $response;
 	}
 	
+	/**
+	 * Returns the instance
+	 */
 	public function getID() {
 		return \Anemo\ID::getInstance();
 	}

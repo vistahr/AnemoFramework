@@ -34,7 +34,7 @@ namespace Anemo;
 use Anemo\ID;
 
 /**
- * The id class holds different user data, permanent in a session
+ * The id class holds different user data in a session. Auth functions are also available.
  * @author vince
  * @version 1.0
  */
@@ -54,6 +54,10 @@ class ID
 	private function __clone() {}
 	
 	
+	/**
+	 * Get the instance (Singleton)
+	 * @return Anemo\ID $this
+	 */
 	public static function getInstance(){
 		if(self::$instance === null){
 	    	self::$instance = new ID();
@@ -61,51 +65,90 @@ class ID
 	    return self::$instance;
 	}	
 	
-	
+	/**
+	 * Set data with key, value pairs
+	 * @param string $key
+	 * @param string $value
+	 * @return void
+	 */
 	public function setUserData($key, $value) {
 		$this->update();
 		$this->IDObject['userData'][$key] = $value;
 		$this->save();
 	}
 	
+	/**
+	 * Getter - user data
+	 * @param string $key
+	 * @return string
+	 */
 	public function getUserData($key) {
 		$this->update();
 		return $this->IDObject['userData'][$key];
 	}
 	
+	/**
+	 * Set a model
+	 * @param object $userModel
+	 * @return void
+	 */
 	public function setUserModel($userModel) {
 		$this->update();
 		$this->IDObject['userModel'] = $userModel;
 		$this->save();
 	}
 	
+	/**
+	 * Getter - user model
+	 * @return object
+	 */
 	public function getUserModel() {
 		$this->update();
 		return $this->IDObject['userModel'];
 	}
 	
-	
+	/**
+	 * Set the default acl subject of the current user. This is the required fallback subject.
+	 * @param ACL\Subject $defaultSubject
+	 * @return void
+	 */
 	public function setDefaultSubject(ACL\Subject $defaultSubject) {
 		$this->update();
 		$this->IDObject['defaultSubject'] = $defaultSubject;
 		$this->save();
 	}
 	
+	/**
+	 * Set the acl subject of the current user
+	 * @param ACL\Subject $subject
+	 * @return void
+	 */
 	public function setSubject(ACL\Subject $subject) {
 		$this->update();
 		$this->IDObject['subject'] = $subject;
 		$this->save();
 	}
 	
+	/**
+	 * Return the subject of the current user. If no subject is setted, the default subject return.
+	 * @return ACL\Subject
+	 */
 	public function getSubject() {
 		$this->update();
+		
 		if($this->IDObject['subject'] instanceof ACL\Subject)
 			return $this->IDObject['subject']->getSubject();
-		
+			
+		if($this->IDObject['defaultSubject'] === null)
+			throw new ID\Exception('Defaultsubject not set');
+			
 		return $this->IDObject['defaultSubject']->getSubject();
 	}
 	
-	
+	/**
+	 * Return the subject, if no exists, an empty string return.
+	 * @return string
+	 */
 	public function __toString() {
 		$this->update();
 		if($this->IDObject['subject'] instanceof ACL\Subject)
@@ -113,7 +156,11 @@ class ID
 		return "";
 	}
 	
-	
+	/**
+	 * Check if the current subject is not equal the default subject.
+	 * @throws ID\Exception
+	 * @return boolean
+	 */
 	public function isLogged() {
 		$this->update();
 		
@@ -126,26 +173,42 @@ class ID
 		return false;
 	}
 	
-	
+	/**
+	 * Delete the ID object
+	 * @return void
+	 */
 	public function logout() {
 		$this->IDObject['subject']  = null;
 		$this->IDObject['userData'] = array();
 		$this->save();
 	}
 
-	
-	public function serialize() {
+	/**
+	 * Serialize the object and save it in a session
+	 * @return void
+	 */
+	protected function serialize() {
 		\Anemo\Session::setSession(ID::$AF_SESSION_ID, serialize($this));
 	}
 	
-	public function unserialize() {
+	/**
+	 * Unserialize the object from the session
+	 * @return void
+	 */
+	protected function unserialize() {
 		return unserialize(\Anemo\Session::getSession(ID::$AF_SESSION_ID));
 	}
 	
+	/**
+	 * A wrapper for serialize
+	 */
 	public function save() {
 		$this->serialize();
 	}
 	
+	/**
+	 * A wrapper for unserialize
+	 */
 	public function update() {
 		$obj = $this->unserialize();
 		$this->IDObject = $obj->IDObject;

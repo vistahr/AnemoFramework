@@ -43,22 +43,32 @@ class Autoloader
 	
 	public $loadedClasses = array();
 	
-	
+	/**
+	 * Add the autoload function to the __autoload stack
+	 */
 	public function register() {
 		spl_autoload_register(array(__CLASS__,'autoload'),true);
 	}
 	
-	
-    public function fileExists($classPath) {
+	/**
+	 * Check if the given file in the include paths exists
+	 * @param string $filePath
+	 * @return boolean
+	 */
+    public function fileExists($filePath) {
    	 	$includePaths = explode(PATH_SEPARATOR, get_include_path());
     	foreach($includePaths as $ip) {
-    		if(file_exists($ip.$classPath) && !is_dir($ip.$classPath))
-				return $classPath;
+    		if(file_exists($ip.$filePath) && !is_dir($ip.$filePath))
+				return $filePath;
     	}
     	return false;
     }
 
-    
+    /**
+     * The main autoload function
+     * @param string $className
+     * @return boolean
+     */
 	public function autoload($className) {
 		if(($class = $this->anemoLibraryAutoloader($className)) !== false || 
 			($class = $this->anemoThirdpartyAutoloader($className)) !== false || 
@@ -68,11 +78,14 @@ class Autoloader
 		} else {
 			//throw new Autoloader\Exception('File '. $className . '.php not found');
 		}
-        
         return true;
     }
     
-    
+    /**
+     * Thirdparty autoloader, to autoload the thirdparty libraries. The libraries can use namespaces. If not, the path have to look like "/library/library.php".
+     * @param string $className
+     * @return boolean
+     */
 	protected function anemoThirdpartyAutoloader($className) {
 		$count = 0;
 		$className = str_replace('\\', '/', $className, $count);
@@ -84,7 +97,11 @@ class Autoloader
 		
 	}
 	
-    
+    /**
+     * Internal library autolaoder which loads all classes. Exception handling for interfaces and abstract classes.
+     * @param unknown_type $className
+     * @return boolean
+     */
     protected function anemoLibraryAutoloader($className) {
     	if(preg_match("#(.+)\W[\w]+Abstract#",$className,$match))
     		$className = $match[1] . '\Abstract';
@@ -97,7 +114,12 @@ class Autoloader
     	return $this->fileExists($classPath);
     }
     
-    
+    /**
+     * Internal controller autoloader loads, after bootstrapping the frontcontroller, the actual needed controller.
+     * @param unknown_type $className
+     * @throws Loader\Exception
+     * @return boolean
+     */
     protected function anemoControllerAutoloader($className) {
     	$front = Controller\Frontcontroller::getInstance();
     	

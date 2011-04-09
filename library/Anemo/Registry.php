@@ -52,7 +52,7 @@ abstract class Registry
      * @param string $key Name of the variable
      * @param mixed $value Value of the variable
      * @throws Registry\Exception
-     * @return bool 
+     * @return boolean
      */
     public static function set($key, &$value) {
         if ( ! self::has($key) ) {
@@ -66,7 +66,7 @@ abstract class Registry
     /**
      * Tests if given $key exists in registry
      * @param string $key
-     * @return bool
+     * @return boolean
      */
     public static function has($key)
     {
@@ -92,7 +92,7 @@ abstract class Registry
  
     /**
      * Returns the whole Registry as an array.
-     * @return array Whole Registry
+     * @return array
      */
     public static function getAll()
     {
@@ -102,7 +102,7 @@ abstract class Registry
     /**
      * Removes a variable from the Registry.
      * @param string $key Name of the variable
-     * @return bool
+     * @return boolean
      */
     public static function remove($key)
     {

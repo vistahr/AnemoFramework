@@ -35,7 +35,7 @@ namespace Anemo;
 use Anemo\ACL;
 
 /**
- * Access control list class which controls the acess by using sessions
+ * Access control list class which controls the acess by using sessions. By default, all access is denied.
  * @author vince
  * @version 1.0
  */
@@ -52,16 +52,27 @@ class ACL
 	
 	public function __construct() {}
 	
-	
-	
+	/**
+	 * Adds a subject object to the ACL.  Optional one or more parents objects.
+	 * @param \Anemo\ACL\Subject $subject
+	 * @param array $parent
+	 * @throws ACL\Exception
+	 * @return \Anemo\ACL\Subject $subject
+	 */
 	public function addSubject(\Anemo\ACL\Subject $subject, $parent = array()) {
 		if(!is_array($parent))
 			throw new ACL\Exception('Parent, expect array');
-			
 		$this->parentSubjects[$subject->getSubject()] = $parent;
 		return $subject;
 	}
 	
+	/**
+	 * Adds a resource object to the ACL. Optional one or more parents objects.
+	 * @param \Anemo\ACL\Resource $resource
+	 * @param unknown_type $parent
+	 * @throws ACL\Exception
+	 * @return \Anemo\ACL\Resource $resource
+	 */
 	public function addResource(\Anemo\ACL\Resource $resource, $parent = array()) {
 		if(!is_array($parent))
 			throw new ACL\Exception('Parent, expect array');
@@ -70,7 +81,14 @@ class ACL
 		return $resource;
 	}
 	
-	
+	/**
+	 * Allows an subject to access the resource with the given action(s). If only the subject is given, the subject has full access.
+	 * @param mixed $subject
+	 * @param mixed $resource
+	 * @param array $action
+	 * @throws ACL\Exception
+	 * @return array $part 
+	 */
 	public function allow($subject, $resource = null, $action = array()) {
 		
 		if($subject instanceof \Anemo\ACL\Subject)
@@ -98,7 +116,14 @@ class ACL
 		return $part = array_unique(array_merge($part, $action));
 	}
 	
-	
+	/**
+	 * Deny access with the given resource and action(s) to the subject. If only the subject is given, access to everythind is denied.
+	 * @param mixed $subject
+	 * @param mixed $resource
+	 * @param array $action
+	 * @throws ACL\Exception
+	 * @return boolean
+	 */
 	public function deny($subject, $resource = null, $action = array()) {
 		if($subject instanceof \Anemo\ACL\Subject)
 			$subject = $subject->getSubject();
@@ -132,7 +157,14 @@ class ACL
 		return true;
 	}
 	
-	
+	/**
+	 * Ask a subject if the access to the resource with the given action is allowed
+	 * @param mixed $subject
+	 * @param string $resource
+	 * @param string $action
+	 * @throws ACL\Exception
+	 * @return boolean
+	 */
 	public function isAllowed($subject, $resource, $action) {
 		 
 		if($subject instanceof \Anemo\ACL\Subject)

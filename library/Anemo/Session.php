@@ -39,20 +39,31 @@ namespace Anemo;
 class Session
 {
 	
-	
+	/**
+	 * A wrapper for session_start
+	 * @throws Session\Exception
+	 * @return void
+	 */
 	public static function start() {
 		if(!session_start())
 			throw new Session\Exception('Session could not start');
 	}
 	
-	
+	/**
+	 * A wrapper for session_id
+	 * @throws Session\Exception
+	 * @return string
+	 */
 	public static function getSessionID() {
 		if(!session_start())
 			throw new Session\Exception('No session available');
 		return session_id();
 	}
 	
-	
+	/**
+	 * Delete the whole session data
+	 * @return void
+	 */
 	public static function end() {
 		$_SESSION = array();
 		if (ini_get('session.use_cookies')) {
@@ -62,11 +73,21 @@ class Session
 		session_destroy();
 	}
 	
-	 
+	/**
+	 * Set data into the session
+	 * @param string $key
+	 * @param string $value
+	 * @return void
+	 */
 	public static function setSession($key, $value) {
 		$_SESSION[$key] = $value;
 	}
 	
+	/**
+	 * Get data from the session
+	 * @param string $key
+	 * @return string
+	 */
 	public static function getSession($key) {
 		return $_SESSION[$key];
 	}

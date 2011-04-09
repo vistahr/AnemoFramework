@@ -48,26 +48,48 @@ class Router
 	
 	protected $request;
 	
+	/**
+	 * Initialize the router
+	 */
 	public function __construct() {
 		$this->requestData = Controller\Router\Rewriter::rewriteRequest();
 	}
 	
-	
+	/**
+	 * Set the default module, which will be requested when nothing other is setted
+	 * @param string $module
+	 * @return Anemo\Router
+	 */
 	public function setDefaultModule($module) {
 		$this->defaultModule = $module;
 		return $this;
 	}
+	/**
+	 * Set the default controller, which will be requested when nothing other is setted
+	 * @param string $controller
+	 * @return Anemo\Router
+	 */
 	public function setDefaultController($controller) {
 		$this->defaultController = $controller;
 		return $this;
 	}
+	/**
+	 * 
+	 * Set the default action, which will be requested when nothing other is setted
+	 * @param string $action
+	 * @return Anemo\Router
+	 */
 	public function setDefaultAction($action) {
 		$this->defaultAction = $action;
 		return $this;
 	}
 	
-	
-	public function loadRoutes($config) {
+	/**
+	 * Load and set the default route
+	 * @param array $config
+	 * @return void
+	 */
+	public function loadRoutes(array $config) {
 		$this->setDefaultModule($config['']['module'])
 			 ->setDefaultController($config['']['controller'])
 			 ->setDefaultAction($config['']['action']);
@@ -75,19 +97,35 @@ class Router
 		$this->routes = $config;
 	}
 	
-	
+	/**
+	 * Set the module name, when nothing is set, the default module will be set
+	 * @param string $module
+	 * @return void
+	 */
 	protected function setModuleName($module) {
 		if($module == '')
 			$module = $this->defaultModule;
 			
 		$this->request->setModuleName($module);
 	}
+	
+	/**
+	 * Set the controller name, when nothing is set, the default controller will be set
+	 * @param string $controller
+	 * @return void
+	 */
 	protected function setControllerName($controller) {
 		if($controller == '')
 			$controller = $this->defaultController;
 			
 		$this->request->setControllerName($controller);
 	}
+	
+	/**
+	 * Set the action name, when nothing is set, the default action will be set
+	 * @param string $action
+	 * @return void
+	 */
 	protected function setActionName($action) {
 		if($action == '')
 			$action = $this->defaultAction;
@@ -95,13 +133,22 @@ class Router
 		$this->request->setActionName($action);
 	}
 	
-	
+	/**
+	 * Check if the given param is a module
+	 * @param string $param
+	 * @return boolean
+	 */
 	protected function isModule($param) {
 		$front = Controller\Frontcontroller::getInstance();
 		$moduleArray = scandir($front->getModuleDirectory());
 		return in_array($param,$moduleArray);
 	}
 	
+	/**
+	 * Check if the given param is a controller
+	 * @param string $param
+	 * @return boolean
+	 */
 	protected function isController($param) {
 		$front = Controller\Frontcontroller::getInstance();
 		
@@ -113,6 +160,11 @@ class Router
 		return in_array($param,$controllerArray);
 	}
 	
+	/**
+	 * Check if the given param is an action
+	 * @param string $param
+	 * @return boolean
+	 */
 	protected function isAction($param) {
 		$param = $param . 'Action';
 		$front = Controller\Frontcontroller::getInstance();
@@ -120,11 +172,23 @@ class Router
 		return in_array($param,$methodsArray);
 	}
 	
+	/**
+	 * Check if the given param is a route
+	 * @param string $param
+	 * @return boolean
+	 */
 	protected function isRoute($param) {
 		return array_key_exists($param,$this->routes);
 	}
 	
-	
+	/**
+	 * 
+	 * Route the incoming request to the right module,controller,action.
+	 * @param Application\Http\Request $request
+	 * @param Application\Http\Response $response
+	 * @throws Router\Exception
+	 * @return void
+	 */
 	public function route(Application\Http\Request $request, Application\Http\Response $response) {
 		$this->request = $request;
 		
@@ -133,12 +197,7 @@ class Router
 		
 		if(isset($this->requestData[0]) && $this->isModule($this->requestData[0]) && $this->isRoute($this->requestData[0]))
 			throw new Router\Exception('Controller and route has the same name.');
-		/*
-		 * for($g=2;$g<count($this->requestData);$g+2) {
-				$this->request->setGet($this->requestData[$g],$this->requestData[$g+1]);
-			}
-		 */
-			
+
 		// passende Route routen
 		if(isset($this->requestData[0]) && $this->isRoute($this->requestData[0])) {
 			$this->setModuleName($this->routes[$this->requestData[0]]['module']);
@@ -194,9 +253,7 @@ class Router
 			}
 			
 		}
-		
-		
-		
+
 	}
 	
 	

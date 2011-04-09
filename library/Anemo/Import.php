@@ -40,7 +40,13 @@ use Import\Adapter;
  */
 class Import
 {
-
+	/**
+	 * Factory function to load dynamically different import adapter
+	 * @param string $adapter
+	 * @param array $params
+	 * @throws Import\Exception
+	 * @return Anemo\Import\Adapter\Abstract
+	 */
 	public static function factory($adapter, $params = array()) {
 		
 		if(!is_string($adapter) || !trim($adapter) )

@@ -39,41 +39,82 @@ namespace Anemo;
 class Layout extends Layout\LayoutAbstract
 {
 	
+	/**
+	 * Disable the current layout
+	 * @return void
+	 */
 	public function disableLayout() {
 		if(!$this->isLayoutDisabled())
 			$this->disableLayout = true;
 	}
 	
+	/**
+	 * Check if the current layout is disabled
+	 * @return void
+	 */
 	public function isLayoutDisabled() {
 		return $this->disableLayout;
 	}
 	
-	
+	/**
+	 * Execute the given action
+	 * @param string $module
+	 * @param string $controller
+	 * @param string $action
+	 * @return string
+	 */
 	public function executeAction($module,$controller,$action) {
 		$front = Controller\Frontcontroller::getInstance();
 		$front->setModuleName($module)->setControllerName($controller)->setActionName($action);
 		return $front->execute();
 	}
 	
+	/**
+	 * Return the base url
+	 * @param string $url
+	 * @return string
+	 */
 	public function baseUrl($url = "") {
 		return $this->getPublicDirectory() . '/' . $url;
 	}
 	
+	/**
+	 * Return the frontcontroller request object
+	 */
 	public function getRequest() {
 		return $this->getFrontcontroller()->getRequest();
 	}
 	
-	
+	/**
+	 * Set the page title
+	 * @param string $title
+	 * @return void
+	 */
 	public function setTitle($title) {
 		$this->headTitle = $title;
 	}
+	
+	/**
+	 * Return the head title
+	 * @returnvoid
+	 */
 	public function headTitle() {
 		return '<title>' .  $this->headTitle . '</title>';
 	}
 	
+	/**
+	 * Set the head script
+	 * @param array $script
+	 * @return void
+	 */
 	public function setScript(array $script) {
 		$this->headScript = $script;
 	}
+	
+	/**
+	 * Return the head scripts
+	 * @return string
+	 */
 	public function headScript() {
 		$headScript = "";
 		foreach($this->headScript as $script) {
@@ -82,9 +123,19 @@ class Layout extends Layout\LayoutAbstract
 		return $headScript;
 	}
 	
-	public function setStyle($stlye) {
+	/**
+	 * Set the head style
+	 * @param array $stlye
+	 * @return void
+	 */
+	public function setStyle(array $stlye) {
 		$this->headStyle = $stlye;
 	}
+	
+	/**
+	 * Return the head style
+	 * @return string
+	 */
 	public function headStyle() {
 		$headStyle = "";
 		foreach($this->headStyle as $style) {
@@ -92,10 +143,19 @@ class Layout extends Layout\LayoutAbstract
 		}
 		return $headStyle;
 	}
-
-	public function setMeta($meta) {
+	
+	/**
+	 * Set the head meta
+	 * @param array $meta
+	 */
+	public function setMeta(array $meta) {
 		$this->headMeta = $meta;
 	}
+	
+	/**
+	 * Return the head meta
+	 * @return void
+	 */
 	public function headMeta() {
 		$headMeta = "";
 		foreach($this->headMeta as $metaName => $metaValue) {
@@ -108,7 +168,9 @@ class Layout extends Layout\LayoutAbstract
 		return $headMeta;
 	}
 	
-
+	/**
+	 * Return the ID instance
+	 */
 	public function getID() {
 		return \Anemo\ID::getInstance();
 	}

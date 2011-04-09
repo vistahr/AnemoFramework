@@ -39,6 +39,11 @@ namespace Anemo;
 class Exception extends \Exception
 {
 	
+	/**
+	 * Throws an exception
+	 * @param string $message
+	 * @param integer $code
+	 */
 	public function __construct($message = null, $code = 0){
         if (!$message)
             throw new $this('Unknown '. get_class($this));
@@ -48,6 +53,10 @@ class Exception extends \Exception
         parent::__construct($message, $code);
     }
     
+    /**
+     * (non-PHPdoc)
+     * @see Anemo.Exception::getMessageByEnvironment()
+     */
     public function getMessageByEnvironment() {
     	if(APPLICATION_ENV == 'production') {
     		preg_match("#.+: (.+)#", $this->message, $msg);

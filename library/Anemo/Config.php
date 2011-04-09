@@ -43,16 +43,23 @@ class Config
 	public $fileInfoArray 	= array();
 	public $filePath 		= "";
 	
-	
+	/**
+	 * Constructor initialize the Config file
+	 * @param string $file
+	 * @param string $path
+	 * @return void
+	 */
 	public function __construct($file,$path) {
 		$this->file 			= $file;
 		$this->fileInfoArray	= pathinfo($file);
 		$this->filePath			= $path;
 	}
 	
-	
+	/**
+	 * Returns the config file as an array
+	 * @return array $configArray
+	 */
 	public function toArray() {
-		
 		$configArray = array();
 		
 		if($this->checkConfigFile())
@@ -61,12 +68,19 @@ class Config
 		return $configArray;
 	}
 	
-	
+	/**
+	 * Returns config filename
+	 * @return string
+	 */
 	public function getFilename() {
 		return $this->fileInfoArray['filename'];
 	}
 	
-	
+	/**
+	 * Verify the configfilename
+	 * @throws Config\Exception
+	 * @return boolean
+	 */
 	protected function checkConfigFile() {
 		if(strtolower($this->fileInfoArray['extension']) != 'ini') 
 			throw new Config\Exception($this->file . 'is no valid configuration file. INI required.');
