@@ -46,7 +46,11 @@ class Module extends BootstrapAbstract
 	
 	protected $request  = null;
 	
-	
+	/**
+	 * Load and init the module config files
+	 * @throws Application\Exception
+	 * @return void
+	 */
 	public function __construct() {
 		$this->loadConfigs($this->getFrontcontroller()->getModuleDirectory() . '/' . $this->getFrontcontroller()->getModuleName() . '/configs');
 		$this->layout = $this->getFrontcontroller()->getResource('layout');
@@ -62,16 +66,26 @@ class Module extends BootstrapAbstract
 		$this->initMetas();
 	}
 	
-	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Application\Bootstrap.BootstrapAbstract::getFrontcontroller()
+	 */
 	public function getFrontcontroller() {
 		return \Anemo\Controller\Frontcontroller::getInstance();
 	}
 	
+	/**
+	 * Return the layout resource
+	 * @return \Anemo\Layout
+	 */
 	protected function getLayout() {
 		return $this->getFrontcontroller()->getResource('layout');
 	}
 	
-	
+	/**
+	 * Set the title from the config array
+	 * @return void
+	 */
 	protected function initTitles() {
 		$title 	 = "";
 		
@@ -87,7 +101,10 @@ class Module extends BootstrapAbstract
 		$this->layout->setTitle($title);
 	}
 	
-	
+	/**
+	 * Set the scripts from the config array. External scripts will be detect automatically
+	 * @return void
+	 */
 	protected function initScripts() {
 		$scripts = array();
 		
@@ -124,7 +141,10 @@ class Module extends BootstrapAbstract
 		$this->layout->setScript($scripts);
 	}
 
-	
+	/**
+	 * Set the styles from the config array. External styles will be detect automatically
+	 * @return void
+	 */
 	protected function initStyles() {
 		$styles = array();
 		
@@ -161,7 +181,10 @@ class Module extends BootstrapAbstract
 		$this->layout->setStyle($styles);
 	}
 	
-	
+	/**
+	 * Set the meta data from the config file. 
+	 * @return void
+	 */
 	protected function initMetas() {
 		$metas = array();
 		

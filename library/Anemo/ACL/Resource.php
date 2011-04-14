@@ -41,15 +41,27 @@ class Resource
 	
 	protected $resource = "";
 	
-	
+	/**
+	 * Create a new resource
+	 * @param string $resource
+	 * @return void
+	 */
 	public function __construct($resource) {
 		$this->resource = $resource;
 	}
 	
+	/**
+	 * Return the resource string
+	 * @return string
+	 */
 	public function getResource() {
 		return $this->resource;
 	}	
 	
+	/**
+	 * Wrapper for getResource
+	 * @return string
+	 */
 	public function __toString() {
 		return $this->getResource();
 	}	

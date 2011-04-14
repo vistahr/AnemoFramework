@@ -41,16 +41,27 @@ class Subject
 	
 	protected $subject = "";
 	
-	
+	/**
+	 * Create a new subject
+	 * @param string $subject
+	 * @return void
+	 */
 	public function __construct($subject) {
 		$this->subject = $subject;
 	}
 	
-	
+	/**
+	 * Return the subject string
+	 * @return string
+	 */
 	public function getSubject() {
 		return $this->subject;
 	}
 	
+	/**
+	 * Wrapper for getSubject
+	 * @return string
+	 */
 	public function __toString() {
 		return $this->getSubject();
 	}

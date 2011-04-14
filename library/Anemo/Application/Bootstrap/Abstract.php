@@ -51,33 +51,66 @@ abstract class BootstrapAbstract
 	
 	protected 	$application = null;
 	
-	
+	/**
+	 * Init the environment, the autloader and load the config files
+	 * @return void
+	 */
 	public function __construct() {
 		$this->registerEnvironment();
 		$this->registerAutoloader();
 		$this->loadConfigs(ROOT.'/configs');
 	}
-
+	
+	/**
+	 * Return the runtime - the absolute time the script ran
+	 * @return float
+	 */
 	public function getRuntime() {
 		return $this->runtime;
 	}
-		
+
+	/**
+	 * Append a new resource
+	 * @param string $resourceName
+	 * @param string $resourceValue
+	 * @return \Anemo\Bootstrap\BootstrapAbstract
+	 */
 	public function setResource($resourceName,$resourceValue) {
 		$this->resources[strtolower($resourceName)] = $resourceValue;
 		return $this;
 	}
-	public function getResource($resource) {
-		if($this->bootstrap($resource))
-			return $this->resources[strtolower($resource)];
+	
+	/**
+	 * Return the object of the given resoruce
+	 * @param string $resourceName
+	 * @return object
+	 */
+	public function getResource($resourceName) {
+		if($this->bootstrap($resourceName))
+			return $this->resources[strtolower($resourceName)];
 	}
-	protected function hasResource($resource) {
-		return isset($this->resources[strtolower($resource)]);
+	
+	/**
+	 * Check if the gevien resource is inside the resource array
+	 * @param string $resourceName
+	 * @return boolean
+	 */
+	protected function hasResource($resourceName) {
+		return isset($this->resources[strtolower($resourceName)]);
 	}
-
+	
+	/**
+	 * Return the frontcontroller object
+	 * @return \Anemo\Controlle\Frontcontroller
+	 */
 	public function getFrontcontroller() {
 		return $this->getResource('frontcontroller');
 	}
 	
+	/**
+	 * Set the debug settings for the environment
+	 * @return void
+	 */
 	protected function registerEnvironment() {
 		if(APPLICATION_ENV == 'development') {
 			ini_set('error_reporting', E_ALL);
@@ -87,12 +120,20 @@ abstract class BootstrapAbstract
 		}
 	}
 	
+	/**
+	 * Start and register a new autoloader
+	 * @return void
+	 */
 	protected function registerAutoloader() {
 		$loader = new \Anemo\Autoloader();
 		$loader->register();
 	}
 	
-
+	/**
+	 * Load automatically all config files and save them into the config array
+	 * @param string $configDir
+	 * @return void
+	 */
 	protected function loadConfigs($configDir) {
 		$configs = scandir($configDir);
 		
@@ -105,7 +146,11 @@ abstract class BootstrapAbstract
 		}
 	}
 	
-	
+	/**
+	 * If no argument is given, all resources will be load and started. With a given resource, only the specified resource will be boostrapped.
+	 * @param string $resource
+	 * @return void
+	 */
 	public function bootstrap($resource = null) {
 		$applicationClass = get_class($this);
 		
@@ -138,7 +183,11 @@ abstract class BootstrapAbstract
 		return true;
 	}
 	
-
+	/**
+	 * Start and run the application
+	 * @param \Anemo\Application\Http\Response $response
+	 * @return void
+	 */
 	public function run(\Anemo\Application\Http\Response $response = null){
 		
 		$starttime = microtime(true);

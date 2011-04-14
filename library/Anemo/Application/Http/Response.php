@@ -31,6 +31,11 @@
 
 namespace Anemo\Application\Http;
 
+/**
+ * Response is a singleton and represent the outgoing response
+ * @author vince
+ * @version 1.0
+ */
 class Response
 {
 
@@ -46,7 +51,10 @@ class Response
 	
 	private function __construct(){}
 	
-	
+	/**
+  	 * Singleton
+  	 * @return \Anemo\Response
+  	 */
 	public static function getInstance() {
 		if(self::$instance === null){
 	    	self::$instance = new Response();
@@ -54,46 +62,100 @@ class Response
 	    return self::$instance;
 	}
 	
-	
+	/**
+	 * Append a new header for the http response
+	 * @param string $name
+	 * @param string $content
+	 * @return \Anemo\Response
+	 */
 	public function addHeader($name, $content) {
     	$this->headers[$name] = $content;
     	return $this;
   	}
 	
+  	/**
+  	 * Set the status of the the http response
+  	 * @param string $status
+  	 * @return void
+  	 */
 	public function setStatus($status) {
     	$this->status = $status;
   	}
+  	
+  	/**
+  	 * Return the status
+  	 * @return string
+  	 */
   	public function getStatus() {
   		return $this->status;
   	}
   	
+  	/**
+  	 * Set the content type of the http response
+  	 * @param string $contentType
+  	 * @return void
+  	 */
   	public function setContentType($contentType) {
   		$this->contentType = $contentType;
   	}
+  	
+  	/**
+  	 * Set the charset of the http response
+  	 * @param string $charset
+  	 * @return void
+  	 */
   	public function setCharset($charset) {
   		$this->charset = $charset;
   	}
   	
+  	/**
+  	 * Return the content
+  	 * @return string
+  	 */
   	public function getContent() {
     	return $this->content;
   	}  
-
+	
+  	/**
+  	 * Replace the content. Overwrites all existing data
+  	 * @param string $newContent
+  	 * @return void
+  	 */
   	public function replaceContent($newContent) {
     	$this->content = $newContent;
   	}
   	
+  	/**
+  	 * Set a exception and the statuscode
+  	 * @param \Anemo\Runtime\Exception $exception
+  	 * @return void
+  	 */
   	public function setException(\Anemo\Runtime\Exception $exception) {
   		$this->exception = $exception;
   		$this->status	 = $this->exception->getCode();
   	}
+  	
+  	/**
+  	 * Return the exception object
+  	 * @return \Anemo\Runtime\Exception
+  	 */
   	public function getException() {
   		return $this->exception;
   	}
+  	
+  	/**
+  	 * Check if the respoinse has an exception
+  	 * @return boolean
+  	 */
   	public function hasException() {
   		return isset($this->exception);
   	}
 	
-  	
+  	/**
+  	 * Send the http request to the browser and output the data with the given headers
+  	 * @throws Exception
+  	 * @return void
+  	 */
   	public function send() {
   		
   		if(headers_sent() && !$this->hasException())
