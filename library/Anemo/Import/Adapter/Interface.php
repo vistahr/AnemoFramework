@@ -39,7 +39,10 @@ namespace Anemo\Import\Adapter;
  */
 interface AdapterInterface
 {
-
+	/**
+	 * String to array
+	 * @param string $input
+	 */
 	public function toArray($input);
 	
 }

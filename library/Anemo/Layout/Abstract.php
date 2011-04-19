@@ -59,42 +59,82 @@ abstract class LayoutAbstract
 	private function __construct() {}
 	private function __clone() {}
 	
-	
+	/**
+	 * The init set the view object
+	 * @param object $view
+	 * @return void
+	 */
 	public function init($view) {
 		$this->view	= $view;
 	}
 	
+	/**
+	 * If a called function does not exists, this function is called
+	 * @param string $name
+	 * @param array $args
+	 * @throws Exception
+	 * @return void
+	 */
 	public function __call($name,$args) {
 		throw new Exception('Method ' . $name . ' does not exists.');
 	}	
 	
+	/**
+	 * Return the self instance of this singleton
+	 * @return \Anemo\Layout
+	 */
 	public static function getInstance(){
 		if(self::$instance === null){
 	    	self::$instance = new \Anemo\Layout();
 	    }
 	    return self::$instance;
 	}
-		
+	
+	/**
+	 * Return the public directory (the base path)
+	 */
 	public function getPublicDirectory() {
 		return $this->getFrontcontroller()->getBasePath();
 	}
 	
+	/**
+	 * Set the layout content
+	 * @param string $content
+	 * @return void
+	 */
 	public function setContent($content) {
 		$this->content = $content;
 	}
+	
+	/**
+	 * Return the layout content
+	 * @return string
+	 */
 	public function getContent() {
 		return $this->content;
 	}
 	
-
+	/**
+	 * Set the layout path
+	 * @param string $layoutPath
+	 * @return void
+	 */
 	public function setLayout($layoutPath) {
 		$this->layoutPath 	= $layoutPath;
 	}
+	
+	/**
+	 * Return the layout path
+	 * @return string
+	 */
 	public function getLayout() {
 		return $this->layoutPath;
 	}
 	
-	
+	/**
+	 * Check if layout is enabled, get response, fill it, if enabled, in the layout and return the response
+	 * @return string
+	 */
 	public function getResponse() {
 		
 		if(!$this->isLayoutDisabled()) {
@@ -107,10 +147,18 @@ abstract class LayoutAbstract
 		return $layout;
 	}
 	
+	/**
+	 * Return the response. Wrapper for getResponse.
+	 * @return string
+	 */
 	public function __toString() {
 		return $this->getResponse();
 	}
 	
+	/**
+	 * Return the frontcontroller instance
+	 * @return \Anemo\Controller\Frontcontroller
+	 */
 	protected function getFrontcontroller() {
 		return \Anemo\Controller\Frontcontroller::getInstance();
 	}

@@ -42,7 +42,11 @@ abstract class AdapterAbstract
 	
 	protected $data;
 
-	
+	/**
+	 * Form an object to an array
+	 * @param object $object
+	 * @return array
+	 */
 	function object2array($object) { 
 		return @json_decode(@json_encode($object),1); 
 	} 

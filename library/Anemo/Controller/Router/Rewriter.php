@@ -42,13 +42,20 @@ class Rewriter
 {
 	protected $request = null;
 	
-	
+	/**
+	 * Return the request object
+	 * @return \Anemo\Application\Http\Request
+	 */
 	public static function getRequest() {
 		$front = Controller\Frontcontroller::getInstance();
 		return $front->getRequest();
 	}
 	
-	
+	/**
+	 * Writes a non-camelcase string to an camelCase string
+	 * @param string $input
+	 * @return string
+	 */
 	public static function toCamelCase($input) {
 		if($parts = explode('-', $input)) {
 			$parts    = $parts ? array_map('ucfirst', $parts) : array($input);
@@ -59,7 +66,10 @@ class Rewriter
 		return $input;
 	}
 
-	
+	/**
+	 * Get the request path and writes it to an array
+	 * @return array
+	 */
 	public static function rewriteRequest() {
 		$front 		= Controller\Frontcontroller::getInstance();
 		$urlParams 	= preg_replace('#'.$front->getBasePath().'#','',Rewriter::getRequest()->getServer('REQUEST_URI'),1);
@@ -75,7 +85,7 @@ class Rewriter
 				$filteredUrlParamsArray[] = Rewriter::toCamelCase($urlParamsArray[$i]);
 		}
 		
-		// mindestens 3 Werte "/module/controller/action", sonst mit leer ("") auffüllen
+		// minimum 3 Values like "/module/controller/action", if not, fill with an empty string
 		if(count($filteredUrlParamsArray)<3)
 			$filteredUrlParamsArray = array_merge($filteredUrlParamsArray,array_fill(0,(3-count($filteredUrlParamsArray)),''));
 		

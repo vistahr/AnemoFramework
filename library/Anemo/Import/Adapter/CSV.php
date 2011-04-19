@@ -43,8 +43,12 @@ class CSV extends AdapterAbstract implements AdapterInterface
 	protected $enclosure = '"';
 	protected $escape    = '\\';
 	
-	
-	public function __construct($params) {
+	/**
+	 * Set the optional delimiter, enclosere and espace data
+	 * @param array $params
+	 * @return void
+	 */
+	public function __construct(array $params) {
 		if(isset($params['delimiter']))
 			$this->delimiter = $params['delimiter'];
 			
@@ -55,7 +59,10 @@ class CSV extends AdapterAbstract implements AdapterInterface
 			$this->escape= $params['escape'];		
 	}
 	
-	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Import\Adapter.AdapterInterface::toArray()
+	 */
 	public function toArray($input) {
 		$this->data = $input;
 		return str_getcsv($input);

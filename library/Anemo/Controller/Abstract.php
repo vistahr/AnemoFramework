@@ -47,7 +47,11 @@ abstract class ControllerAbstract
 	protected $template 		= "";
 	
 	
-	
+	/**
+	 * Create a new controller. Loads the module bootstrap and if exists call the init function of the parent class
+	 * @throws \Anemo\Exception
+	 * @return void
+	 */
 	public function __construct() {
 		$this->froncontroller = Frontcontroller::getInstance();
 		
@@ -65,48 +69,108 @@ abstract class ControllerAbstract
 			call_user_func(array($this,'init'));
 	}
 	
+	/**
+	 * Function is called, if a method does not exists
+	 * @param string $name
+	 * @param mixed $args
+	 * @throws Exception
+	 * @return void
+	 */
 	public function __call($name,$args) {
 		throw new Exception('Method ' . $name . ' does not exists.');
 	}
-		
+	
+	/**
+	 * Return the bootstrap object
+	 * @return \Anemo\Application\Bootstrap\BootstrapAbstract
+	 */
 	public function getBootstrap() {
 		if($this->bootstrap == null)
 			$this->bootstrap = \Anemo\Registry::get('bootstrap');
 		return $this->bootstrap;
 	}
 	
+	/**
+	 * Return a specified resource
+	 * @param string $resource
+	 * @return object
+	 */
 	public function getResource($resource) {
 		return $this->getBootstrap()->getResource($resource);
 	}
+	
+	/**
+	 * Return the frontcontroller
+	 * @return \Anemo\Controller\Frontcontroller
+	 */
 	public function getFrontcontroller() {
 		return $this->getResource('frontcontroller');
 	}
+	
+	/**
+	 * Return the view resource, which was set in the bootstrap
+	 * @return object
+	 */
 	public function getView() {
 		return $this->getResource('view');
 	}
+	
+	/**
+	 * Return the layout object
+	 * @return \Anemo\Layout
+	 */
 	public function getLayout() {
 		return $this->getResource('layout');
 	}
 	
+	/**
+	 * Return the request object
+	 * @return \Anemo\Application\Http\Request
+	 */
 	public function getRequest() {
 		return $this->getFrontcontroller()->getRequest();
 	}
+	
+	/**
+	 * Return the response object
+	 * @return \Anemo\Application\Http\Response
+	 */
 	public function getResponse() {
 		return $this->getFrontcontroller()->getResponse();
 	}
 	
+	/**
+	 * Enable the template output.
+	 * @return void
+	 */
 	public function enableTemplate() {
 		if($this->isTemplateDisabled())
 			$this->disableTemplate = false;
 	}
+	
+	/**
+	 * disable the template output
+	 * @return void
+	 */
 	public function disableTemplate() {
 		if(!$this->isTemplateDisabled())
 			$this->disableTemplate = true;
 	}
+	
+	/**
+	 * Return the state of the template output
+	 * @return boolean
+	 */
 	public function isTemplateDisabled() {
 		return $this->disableTemplate;
 	}
 	
+	/**
+	 * Execute the given action and return the response
+	 * @param string $actionName
+	 * @throws Exception
+	 * @return string 
+	 */
 	public function executeAction($actionName) {
 		$actionMethodName = $actionName . 'Action';
 		
@@ -129,7 +193,12 @@ abstract class ControllerAbstract
 		return $response;
 	}
 
-	
+	/**
+	 * Return the specified part of a camelCase string
+	 * @param string $camelCaseInput
+	 * @param int $arrayIndex
+	 * @return string
+	 */
 	private function getCamelCasePart($camelCaseInput, $arrayIndex = 0) {
 		$camelCaseOutputArray = preg_split("{(?<=[a-z]) (?=[A-Z])}x", $camelCaseInput);
 		return $camelCaseOutputArray[$arrayIndex];

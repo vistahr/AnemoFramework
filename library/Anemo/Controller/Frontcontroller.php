@@ -61,7 +61,11 @@ class Frontcontroller
 	private function __construct() {}
 	private function __clone() {}
 	
-	
+	/**
+	 * init the singleton frontcontroller. Loads the config files, and init the request, response and the router
+	 * @param array $config
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	public function init(array $config) {
 		$this->config = $config;
 		
@@ -83,7 +87,10 @@ class Frontcontroller
 		return $this;
 	}
 	
-	
+	/**
+	 * Return the self instance of the singleton
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	public static function getInstance(){
 		if(self::$instance === null){
 	    	self::$instance = new Frontcontroller();
@@ -92,55 +99,107 @@ class Frontcontroller
 	    return self::$instance;
 	}
 	
+	/**
+	 * Return the config array
+	 * @return array
+	 */
 	public function getConfig() {
 		return $this->config;
 	}
 	
-
+	/**
+	 * Wrapper for setModuleName from the request class
+	 * @param string $module
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	public function setModuleName($module) {
 		$this->getRequest()->setModuleName($module);
 		return $this;
 	}
+	
+	/**
+	 * Wrapper for getModuleName from the request class
+	 * @return string
+	 */
 	public function getModuleName() {
 		return $this->getRequest()->getModuleName();
 	}
 	
+	/**
+	 * Wrapper for setControllerName from the request class
+	 * @param string $controller
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	public function setControllerName($controller) {
 		$this->getRequest()->setControllerName($controller);
 		return $this;
 	}
+	
+	/**
+	 * Wrapper for getControllerName from the request class
+	 * @return string
+	 */
 	public function getControllerName() {
 		return $this->getRequest()->getControllerName();
 	}
 	
+	/**
+	 * Wrapper for setActionName from the request class
+	 * @param string $action
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	public function setActionName($action) {
 		$this->getRequest()->setActionName($action);
 		return $this;
 	}
+	
+	/**
+	 * Wrapper for getActionName from the request class
+	 * @return string
+	 */
 	public function getActionName() {
 		return $this->getRequest()->getActionName();
 	}
 	
-	
-	
+	/**
+	 * Return the router object
+	 * @return \Anemo\Router
+	 */
 	public function getRouter() {
 		return $this->router;
 	}
+	
+	/**
+	 * Return the request object
+	 * @return \Anemo\Application\Http\Request
+	 */
 	public function getRequest() {
 		return $this->request;	
 	}
+	
+	/**
+	 * Return the response object
+	 * @return \Anemo\Application\Http\Response
+	 */
 	public function getResponse() {
 		return $this->response;
 	}
 	
-	
+	/**
+	 * Return the, if exists, given resource
+	 * @param string $resource
+	 * @return object
+	 */
 	public function getResource($resource) {
 		if(($bootstrap = \Anemo\Registry::get('bootstrap')) != null)
 			return $bootstrap->getResource($resource);
 		return null;
 	}
 
-	
+	/**
+	 * Return the base path
+	 * @return string
+	 */
 	public function getBasePath() {
 		$basePath = $this->getRequest()->getServer("SCRIPT_NAME");
 		if(preg_match('#/[a-z_-]+.php#',$basePath))
@@ -149,7 +208,11 @@ class Frontcontroller
 		return $basePath;
 	}
 	
-	
+	/**
+	 * Return the layout path. Module directory / module name / temp.late
+	 * @throws Exception
+	 * @return string
+	 */
 	public function getLayoutPath() {
 		$layoutPath = $this->getModuleDirectory() . $this->getModuleName() . $this->layoutTemplate;
 		if(!is_file($layoutPath))
@@ -157,11 +220,22 @@ class Frontcontroller
 		
 		return $layoutPath;
 	}
+	
+	/**
+	 * Set the layout template. An extension is required
+	 * @param string $template
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	public function setLayoutTemplate($template) {
 		$this->layoutTemplate = $template;
 		return $this;
 	}
 	
+	/**
+	 * Return the module directory. ROOT / module directory
+	 * @throws Exception
+	 * @return string module directory
+	 */
 	public function getModuleDirectory() {
 		$dir =  ROOT . $this->moduleDirectory;
 		if(!is_dir($dir))
@@ -169,24 +243,49 @@ class Frontcontroller
 		
 		return $dir;
 	}
+	
+	/**
+	 * Set the module directory
+	 * @param string $dir
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	public function setModuleDirectory($dir) {
 		$this->moduleDirectory = $dir;
 		return $this;
 	}
 	
+	/**
+	 * Return the controller directory. ROOT / module directory / module name / "controllers"
+	 */
 	public function getControllerDirectory() {
 		return ROOT . $this->moduleDirectory . $this->getModuleName() . '/controllers';
 	}
 	
+	/**
+	 * Set the error controller
+	 * @param string $controller
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	public function setErrorController($controller) {
 		$this->errorController = $controller;
 		return $this;
 	}
+	
+	/**
+	 * Set the error action
+	 * @param string $action
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	public function setErrorAction($action) {
 		$this->errorAction = $action;
 		return $this;
 	}
 	
+	/**
+	 * Init the error handling. Check if error controller & action is set and set them as controller and action name
+	 * @throws Exception
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	public function initErrorHandling() {
 		if($this->errorController == '' || $this->errorAction == '')
 			throw new Exception('Errorcontroller: ' . $this->errorController . ' or Erroraction: ' . $this->errorAction . ' not specified');
@@ -200,13 +299,22 @@ class Frontcontroller
 		return $this;
 	}
 	
-
+	/**
+	 * Route the request and response
+	 * @param Http\Request $request
+	 * @param Http\Response $response
+	 * @return \Anemo\Application\Http\Frontcontroller
+	 */
 	private function route(Http\Request $request, Http\Response $response) {
 		$route = $this->getRouter()->route($request,$response);
 		return $this;
 	}
 	
-	
+	/**
+	 * Execute the controller and action which are set and return the executed content
+	 * @throws Exception
+	 * @return string
+	 */
 	public function execute() {
 		$controllerClass = ucfirst(strtolower($this->getControllerName())) . 'Controller';
 		
@@ -219,7 +327,10 @@ class Frontcontroller
 		return $content;
 	}
 	
-	
+	/**
+	 * The dispatch, routes the request, get the layout, execute the request, insert it into the layout, write the response object and return the whole response.
+	 * @return string
+	 */
 	public function dispatch() {
 		if($this->getModuleName() == "" || ($this->getModuleName() == "" && $this->getControllerName() == "" && $this->getActionName() == ""))
 			$this->route($this->getRequest(),$this->getResponse());

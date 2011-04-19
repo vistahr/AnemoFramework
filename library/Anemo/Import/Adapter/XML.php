@@ -39,12 +39,18 @@ namespace Anemo\Import\Adapter;
 class XML extends AdapterAbstract implements AdapterInterface
 {
 	
+	/**
+	 * Turn on internal errors
+	 * @param array $params
+	 */
 	public function __construct($params) {
 		libxml_use_internal_errors(true);
-		
 	}
 	
-	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Import\Adapter.AdapterInterface::toArray()
+	 */
 	public function toArray($input) {
 		$this->data = $input;
 	
