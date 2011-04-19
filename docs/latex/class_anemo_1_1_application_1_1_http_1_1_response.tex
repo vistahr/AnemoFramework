@@ -1,0 +1,241 @@
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response}{
+\section{Response Class Reference}
+\label{class_anemo_1_1_application_1_1_http_1_1_response}\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_a483870774b6f8e29219a5f220a0bc9d3}{addHeader} (\$name, \$content)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_a7d02c100d684fe1dffc6cb3486a48511}{setStatus} (\$status)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_a9d21636071f529e2154051d3ea6e5921}{getStatus} ()
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_a945b1a5744b810fcb31a05f827356cfa}{setContentType} (\$contentType)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_a81ee11b0f5fadecaece55170fea54b29}{setCharset} (\$charset)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_a58e43f09a06ce4e29b192c4e17ce7915}{getContent} ()
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_a9eaad4ac82524f3b2f5a0d63926926ae}{replaceContent} (\$newContent)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_a111d0271feafeec670338c20d028a13b}{setException} ($\backslash$Anemo$\backslash$Runtime$\backslash$\hyperlink{class_anemo_1_1_application_1_1_http_1_1_exception}{Exception} \$exception)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_a31ec439e56ccf74108b96587373a112c}{getException} ()
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_ade8585f0135f27c77faca0ec65ce7d80}{hasException} ()
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_a12bcef5130168b80d3d52dc82213f19a}{send} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_anemo_1_1_application_1_1_http_1_1_response_ac93fbec81f07e5d15f80db907e63dc10}{getInstance} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_ad9d7ce33ebb142b70e58b68052ca0ea8}{
+static {\bfseries \$instance} = null}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_ad9d7ce33ebb142b70e58b68052ca0ea8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_response}{Response} is a singleton and represent the outgoing response \begin{DoxyAuthor}{Author}
+vince 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_a483870774b6f8e29219a5f220a0bc9d3}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!addHeader@{addHeader}}
+\index{addHeader@{addHeader}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{addHeader}]{\setlength{\rightskip}{0pt plus 5cm}addHeader (
+\begin{DoxyParamCaption}
+\item[{\$}]{name, }
+\item[{\$}]{content}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_a483870774b6f8e29219a5f220a0bc9d3}
+Append a new header for the http response 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+string & {\em \$content} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_a58e43f09a06ce4e29b192c4e17ce7915}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!getContent@{getContent}}
+\index{getContent@{getContent}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{getContent}]{\setlength{\rightskip}{0pt plus 5cm}getContent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_a58e43f09a06ce4e29b192c4e17ce7915}
+Return the content \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_a31ec439e56ccf74108b96587373a112c}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!getException@{getException}}
+\index{getException@{getException}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{getException}]{\setlength{\rightskip}{0pt plus 5cm}getException (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_a31ec439e56ccf74108b96587373a112c}
+Return the exception object \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_ac93fbec81f07e5d15f80db907e63dc10}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{getInstance}]{\setlength{\rightskip}{0pt plus 5cm}static getInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_ac93fbec81f07e5d15f80db907e63dc10}
+Singleton \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_a9d21636071f529e2154051d3ea6e5921}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{getStatus}]{\setlength{\rightskip}{0pt plus 5cm}getStatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_a9d21636071f529e2154051d3ea6e5921}
+Return the status \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_ade8585f0135f27c77faca0ec65ce7d80}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!hasException@{hasException}}
+\index{hasException@{hasException}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{hasException}]{\setlength{\rightskip}{0pt plus 5cm}hasException (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_ade8585f0135f27c77faca0ec65ce7d80}
+Check if the respoinse has an exception \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_a9eaad4ac82524f3b2f5a0d63926926ae}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!replaceContent@{replaceContent}}
+\index{replaceContent@{replaceContent}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{replaceContent}]{\setlength{\rightskip}{0pt plus 5cm}replaceContent (
+\begin{DoxyParamCaption}
+\item[{\$}]{newContent}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_a9eaad4ac82524f3b2f5a0d63926926ae}
+Replace the content. Overwrites all existing data 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$newContent} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_a12bcef5130168b80d3d52dc82213f19a}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!send@{send}}
+\index{send@{send}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}send (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_a12bcef5130168b80d3d52dc82213f19a}
+Send the http request to the browser and output the data with the given headers 
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_anemo_1_1_application_1_1_http_1_1_exception}{Exception}} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_a81ee11b0f5fadecaece55170fea54b29}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!setCharset@{setCharset}}
+\index{setCharset@{setCharset}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{setCharset}]{\setlength{\rightskip}{0pt plus 5cm}setCharset (
+\begin{DoxyParamCaption}
+\item[{\$}]{charset}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_a81ee11b0f5fadecaece55170fea54b29}
+Set the charset of the http response 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$charset} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_a945b1a5744b810fcb31a05f827356cfa}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!setContentType@{setContentType}}
+\index{setContentType@{setContentType}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{setContentType}]{\setlength{\rightskip}{0pt plus 5cm}setContentType (
+\begin{DoxyParamCaption}
+\item[{\$}]{contentType}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_a945b1a5744b810fcb31a05f827356cfa}
+Set the content type of the http response 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$contentType} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_a111d0271feafeec670338c20d028a13b}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!setException@{setException}}
+\index{setException@{setException}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{setException}]{\setlength{\rightskip}{0pt plus 5cm}setException (
+\begin{DoxyParamCaption}
+\item[{$\backslash$Anemo$\backslash$Runtime$\backslash${\bf Exception} \$}]{exception}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_a111d0271feafeec670338c20d028a13b}
+Set a exception and the statuscode 
+\begin{DoxyParams}{Parameters}
+{\em $\backslash$Anemo$\backslash$Runtime$\backslash$Exception} & \$exception \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_response_a7d02c100d684fe1dffc6cb3486a48511}{
+\index{Anemo::Application::Http::Response@{Anemo::Application::Http::Response}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!Anemo::Application::Http::Response@{Anemo::Application::Http::Response}}
+\subsubsection[{setStatus}]{\setlength{\rightskip}{0pt plus 5cm}setStatus (
+\begin{DoxyParamCaption}
+\item[{\$}]{status}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_response_a7d02c100d684fe1dffc6cb3486a48511}
+Set the status of the the http response 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$status} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Application/Http/Response.php\end{DoxyCompactItemize}

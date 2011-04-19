@@ -1,0 +1,146 @@
+\hypertarget{class_anemo_1_1_autoloader}{
+\section{Autoloader Class Reference}
+\label{class_anemo_1_1_autoloader}\index{Anemo::Autoloader@{Anemo::Autoloader}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_autoloader_acc294a6cc8e69743746820e3d15e3f78}{register} ()
+\item 
+\hyperlink{class_anemo_1_1_autoloader_a21dec87fa516b4bea4733b8a2e5dbb5b}{fileExists} (\$filePath)
+\item 
+\hyperlink{class_anemo_1_1_autoloader_a554c5ec3a650c5bf28f6ffa88bc4500a}{autoload} (\$className)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_anemo_1_1_autoloader_a90c9f0d6c37f97b2ee3ea231b9ca597c}{
+{\bfseries \$loadedClasses} = array()}
+\label{class_anemo_1_1_autoloader_a90c9f0d6c37f97b2ee3ea231b9ca597c}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_autoloader_a8dd1854ac4edda242d23829f25023f7b}{anemoThirdpartyAutoloader} (\$className)
+\item 
+\hyperlink{class_anemo_1_1_autoloader_a66b1a115d3c8182cdf5682ddbf3d8e38}{anemoLibraryAutoloader} (\$className)
+\item 
+\hyperlink{class_anemo_1_1_autoloader_aa5fb95667e129e5e12003e1ec525b8d3}{anemoControllerAutoloader} (\$className)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_anemo_1_1_autoloader}{Autoloader} class loads dynamically different libraryclasses \begin{DoxyAuthor}{Author}
+vince 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_anemo_1_1_autoloader_aa5fb95667e129e5e12003e1ec525b8d3}{
+\index{Anemo::Autoloader@{Anemo::Autoloader}!anemoControllerAutoloader@{anemoControllerAutoloader}}
+\index{anemoControllerAutoloader@{anemoControllerAutoloader}!Anemo::Autoloader@{Anemo::Autoloader}}
+\subsubsection[{anemoControllerAutoloader}]{\setlength{\rightskip}{0pt plus 5cm}anemoControllerAutoloader (
+\begin{DoxyParamCaption}
+\item[{\$}]{className}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_autoloader_aa5fb95667e129e5e12003e1ec525b8d3}
+Internal controller autoloader loads, after bootstrapping the frontcontroller, the actual needed controller. 
+\begin{DoxyParams}[1]{Parameters}
+unknown\_\-type & {\em \$className} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Loader$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_autoloader_a66b1a115d3c8182cdf5682ddbf3d8e38}{
+\index{Anemo::Autoloader@{Anemo::Autoloader}!anemoLibraryAutoloader@{anemoLibraryAutoloader}}
+\index{anemoLibraryAutoloader@{anemoLibraryAutoloader}!Anemo::Autoloader@{Anemo::Autoloader}}
+\subsubsection[{anemoLibraryAutoloader}]{\setlength{\rightskip}{0pt plus 5cm}anemoLibraryAutoloader (
+\begin{DoxyParamCaption}
+\item[{\$}]{className}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_autoloader_a66b1a115d3c8182cdf5682ddbf3d8e38}
+Internal library autolaoder which loads all classes. \hyperlink{class_anemo_1_1_autoloader_1_1_exception}{Exception} handling for interfaces and abstract classes. 
+\begin{DoxyParams}[1]{Parameters}
+unknown\_\-type & {\em \$className} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_autoloader_a8dd1854ac4edda242d23829f25023f7b}{
+\index{Anemo::Autoloader@{Anemo::Autoloader}!anemoThirdpartyAutoloader@{anemoThirdpartyAutoloader}}
+\index{anemoThirdpartyAutoloader@{anemoThirdpartyAutoloader}!Anemo::Autoloader@{Anemo::Autoloader}}
+\subsubsection[{anemoThirdpartyAutoloader}]{\setlength{\rightskip}{0pt plus 5cm}anemoThirdpartyAutoloader (
+\begin{DoxyParamCaption}
+\item[{\$}]{className}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_autoloader_a8dd1854ac4edda242d23829f25023f7b}
+Thirdparty autoloader, to autoload the thirdparty libraries. The libraries can use namespaces. If not, the path have to look like \char`\"{}/library/library.php\char`\"{}. 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$className} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_autoloader_a554c5ec3a650c5bf28f6ffa88bc4500a}{
+\index{Anemo::Autoloader@{Anemo::Autoloader}!autoload@{autoload}}
+\index{autoload@{autoload}!Anemo::Autoloader@{Anemo::Autoloader}}
+\subsubsection[{autoload}]{\setlength{\rightskip}{0pt plus 5cm}autoload (
+\begin{DoxyParamCaption}
+\item[{\$}]{className}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_autoloader_a554c5ec3a650c5bf28f6ffa88bc4500a}
+The main autoload function 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$className} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_autoloader_a21dec87fa516b4bea4733b8a2e5dbb5b}{
+\index{Anemo::Autoloader@{Anemo::Autoloader}!fileExists@{fileExists}}
+\index{fileExists@{fileExists}!Anemo::Autoloader@{Anemo::Autoloader}}
+\subsubsection[{fileExists}]{\setlength{\rightskip}{0pt plus 5cm}fileExists (
+\begin{DoxyParamCaption}
+\item[{\$}]{filePath}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_autoloader_a21dec87fa516b4bea4733b8a2e5dbb5b}
+Check if the given file in the include paths exists 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$filePath} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_autoloader_acc294a6cc8e69743746820e3d15e3f78}{
+\index{Anemo::Autoloader@{Anemo::Autoloader}!register@{register}}
+\index{register@{register}!Anemo::Autoloader@{Anemo::Autoloader}}
+\subsubsection[{register}]{\setlength{\rightskip}{0pt plus 5cm}register (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_autoloader_acc294a6cc8e69743746820e3d15e3f78}
+Add the autoload function to the \_\-\_\-autoload stack 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Autoloader.php\end{DoxyCompactItemize}

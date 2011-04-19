@@ -1,0 +1,194 @@
+\hypertarget{class_anemo_1_1_a_c_l}{
+\section{ACL Class Reference}
+\label{class_anemo_1_1_a_c_l}\index{Anemo::ACL@{Anemo::ACL}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_a_c_l_a70b2e78ff162eff6413e3a4fee342692}{addSubject} ($\backslash$Anemo$\backslash$\hyperlink{class_anemo_1_1_a_c_l}{ACL}$\backslash$Subject \$subject, \$parent=array())
+\item 
+\hyperlink{class_anemo_1_1_a_c_l_a21012582653973087f10147151727198}{addResource} ($\backslash$Anemo$\backslash$\hyperlink{class_anemo_1_1_a_c_l}{ACL}$\backslash$Resource \$resource, \$parent=array())
+\item 
+\hyperlink{class_anemo_1_1_a_c_l_a07bc8d3c0e088693858b0535f150d136}{allow} (\$subject, \$resource=null, \$action=array())
+\item 
+\hyperlink{class_anemo_1_1_a_c_l_acb2fb7d69d163b8f13c99492b402e471}{deny} (\$subject, \$resource=null, \$action=array())
+\item 
+\hyperlink{class_anemo_1_1_a_c_l_a7dd7085d9ca64b04d068f3982d86c4b2}{isAllowed} (\$subject, \$resource, \$action)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_anemo_1_1_a_c_l_a24d761413df70e449c0f7aa0243ada47}{
+{\bfseries \$parentSubjects} = array()}
+\label{class_anemo_1_1_a_c_l_a24d761413df70e449c0f7aa0243ada47}
+
+\item 
+\hypertarget{class_anemo_1_1_a_c_l_a230896d04cc88e5b5156e27a0daba158}{
+{\bfseries \$parentResources} = array()}
+\label{class_anemo_1_1_a_c_l_a230896d04cc88e5b5156e27a0daba158}
+
+\item 
+\hypertarget{class_anemo_1_1_a_c_l_a896b3f6f6b6fea4856526607cf007d3e}{
+{\bfseries \$acl} = array()}
+\label{class_anemo_1_1_a_c_l_a896b3f6f6b6fea4856526607cf007d3e}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_anemo_1_1_a_c_l_a622fe2982257662fa696c96dcb528da1}{
+static {\bfseries \$GRANT\_\-ALL\_\-ACCESS} = 'all'}
+\label{class_anemo_1_1_a_c_l_a622fe2982257662fa696c96dcb528da1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Access control list class which controls the acess by using sessions. By default, all access is denied. \begin{DoxyAuthor}{Author}
+vince 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_anemo_1_1_a_c_l_a21012582653973087f10147151727198}{
+\index{Anemo::ACL@{Anemo::ACL}!addResource@{addResource}}
+\index{addResource@{addResource}!Anemo::ACL@{Anemo::ACL}}
+\subsubsection[{addResource}]{\setlength{\rightskip}{0pt plus 5cm}addResource (
+\begin{DoxyParamCaption}
+\item[{$\backslash$Anemo$\backslash${\bf ACL}$\backslash$Resource \$}]{resource, }
+\item[{\$}]{parent = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_a_c_l_a21012582653973087f10147151727198}
+Adds a resource object to the \hyperlink{class_anemo_1_1_a_c_l}{ACL}. Optional one or more parents objects. 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em $\backslash$Anemo$\backslash$ACL$\backslash$Resource} & \$resource \\
+\hline
+unknown\_\-type & {\em \$parent} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em ACL$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+\$resource 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_a_c_l_a70b2e78ff162eff6413e3a4fee342692}{
+\index{Anemo::ACL@{Anemo::ACL}!addSubject@{addSubject}}
+\index{addSubject@{addSubject}!Anemo::ACL@{Anemo::ACL}}
+\subsubsection[{addSubject}]{\setlength{\rightskip}{0pt plus 5cm}addSubject (
+\begin{DoxyParamCaption}
+\item[{$\backslash$Anemo$\backslash${\bf ACL}$\backslash$Subject \$}]{subject, }
+\item[{\$}]{parent = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_a_c_l_a70b2e78ff162eff6413e3a4fee342692}
+Adds a subject object to the \hyperlink{class_anemo_1_1_a_c_l}{ACL}. Optional one or more parents objects. 
+\begin{DoxyParams}[1]{Parameters}
+ & {\em $\backslash$Anemo$\backslash$ACL$\backslash$Subject} & \$subject \\
+\hline
+array & {\em \$parent} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em ACL$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+\$subject 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_a_c_l_a07bc8d3c0e088693858b0535f150d136}{
+\index{Anemo::ACL@{Anemo::ACL}!allow@{allow}}
+\index{allow@{allow}!Anemo::ACL@{Anemo::ACL}}
+\subsubsection[{allow}]{\setlength{\rightskip}{0pt plus 5cm}allow (
+\begin{DoxyParamCaption}
+\item[{\$}]{subject, }
+\item[{\$}]{resource = {\ttfamily null}, }
+\item[{\$}]{action = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_a_c_l_a07bc8d3c0e088693858b0535f150d136}
+Allows an subject to access the resource with the given action(s). If only the subject is given, the subject has full access. 
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$subject} & \\
+\hline
+mixed & {\em \$resource} & \\
+\hline
+array & {\em \$action} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em ACL$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+array \$part 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_a_c_l_acb2fb7d69d163b8f13c99492b402e471}{
+\index{Anemo::ACL@{Anemo::ACL}!deny@{deny}}
+\index{deny@{deny}!Anemo::ACL@{Anemo::ACL}}
+\subsubsection[{deny}]{\setlength{\rightskip}{0pt plus 5cm}deny (
+\begin{DoxyParamCaption}
+\item[{\$}]{subject, }
+\item[{\$}]{resource = {\ttfamily null}, }
+\item[{\$}]{action = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_a_c_l_acb2fb7d69d163b8f13c99492b402e471}
+Deny access with the given resource and action(s) to the subject. If only the subject is given, access to everythind is denied. 
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$subject} & \\
+\hline
+mixed & {\em \$resource} & \\
+\hline
+array & {\em \$action} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em ACL$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_a_c_l_a7dd7085d9ca64b04d068f3982d86c4b2}{
+\index{Anemo::ACL@{Anemo::ACL}!isAllowed@{isAllowed}}
+\index{isAllowed@{isAllowed}!Anemo::ACL@{Anemo::ACL}}
+\subsubsection[{isAllowed}]{\setlength{\rightskip}{0pt plus 5cm}isAllowed (
+\begin{DoxyParamCaption}
+\item[{\$}]{subject, }
+\item[{\$}]{resource, }
+\item[{\$}]{action}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_a_c_l_a7dd7085d9ca64b04d068f3982d86c4b2}
+Ask a subject if the access to the resource with the given action is allowed 
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$subject} & \\
+\hline
+string & {\em \$resource} & \\
+\hline
+string & {\em \$action} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em ACL$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+ACL.php\end{DoxyCompactItemize}

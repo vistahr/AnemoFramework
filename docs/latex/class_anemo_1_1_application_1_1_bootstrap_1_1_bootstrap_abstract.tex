@@ -1,0 +1,262 @@
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract}{
+\section{BootstrapAbstract Class Reference}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract}\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+}
+Inheritance diagram for BootstrapAbstract:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ac2a09455b573392d15b9c869c0a3bf72}{getRuntime} ()
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ae35d77763195c088f5a6bf80868cd946}{setResource} (\$resourceName, \$resourceValue)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a30b3fff81c5977a430f38403557b883b}{getResource} (\$resourceName)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_aa182525e446da02ad9af5d903f3f8f66}{getFrontcontroller} ()
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ad15ef0757b73cb8080b00b3b0a96e092}{bootstrap} (\$resource=null)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_aacbe5cfc1af0f6e016aef87bc23a61e2}{run} ($\backslash$Anemo$\backslash$\hyperlink{class_anemo_1_1_application}{Application}$\backslash$Http$\backslash$Response \$response=null)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a49c7011be9c979d9174c52a8b83e5d8e}{
+{\bfseries \$config} = array()}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a49c7011be9c979d9174c52a8b83e5d8e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ab399a9a58e8edb13390ad0f075d9d303}{hasResource} (\$resourceName)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a2ea35eea46b3f3c02ea3aeb5746814c3}{registerEnvironment} ()
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a45a95245e446802579093fb7a15856a0}{registerAutoloader} ()
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a0236e4f61d022d5315ffdb89310c1e43}{loadConfigs} (\$configDir)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ad57e7e99506ffd448d98e036b1a8da50}{
+{\bfseries \$resources} = array()}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ad57e7e99506ffd448d98e036b1a8da50}
+
+\item 
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a848d6f39ddf52949fc0c10cbc0159188}{
+{\bfseries \$runtime}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a848d6f39ddf52949fc0c10cbc0159188}
+
+\item 
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a68ccc223df2708efe11893f675abdacf}{
+{\bfseries \$rootDir} = \char`\"{}\char`\"{}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a68ccc223df2708efe11893f675abdacf}
+
+\item 
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a537fa9b460dddc2a67074faab810398a}{
+{\bfseries \$application} = null}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a537fa9b460dddc2a67074faab810398a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract bootstrap class is the head of the framework and loads and run the application  \begin{DoxyAuthor}{Author}
+vince 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a095c5d389db211932136b53f25f39685}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a095c5d389db211932136b53f25f39685}
+Init the environment, the autloader and load the config files \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_module_a095c5d389db211932136b53f25f39685}{Module}.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ad15ef0757b73cb8080b00b3b0a96e092}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!bootstrap@{bootstrap}}
+\index{bootstrap@{bootstrap}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{bootstrap}]{\setlength{\rightskip}{0pt plus 5cm}bootstrap (
+\begin{DoxyParamCaption}
+\item[{\$}]{resource = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ad15ef0757b73cb8080b00b3b0a96e092}
+If no argument is given, all resources will be load and started. With a given resource, only the specified resource will be boostrapped. 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$resource} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_aa182525e446da02ad9af5d903f3f8f66}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!getFrontcontroller@{getFrontcontroller}}
+\index{getFrontcontroller@{getFrontcontroller}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{getFrontcontroller}]{\setlength{\rightskip}{0pt plus 5cm}getFrontcontroller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_aa182525e446da02ad9af5d903f3f8f66}
+Return the frontcontroller object \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_anemo_1_1_application_1_1_bootstrap_1_1_module_aa182525e446da02ad9af5d903f3f8f66}{Module}.
+
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a30b3fff81c5977a430f38403557b883b}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!getResource@{getResource}}
+\index{getResource@{getResource}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{getResource}]{\setlength{\rightskip}{0pt plus 5cm}getResource (
+\begin{DoxyParamCaption}
+\item[{\$}]{resourceName}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a30b3fff81c5977a430f38403557b883b}
+Return the object of the given resoruce 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$resourceName} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ac2a09455b573392d15b9c869c0a3bf72}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!getRuntime@{getRuntime}}
+\index{getRuntime@{getRuntime}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{getRuntime}]{\setlength{\rightskip}{0pt plus 5cm}getRuntime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ac2a09455b573392d15b9c869c0a3bf72}
+Return the runtime -\/ the absolute time the script ran \begin{DoxyReturn}{Returns}
+float 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ab399a9a58e8edb13390ad0f075d9d303}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!hasResource@{hasResource}}
+\index{hasResource@{hasResource}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{hasResource}]{\setlength{\rightskip}{0pt plus 5cm}hasResource (
+\begin{DoxyParamCaption}
+\item[{\$}]{resourceName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ab399a9a58e8edb13390ad0f075d9d303}
+Check if the gevien resource is inside the resource array 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$resourceName} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a0236e4f61d022d5315ffdb89310c1e43}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!loadConfigs@{loadConfigs}}
+\index{loadConfigs@{loadConfigs}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{loadConfigs}]{\setlength{\rightskip}{0pt plus 5cm}loadConfigs (
+\begin{DoxyParamCaption}
+\item[{\$}]{configDir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a0236e4f61d022d5315ffdb89310c1e43}
+Load automatically all config files and save them into the config array 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$configDir} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a45a95245e446802579093fb7a15856a0}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!registerAutoloader@{registerAutoloader}}
+\index{registerAutoloader@{registerAutoloader}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{registerAutoloader}]{\setlength{\rightskip}{0pt plus 5cm}registerAutoloader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a45a95245e446802579093fb7a15856a0}
+Start and register a new autoloader \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a2ea35eea46b3f3c02ea3aeb5746814c3}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!registerEnvironment@{registerEnvironment}}
+\index{registerEnvironment@{registerEnvironment}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{registerEnvironment}]{\setlength{\rightskip}{0pt plus 5cm}registerEnvironment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_a2ea35eea46b3f3c02ea3aeb5746814c3}
+Set the debug settings for the environment \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_aacbe5cfc1af0f6e016aef87bc23a61e2}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!run@{run}}
+\index{run@{run}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}run (
+\begin{DoxyParamCaption}
+\item[{$\backslash$Anemo$\backslash${\bf Application}$\backslash$Http$\backslash$Response \$}]{response = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_aacbe5cfc1af0f6e016aef87bc23a61e2}
+Start and run the application 
+\begin{DoxyParams}{Parameters}
+{\em $\backslash$Anemo$\backslash$Application$\backslash$Http$\backslash$Response} & \$response \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ae35d77763195c088f5a6bf80868cd946}{
+\index{Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}!setResource@{setResource}}
+\index{setResource@{setResource}!Anemo::Application::Bootstrap::BootstrapAbstract@{Anemo::Application::Bootstrap::BootstrapAbstract}}
+\subsubsection[{setResource}]{\setlength{\rightskip}{0pt plus 5cm}setResource (
+\begin{DoxyParamCaption}
+\item[{\$}]{resourceName, }
+\item[{\$}]{resourceValue}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_bootstrap_1_1_bootstrap_abstract_ae35d77763195c088f5a6bf80868cd946}
+Append a new resource 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$resourceName} & \\
+\hline
+string & {\em \$resourceValue} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Application/Bootstrap/Abstract.php\end{DoxyCompactItemize}

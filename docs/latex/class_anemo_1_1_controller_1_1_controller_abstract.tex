@@ -1,0 +1,291 @@
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract}{
+\section{ControllerAbstract Class Reference}
+\label{class_anemo_1_1_controller_1_1_controller_abstract}\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+}
+Inheritance diagram for ControllerAbstract:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_anemo_1_1_controller_1_1_controller_abstract}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_af231e86ad32039b9573ae228db5a29fa}{\_\-\_\-call} (\$name, \$args)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_a300f7e1c5d57efbb6cad4fe8c6564b85}{getBootstrap} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_aa2c1b8634bea77c8eb6a7d909511bd52}{getResource} (\$resource)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_aa182525e446da02ad9af5d903f3f8f66}{getFrontcontroller} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_a50677812ea3f0258f7d03bbac5265413}{getView} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_a5c316721766e9cd8ad5d0085e64048ed}{getLayout} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_adf1a35ad20e475c59cc0967d5764aa22}{getRequest} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_a6c907e8af775e517a77037dd0164222f}{getResponse} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_af8ea319b632b63ba5e376608bdbbd6b6}{enableTemplate} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_a183063744e28a4b5b5996cd3a854f15d}{disableTemplate} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_a0bb5a54f2aa220dddebd6cb13165857d}{isTemplateDisabled} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_controller_abstract_a70688b48b1371f6e70d6521d651aa3e6}{executeAction} (\$actionName)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_a32a998e070639674077839a3ebeb20d8}{
+{\bfseries \$bootstrap} = null}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_a32a998e070639674077839a3ebeb20d8}
+
+\item 
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_a63f8c1a24d55e25a02e7dfd2525de6ba}{
+{\bfseries \$frontcontroller} = null}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_a63f8c1a24d55e25a02e7dfd2525de6ba}
+
+\item 
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_aff726c3b22c65e82ff58fd605ef95072}{
+{\bfseries \$disableTemplate} = false}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_aff726c3b22c65e82ff58fd605ef95072}
+
+\item 
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_aa3e9534005fd516d941f6a5569896e01}{
+{\bfseries \$template} = \char`\"{}\char`\"{}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_aa3e9534005fd516d941f6a5569896e01}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The abstract controller body class holds the basic functions for the controller class  \begin{DoxyAuthor}{Author}
+vince 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_a095c5d389db211932136b53f25f39685}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_a095c5d389db211932136b53f25f39685}
+Create a new controller. Loads the module bootstrap and if exists call the init function of the parent class 
+\begin{DoxyExceptions}{Exceptions}
+{\em $\backslash$Anemo$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_af231e86ad32039b9573ae228db5a29fa}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!\_\-\_\-call@{\_\-\_\-call}}
+\index{\_\-\_\-call@{\_\-\_\-call}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{\_\-\_\-call}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-call (
+\begin{DoxyParamCaption}
+\item[{\$}]{name, }
+\item[{\$}]{args}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_af231e86ad32039b9573ae228db5a29fa}
+Function is called, if a method does not exists 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$name} & \\
+\hline
+mixed & {\em \$args} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_anemo_1_1_controller_1_1_exception}{Exception}} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_a183063744e28a4b5b5996cd3a854f15d}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!disableTemplate@{disableTemplate}}
+\index{disableTemplate@{disableTemplate}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{disableTemplate}]{\setlength{\rightskip}{0pt plus 5cm}disableTemplate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_a183063744e28a4b5b5996cd3a854f15d}
+disable the template output \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_af8ea319b632b63ba5e376608bdbbd6b6}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!enableTemplate@{enableTemplate}}
+\index{enableTemplate@{enableTemplate}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{enableTemplate}]{\setlength{\rightskip}{0pt plus 5cm}enableTemplate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_af8ea319b632b63ba5e376608bdbbd6b6}
+Enable the template output. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_a70688b48b1371f6e70d6521d651aa3e6}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!executeAction@{executeAction}}
+\index{executeAction@{executeAction}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{executeAction}]{\setlength{\rightskip}{0pt plus 5cm}executeAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{actionName}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_a70688b48b1371f6e70d6521d651aa3e6}
+Execute the given action and return the response 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$actionName} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_anemo_1_1_controller_1_1_exception}{Exception}} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_a300f7e1c5d57efbb6cad4fe8c6564b85}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!getBootstrap@{getBootstrap}}
+\index{getBootstrap@{getBootstrap}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{getBootstrap}]{\setlength{\rightskip}{0pt plus 5cm}getBootstrap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_a300f7e1c5d57efbb6cad4fe8c6564b85}
+Return the bootstrap object \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_aa182525e446da02ad9af5d903f3f8f66}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!getFrontcontroller@{getFrontcontroller}}
+\index{getFrontcontroller@{getFrontcontroller}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{getFrontcontroller}]{\setlength{\rightskip}{0pt plus 5cm}getFrontcontroller (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_aa182525e446da02ad9af5d903f3f8f66}
+Return the frontcontroller \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_anemo_1_1_controller_aa182525e446da02ad9af5d903f3f8f66}{Controller}.
+
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_a5c316721766e9cd8ad5d0085e64048ed}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!getLayout@{getLayout}}
+\index{getLayout@{getLayout}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{getLayout}]{\setlength{\rightskip}{0pt plus 5cm}getLayout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_a5c316721766e9cd8ad5d0085e64048ed}
+Return the layout object \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_anemo_1_1_controller_a5c316721766e9cd8ad5d0085e64048ed}{Controller}.
+
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_adf1a35ad20e475c59cc0967d5764aa22}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!getRequest@{getRequest}}
+\index{getRequest@{getRequest}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{getRequest}]{\setlength{\rightskip}{0pt plus 5cm}getRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_adf1a35ad20e475c59cc0967d5764aa22}
+Return the request object \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_anemo_1_1_controller_adf1a35ad20e475c59cc0967d5764aa22}{Controller}.
+
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_aa2c1b8634bea77c8eb6a7d909511bd52}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!getResource@{getResource}}
+\index{getResource@{getResource}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{getResource}]{\setlength{\rightskip}{0pt plus 5cm}getResource (
+\begin{DoxyParamCaption}
+\item[{\$}]{resource}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_aa2c1b8634bea77c8eb6a7d909511bd52}
+Return a specified resource 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$resource} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_a6c907e8af775e517a77037dd0164222f}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!getResponse@{getResponse}}
+\index{getResponse@{getResponse}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{getResponse}]{\setlength{\rightskip}{0pt plus 5cm}getResponse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_a6c907e8af775e517a77037dd0164222f}
+Return the response object \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_anemo_1_1_controller_a6c907e8af775e517a77037dd0164222f}{Controller}.
+
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_a50677812ea3f0258f7d03bbac5265413}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!getView@{getView}}
+\index{getView@{getView}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{getView}]{\setlength{\rightskip}{0pt plus 5cm}getView (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_a50677812ea3f0258f7d03bbac5265413}
+Return the view resource, which was set in the bootstrap \begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_anemo_1_1_controller_a50677812ea3f0258f7d03bbac5265413}{Controller}.
+
+\hypertarget{class_anemo_1_1_controller_1_1_controller_abstract_a0bb5a54f2aa220dddebd6cb13165857d}{
+\index{Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}!isTemplateDisabled@{isTemplateDisabled}}
+\index{isTemplateDisabled@{isTemplateDisabled}!Anemo::Controller::ControllerAbstract@{Anemo::Controller::ControllerAbstract}}
+\subsubsection[{isTemplateDisabled}]{\setlength{\rightskip}{0pt plus 5cm}isTemplateDisabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_controller_abstract_a0bb5a54f2aa220dddebd6cb13165857d}
+Return the state of the template output \begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Controller/Abstract.php\end{DoxyCompactItemize}

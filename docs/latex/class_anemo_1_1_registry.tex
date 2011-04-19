@@ -1,0 +1,136 @@
+\hypertarget{class_anemo_1_1_registry}{
+\section{Registry Class Reference}
+\label{class_anemo_1_1_registry}\index{Anemo::Registry@{Anemo::Registry}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_anemo_1_1_registry_a52f161839f00824f9d6f8638ae75f623}{set} (\$key, \&\$value)
+\item 
+static \hyperlink{class_anemo_1_1_registry_a8f660283f72e0f3c5f00b4f98563a79b}{has} (\$key)
+\item 
+static \& \hyperlink{class_anemo_1_1_registry_a7c33639232d3bb39570caffc5c8be969}{get} (\$key)
+\item 
+static \hyperlink{class_anemo_1_1_registry_aca7ae46d923aa798f1e29657bb767a22}{getAll} ()
+\item 
+static \hyperlink{class_anemo_1_1_registry_acc60f64095c2df2c0d1e48f9f3ffb9d8}{remove} (\$key)
+\item 
+static \hyperlink{class_anemo_1_1_registry_a1aff3b0cad0cc68676cecee4dc5fc625}{removeAll} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_anemo_1_1_registry}{Registry} pattern allows to store objects permanent in a session  \begin{DoxyAuthor}{Author}
+vince 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_anemo_1_1_registry_a7c33639232d3bb39570caffc5c8be969}{
+\index{Anemo::Registry@{Anemo::Registry}!get@{get}}
+\index{get@{get}!Anemo::Registry@{Anemo::Registry}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}static\& get (
+\begin{DoxyParamCaption}
+\item[{\$}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_registry_a7c33639232d3bb39570caffc5c8be969}
+Returns the value of the specified \$key in the \hyperlink{class_anemo_1_1_registry}{Registry}. 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Name of the variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mixed Value of the specified \$key 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_registry_aca7ae46d923aa798f1e29657bb767a22}{
+\index{Anemo::Registry@{Anemo::Registry}!getAll@{getAll}}
+\index{getAll@{getAll}!Anemo::Registry@{Anemo::Registry}}
+\subsubsection[{getAll}]{\setlength{\rightskip}{0pt plus 5cm}static getAll (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_registry_aca7ae46d923aa798f1e29657bb767a22}
+Returns the whole \hyperlink{class_anemo_1_1_registry}{Registry} as an array. \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_registry_a8f660283f72e0f3c5f00b4f98563a79b}{
+\index{Anemo::Registry@{Anemo::Registry}!has@{has}}
+\index{has@{has}!Anemo::Registry@{Anemo::Registry}}
+\subsubsection[{has}]{\setlength{\rightskip}{0pt plus 5cm}static has (
+\begin{DoxyParamCaption}
+\item[{\$}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_registry_a8f660283f72e0f3c5f00b4f98563a79b}
+Tests if given \$key exists in registry 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_registry_acc60f64095c2df2c0d1e48f9f3ffb9d8}{
+\index{Anemo::Registry@{Anemo::Registry}!remove@{remove}}
+\index{remove@{remove}!Anemo::Registry@{Anemo::Registry}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}static remove (
+\begin{DoxyParamCaption}
+\item[{\$}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_registry_acc60f64095c2df2c0d1e48f9f3ffb9d8}
+Removes a variable from the \hyperlink{class_anemo_1_1_registry}{Registry}. 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Name of the variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_registry_a1aff3b0cad0cc68676cecee4dc5fc625}{
+\index{Anemo::Registry@{Anemo::Registry}!removeAll@{removeAll}}
+\index{removeAll@{removeAll}!Anemo::Registry@{Anemo::Registry}}
+\subsubsection[{removeAll}]{\setlength{\rightskip}{0pt plus 5cm}static removeAll (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_registry_a1aff3b0cad0cc68676cecee4dc5fc625}
+Removes all variables from the \hyperlink{class_anemo_1_1_registry}{Registry}. \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_registry_a52f161839f00824f9d6f8638ae75f623}{
+\index{Anemo::Registry@{Anemo::Registry}!set@{set}}
+\index{set@{set}!Anemo::Registry@{Anemo::Registry}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}static set (
+\begin{DoxyParamCaption}
+\item[{\$}]{key, }
+\item[{\&\$}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_registry_a52f161839f00824f9d6f8638ae75f623}
+Adds a new variable to the \hyperlink{class_anemo_1_1_registry}{Registry}. 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & Name of the variable \\
+\hline
+mixed & {\em \$value} & Value of the variable \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Registry$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Registry.php\end{DoxyCompactItemize}

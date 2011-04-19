@@ -1,0 +1,267 @@
+\hypertarget{class_anemo_1_1_i_d}{
+\section{ID Class Reference}
+\label{class_anemo_1_1_i_d}\index{Anemo::ID@{Anemo::ID}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_i_d_a96f600de7f4fe416bf8565d9d0eebee4}{setUserData} (\$key, \$value)
+\item 
+\hyperlink{class_anemo_1_1_i_d_ab62d4b3c3a14ab592768235dad6deb63}{getUserData} (\$key)
+\item 
+\hyperlink{class_anemo_1_1_i_d_acb1f072e530b91295d23a5ebdc6e53ff}{setUserModel} (\$userModel)
+\item 
+\hyperlink{class_anemo_1_1_i_d_a0a6d931d0dc4ccedf2c4600db053f8c9}{getUserModel} ()
+\item 
+\hyperlink{class_anemo_1_1_i_d_a2cd5bd9951ce5aa5ff432c289a40721b}{setDefaultSubject} (\hyperlink{class_anemo_1_1_a_c_l}{ACL}$\backslash$Subject \$defaultSubject)
+\item 
+\hyperlink{class_anemo_1_1_i_d_abc6977501353993a25964aa590a1c9c1}{setSubject} (\hyperlink{class_anemo_1_1_a_c_l}{ACL}$\backslash$Subject \$subject)
+\item 
+\hyperlink{class_anemo_1_1_i_d_a7ec8f5b794ded8f3c0df9afd96c8233c}{getSubject} ()
+\item 
+\hyperlink{class_anemo_1_1_i_d_a7516ca30af0db3cdbf9a7739b48ce91d}{\_\-\_\-toString} ()
+\item 
+\hyperlink{class_anemo_1_1_i_d_a2e5051c30251e26c6da72ea9cfbe864f}{isLogged} ()
+\item 
+\hyperlink{class_anemo_1_1_i_d_a082405d89acd6835c3a7c7a08a7adbab}{logout} ()
+\item 
+\hyperlink{class_anemo_1_1_i_d_afc8a3c62679cf00ade9f15fb2a6d6132}{save} ()
+\item 
+\hyperlink{class_anemo_1_1_i_d_a842e4774e3b3601a005b995c02f7e883}{update} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_anemo_1_1_i_d_ac93fbec81f07e5d15f80db907e63dc10}{getInstance} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_i_d_a4d9813fea8525b19a1d370eeb8fe41d6}{serialize} ()
+\item 
+\hyperlink{class_anemo_1_1_i_d_a22ab2c3304bb284dd641995a23592c03}{unserialize} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The id class holds different user data in a session. Auth functions are also available. \begin{DoxyAuthor}{Author}
+vince 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_anemo_1_1_i_d_a7516ca30af0db3cdbf9a7739b48ce91d}{
+\index{Anemo::ID@{Anemo::ID}!\_\-\_\-toString@{\_\-\_\-toString}}
+\index{\_\-\_\-toString@{\_\-\_\-toString}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{\_\-\_\-toString}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-toString (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_a7516ca30af0db3cdbf9a7739b48ce91d}
+Return the subject, if no exists, an empty string return. \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_ac93fbec81f07e5d15f80db907e63dc10}{
+\index{Anemo::ID@{Anemo::ID}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{getInstance}]{\setlength{\rightskip}{0pt plus 5cm}static getInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_i_d_ac93fbec81f07e5d15f80db907e63dc10}
+Get the instance (Singleton) \begin{DoxyReturn}{Returns}
+\hyperlink{namespace_anemo}{Anemo} \$this 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_a7ec8f5b794ded8f3c0df9afd96c8233c}{
+\index{Anemo::ID@{Anemo::ID}!getSubject@{getSubject}}
+\index{getSubject@{getSubject}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{getSubject}]{\setlength{\rightskip}{0pt plus 5cm}getSubject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_a7ec8f5b794ded8f3c0df9afd96c8233c}
+Return the subject of the current user. If no subject is setted, the default subject return. \begin{DoxyReturn}{Returns}
+\hyperlink{class_anemo_1_1_a_c_l}{ACL} 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_ab62d4b3c3a14ab592768235dad6deb63}{
+\index{Anemo::ID@{Anemo::ID}!getUserData@{getUserData}}
+\index{getUserData@{getUserData}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{getUserData}]{\setlength{\rightskip}{0pt plus 5cm}getUserData (
+\begin{DoxyParamCaption}
+\item[{\$}]{key}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_ab62d4b3c3a14ab592768235dad6deb63}
+Getter -\/ user data 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_a0a6d931d0dc4ccedf2c4600db053f8c9}{
+\index{Anemo::ID@{Anemo::ID}!getUserModel@{getUserModel}}
+\index{getUserModel@{getUserModel}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{getUserModel}]{\setlength{\rightskip}{0pt plus 5cm}getUserModel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_a0a6d931d0dc4ccedf2c4600db053f8c9}
+Getter -\/ user model \begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_a2e5051c30251e26c6da72ea9cfbe864f}{
+\index{Anemo::ID@{Anemo::ID}!isLogged@{isLogged}}
+\index{isLogged@{isLogged}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{isLogged}]{\setlength{\rightskip}{0pt plus 5cm}isLogged (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_a2e5051c30251e26c6da72ea9cfbe864f}
+Check if the current subject is not equal the default subject. 
+\begin{DoxyExceptions}{Exceptions}
+{\em ID$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_a082405d89acd6835c3a7c7a08a7adbab}{
+\index{Anemo::ID@{Anemo::ID}!logout@{logout}}
+\index{logout@{logout}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{logout}]{\setlength{\rightskip}{0pt plus 5cm}logout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_a082405d89acd6835c3a7c7a08a7adbab}
+Delete the \hyperlink{class_anemo_1_1_i_d}{ID} object \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_afc8a3c62679cf00ade9f15fb2a6d6132}{
+\index{Anemo::ID@{Anemo::ID}!save@{save}}
+\index{save@{save}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_afc8a3c62679cf00ade9f15fb2a6d6132}
+A wrapper for serialize \hypertarget{class_anemo_1_1_i_d_a4d9813fea8525b19a1d370eeb8fe41d6}{
+\index{Anemo::ID@{Anemo::ID}!serialize@{serialize}}
+\index{serialize@{serialize}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}serialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_i_d_a4d9813fea8525b19a1d370eeb8fe41d6}
+Serialize the object and save it in a session \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_a2cd5bd9951ce5aa5ff432c289a40721b}{
+\index{Anemo::ID@{Anemo::ID}!setDefaultSubject@{setDefaultSubject}}
+\index{setDefaultSubject@{setDefaultSubject}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{setDefaultSubject}]{\setlength{\rightskip}{0pt plus 5cm}setDefaultSubject (
+\begin{DoxyParamCaption}
+\item[{{\bf ACL}$\backslash$Subject \$}]{defaultSubject}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_a2cd5bd9951ce5aa5ff432c289a40721b}
+Set the default acl subject of the current user. This is the required fallback subject. 
+\begin{DoxyParams}{Parameters}
+{\em ACL$\backslash$Subject} & \$defaultSubject \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_abc6977501353993a25964aa590a1c9c1}{
+\index{Anemo::ID@{Anemo::ID}!setSubject@{setSubject}}
+\index{setSubject@{setSubject}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{setSubject}]{\setlength{\rightskip}{0pt plus 5cm}setSubject (
+\begin{DoxyParamCaption}
+\item[{{\bf ACL}$\backslash$Subject \$}]{subject}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_abc6977501353993a25964aa590a1c9c1}
+Set the acl subject of the current user 
+\begin{DoxyParams}{Parameters}
+{\em ACL$\backslash$Subject} & \$subject \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_a96f600de7f4fe416bf8565d9d0eebee4}{
+\index{Anemo::ID@{Anemo::ID}!setUserData@{setUserData}}
+\index{setUserData@{setUserData}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{setUserData}]{\setlength{\rightskip}{0pt plus 5cm}setUserData (
+\begin{DoxyParamCaption}
+\item[{\$}]{key, }
+\item[{\$}]{value}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_a96f600de7f4fe416bf8565d9d0eebee4}
+Set data with key, value pairs 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$key} & \\
+\hline
+string & {\em \$value} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_acb1f072e530b91295d23a5ebdc6e53ff}{
+\index{Anemo::ID@{Anemo::ID}!setUserModel@{setUserModel}}
+\index{setUserModel@{setUserModel}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{setUserModel}]{\setlength{\rightskip}{0pt plus 5cm}setUserModel (
+\begin{DoxyParamCaption}
+\item[{\$}]{userModel}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_acb1f072e530b91295d23a5ebdc6e53ff}
+Set a model 
+\begin{DoxyParams}[1]{Parameters}
+object & {\em \$userModel} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_a22ab2c3304bb284dd641995a23592c03}{
+\index{Anemo::ID@{Anemo::ID}!unserialize@{unserialize}}
+\index{unserialize@{unserialize}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{unserialize}]{\setlength{\rightskip}{0pt plus 5cm}unserialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_i_d_a22ab2c3304bb284dd641995a23592c03}
+Unserialize the object from the session \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_i_d_a842e4774e3b3601a005b995c02f7e883}{
+\index{Anemo::ID@{Anemo::ID}!update@{update}}
+\index{update@{update}!Anemo::ID@{Anemo::ID}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_i_d_a842e4774e3b3601a005b995c02f7e883}
+A wrapper for unserialize 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+ID.php\end{DoxyCompactItemize}

@@ -1,0 +1,310 @@
+\hypertarget{class_anemo_1_1_router}{
+\section{Router Class Reference}
+\label{class_anemo_1_1_router}\index{Anemo::Router@{Anemo::Router}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_router_a095c5d389db211932136b53f25f39685}{\_\-\_\-construct} ()
+\item 
+\hyperlink{class_anemo_1_1_router_afbdfa605ea27a9d9d5fd6655fc9cb6a0}{setDefaultModule} (\$module)
+\item 
+\hyperlink{class_anemo_1_1_router_a274600a1cc837f86d4500eab3969e25f}{setDefaultController} (\$controller)
+\item 
+\hyperlink{class_anemo_1_1_router_ae4281eeaea21283228e29e325b14f76b}{setDefaultAction} (\$action)
+\item 
+\hyperlink{class_anemo_1_1_router_ac937ff6d29e67889dfd635b740af8c81}{loadRoutes} (array \$config)
+\item 
+\hyperlink{class_anemo_1_1_router_a0aa151a03b17a17fd98adbf455056d02}{route} (\hyperlink{class_anemo_1_1_application}{Application}$\backslash$Http$\backslash$Request \$request, \hyperlink{class_anemo_1_1_application}{Application}$\backslash$Http$\backslash$Response \$response)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_router_ace12d039551ac52a70b0629a519fae41}{setModuleName} (\$module)
+\item 
+\hyperlink{class_anemo_1_1_router_a4e3aa0a1a35106bea24cd0cff17a661e}{setControllerName} (\$controller)
+\item 
+\hyperlink{class_anemo_1_1_router_a3b9d4e3945e398b30382c80056b5083a}{setActionName} (\$action)
+\item 
+\hyperlink{class_anemo_1_1_router_a67cc18835787a8cd246840098e8e0497}{isModule} (\$param)
+\item 
+\hyperlink{class_anemo_1_1_router_aa5b001e7c64faca5595ac6ed1c3a42b4}{isController} (\$param)
+\item 
+\hyperlink{class_anemo_1_1_router_aea02fd86d072a4d5b78efc8dd437fc4a}{isAction} (\$param)
+\item 
+\hyperlink{class_anemo_1_1_router_a7f8217042f5433880fa9d00cb6a903ee}{isRoute} (\$param)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_anemo_1_1_router_a8f7eb04a54e0f0bfc0cedeb9899ce4a8}{
+{\bfseries \$routes} = array()}
+\label{class_anemo_1_1_router_a8f7eb04a54e0f0bfc0cedeb9899ce4a8}
+
+\item 
+\hypertarget{class_anemo_1_1_router_a40b79113bfcd261aa03d02c836b4fd0d}{
+{\bfseries \$requestData} = array()}
+\label{class_anemo_1_1_router_a40b79113bfcd261aa03d02c836b4fd0d}
+
+\item 
+\hypertarget{class_anemo_1_1_router_a3fcaeb229c94173ba904952898e7bfed}{
+{\bfseries \$defaultController}}
+\label{class_anemo_1_1_router_a3fcaeb229c94173ba904952898e7bfed}
+
+\item 
+\hypertarget{class_anemo_1_1_router_ab8b5213f191f4e05bec89f1841a35c16}{
+{\bfseries \$defaultAction}}
+\label{class_anemo_1_1_router_ab8b5213f191f4e05bec89f1841a35c16}
+
+\item 
+\hypertarget{class_anemo_1_1_router_a78e75cfa2a7b1db0c89be5c7da2f2173}{
+{\bfseries \$defaultModule}}
+\label{class_anemo_1_1_router_a78e75cfa2a7b1db0c89be5c7da2f2173}
+
+\item 
+\hypertarget{class_anemo_1_1_router_abb35c8495a232b510389fa6d7b15d38a}{
+{\bfseries \$request}}
+\label{class_anemo_1_1_router_abb35c8495a232b510389fa6d7b15d38a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The router class routes incoming requests to the specified controllers and actions \begin{DoxyAuthor}{Author}
+vince 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_anemo_1_1_router_a095c5d389db211932136b53f25f39685}{
+\index{Anemo::Router@{Anemo::Router}!\_\-\_\-construct@{\_\-\_\-construct}}
+\index{\_\-\_\-construct@{\_\-\_\-construct}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{\_\-\_\-construct}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-construct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_router_a095c5d389db211932136b53f25f39685}
+Initialize the router 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_anemo_1_1_router_aea02fd86d072a4d5b78efc8dd437fc4a}{
+\index{Anemo::Router@{Anemo::Router}!isAction@{isAction}}
+\index{isAction@{isAction}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{isAction}]{\setlength{\rightskip}{0pt plus 5cm}isAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_router_aea02fd86d072a4d5b78efc8dd437fc4a}
+Check if the given param is an action 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_aa5b001e7c64faca5595ac6ed1c3a42b4}{
+\index{Anemo::Router@{Anemo::Router}!isController@{isController}}
+\index{isController@{isController}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{isController}]{\setlength{\rightskip}{0pt plus 5cm}isController (
+\begin{DoxyParamCaption}
+\item[{\$}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_router_aa5b001e7c64faca5595ac6ed1c3a42b4}
+Check if the given param is a controller 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_a67cc18835787a8cd246840098e8e0497}{
+\index{Anemo::Router@{Anemo::Router}!isModule@{isModule}}
+\index{isModule@{isModule}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{isModule}]{\setlength{\rightskip}{0pt plus 5cm}isModule (
+\begin{DoxyParamCaption}
+\item[{\$}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_router_a67cc18835787a8cd246840098e8e0497}
+Check if the given param is a module 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_a7f8217042f5433880fa9d00cb6a903ee}{
+\index{Anemo::Router@{Anemo::Router}!isRoute@{isRoute}}
+\index{isRoute@{isRoute}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{isRoute}]{\setlength{\rightskip}{0pt plus 5cm}isRoute (
+\begin{DoxyParamCaption}
+\item[{\$}]{param}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_router_a7f8217042f5433880fa9d00cb6a903ee}
+Check if the given param is a route 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_ac937ff6d29e67889dfd635b740af8c81}{
+\index{Anemo::Router@{Anemo::Router}!loadRoutes@{loadRoutes}}
+\index{loadRoutes@{loadRoutes}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{loadRoutes}]{\setlength{\rightskip}{0pt plus 5cm}loadRoutes (
+\begin{DoxyParamCaption}
+\item[{array \$}]{config}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_router_ac937ff6d29e67889dfd635b740af8c81}
+Load and set the default route 
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$config} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_a0aa151a03b17a17fd98adbf455056d02}{
+\index{Anemo::Router@{Anemo::Router}!route@{route}}
+\index{route@{route}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{route}]{\setlength{\rightskip}{0pt plus 5cm}route (
+\begin{DoxyParamCaption}
+\item[{{\bf Application}$\backslash$Http$\backslash$Request \$}]{request, }
+\item[{{\bf Application}$\backslash$Http$\backslash$Response \$}]{response}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_router_a0aa151a03b17a17fd98adbf455056d02}
+Route the incoming request to the right module,controller,action. 
+\begin{DoxyParams}{Parameters}
+{\em Application$\backslash$Http$\backslash$Request} & \$request \\
+\hline
+{\em Application$\backslash$Http$\backslash$Response} & \$response \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Router$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_a3b9d4e3945e398b30382c80056b5083a}{
+\index{Anemo::Router@{Anemo::Router}!setActionName@{setActionName}}
+\index{setActionName@{setActionName}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{setActionName}]{\setlength{\rightskip}{0pt plus 5cm}setActionName (
+\begin{DoxyParamCaption}
+\item[{\$}]{action}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_router_a3b9d4e3945e398b30382c80056b5083a}
+Set the action name, when nothing is set, the default action will be set 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$action} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_a4e3aa0a1a35106bea24cd0cff17a661e}{
+\index{Anemo::Router@{Anemo::Router}!setControllerName@{setControllerName}}
+\index{setControllerName@{setControllerName}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{setControllerName}]{\setlength{\rightskip}{0pt plus 5cm}setControllerName (
+\begin{DoxyParamCaption}
+\item[{\$}]{controller}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_router_a4e3aa0a1a35106bea24cd0cff17a661e}
+Set the controller name, when nothing is set, the default controller will be set 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$controller} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_ae4281eeaea21283228e29e325b14f76b}{
+\index{Anemo::Router@{Anemo::Router}!setDefaultAction@{setDefaultAction}}
+\index{setDefaultAction@{setDefaultAction}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{setDefaultAction}]{\setlength{\rightskip}{0pt plus 5cm}setDefaultAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{action}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_router_ae4281eeaea21283228e29e325b14f76b}
+Set the default action, which will be requested when nothing other is setted 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$action} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{namespace_anemo}{Anemo} 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_a274600a1cc837f86d4500eab3969e25f}{
+\index{Anemo::Router@{Anemo::Router}!setDefaultController@{setDefaultController}}
+\index{setDefaultController@{setDefaultController}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{setDefaultController}]{\setlength{\rightskip}{0pt plus 5cm}setDefaultController (
+\begin{DoxyParamCaption}
+\item[{\$}]{controller}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_router_a274600a1cc837f86d4500eab3969e25f}
+Set the default controller, which will be requested when nothing other is setted 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$controller} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{namespace_anemo}{Anemo} 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_afbdfa605ea27a9d9d5fd6655fc9cb6a0}{
+\index{Anemo::Router@{Anemo::Router}!setDefaultModule@{setDefaultModule}}
+\index{setDefaultModule@{setDefaultModule}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{setDefaultModule}]{\setlength{\rightskip}{0pt plus 5cm}setDefaultModule (
+\begin{DoxyParamCaption}
+\item[{\$}]{module}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_router_afbdfa605ea27a9d9d5fd6655fc9cb6a0}
+Set the default module, which will be requested when nothing other is setted 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$module} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{namespace_anemo}{Anemo} 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_router_ace12d039551ac52a70b0629a519fae41}{
+\index{Anemo::Router@{Anemo::Router}!setModuleName@{setModuleName}}
+\index{setModuleName@{setModuleName}!Anemo::Router@{Anemo::Router}}
+\subsubsection[{setModuleName}]{\setlength{\rightskip}{0pt plus 5cm}setModuleName (
+\begin{DoxyParamCaption}
+\item[{\$}]{module}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_anemo_1_1_router_ace12d039551ac52a70b0629a519fae41}
+Set the module name, when nothing is set, the default module will be set 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$module} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Router.php\end{DoxyCompactItemize}

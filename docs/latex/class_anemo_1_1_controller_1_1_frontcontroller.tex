@@ -1,0 +1,425 @@
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller}{
+\section{Frontcontroller Class Reference}
+\label{class_anemo_1_1_controller_1_1_frontcontroller}\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_adb7ebaf24d4b5aa433136dc2117854fc}{init} (array \$config)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a628300eb8464467d9344c7c59cc8770b}{getConfig} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_ace12d039551ac52a70b0629a519fae41}{setModuleName} (\$module)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a7e79740a77d43616dc9e0976f603fb7a}{getModuleName} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a4e3aa0a1a35106bea24cd0cff17a661e}{setControllerName} (\$controller)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a1b465007a1196146db46a2890a1391a8}{getControllerName} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a3b9d4e3945e398b30382c80056b5083a}{setActionName} (\$action)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a26f353f733e6f7a64eaeba330af5770e}{getActionName} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a392437718b3e58299cf673d44af6151e}{getRouter} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_adf1a35ad20e475c59cc0967d5764aa22}{getRequest} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a6c907e8af775e517a77037dd0164222f}{getResponse} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_aa2c1b8634bea77c8eb6a7d909511bd52}{getResource} (\$resource)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_aaf4a9649667a3904fae19e9bd27ebd67}{getBasePath} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_abc6f0c7a83921cf10e85fab3524e6cab}{getLayoutPath} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a0e09b1e62bb6321aa1bd388e1a0766ef}{setLayoutTemplate} (\$template)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a484053c8cafaa864f7dff745f7eb1198}{getModuleDirectory} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_abee94a656a5297cb451ff8fe95901e5a}{setModuleDirectory} (\$dir)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_aa43f16ec7415769fee4be5e49a52f93b}{getControllerDirectory} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a7c94b5c43692cab27b603c08c2277d73}{setErrorController} (\$controller)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_ab5c738994c3a2ff1df6fc5900462585a}{setErrorAction} (\$action)
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_afe34a8388a83ac3d0404476c4ba2229f}{initErrorHandling} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_a1909f4b7f8129c7790cb75de2ffbe1e4}{execute} ()
+\item 
+\hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_ac9b4976d41cd6b50add18c46b165c03d}{dispatch} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_anemo_1_1_controller_1_1_frontcontroller_ac93fbec81f07e5d15f80db907e63dc10}{getInstance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The frontcontroller is the main controller. Every request routes at first to the frontcontroller which calls futher controllers. \begin{DoxyAuthor}{Author}
+vince 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_ac9b4976d41cd6b50add18c46b165c03d}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!dispatch@{dispatch}}
+\index{dispatch@{dispatch}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{dispatch}]{\setlength{\rightskip}{0pt plus 5cm}dispatch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_ac9b4976d41cd6b50add18c46b165c03d}
+The dispatch, routes the request, get the layout, execute the request, insert it into the layout, write the response object and return the whole response. \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a1909f4b7f8129c7790cb75de2ffbe1e4}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!execute@{execute}}
+\index{execute@{execute}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a1909f4b7f8129c7790cb75de2ffbe1e4}
+Execute the controller and action which are set and return the executed content 
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_anemo_1_1_controller_1_1_exception}{Exception}} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a26f353f733e6f7a64eaeba330af5770e}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getActionName@{getActionName}}
+\index{getActionName@{getActionName}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getActionName}]{\setlength{\rightskip}{0pt plus 5cm}getActionName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a26f353f733e6f7a64eaeba330af5770e}
+Wrapper for getActionName from the request class \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_aaf4a9649667a3904fae19e9bd27ebd67}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getBasePath@{getBasePath}}
+\index{getBasePath@{getBasePath}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getBasePath}]{\setlength{\rightskip}{0pt plus 5cm}getBasePath (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_aaf4a9649667a3904fae19e9bd27ebd67}
+Return the base path \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a628300eb8464467d9344c7c59cc8770b}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getConfig@{getConfig}}
+\index{getConfig@{getConfig}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getConfig}]{\setlength{\rightskip}{0pt plus 5cm}getConfig (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a628300eb8464467d9344c7c59cc8770b}
+Return the config array \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_aa43f16ec7415769fee4be5e49a52f93b}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getControllerDirectory@{getControllerDirectory}}
+\index{getControllerDirectory@{getControllerDirectory}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getControllerDirectory}]{\setlength{\rightskip}{0pt plus 5cm}getControllerDirectory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_aa43f16ec7415769fee4be5e49a52f93b}
+Return the controller directory. ROOT / module directory / module name / \char`\"{}controllers\char`\"{} \hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a1b465007a1196146db46a2890a1391a8}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getControllerName@{getControllerName}}
+\index{getControllerName@{getControllerName}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getControllerName}]{\setlength{\rightskip}{0pt plus 5cm}getControllerName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a1b465007a1196146db46a2890a1391a8}
+Wrapper for getControllerName from the request class \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_ac93fbec81f07e5d15f80db907e63dc10}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getInstance}]{\setlength{\rightskip}{0pt plus 5cm}static getInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_ac93fbec81f07e5d15f80db907e63dc10}
+Return the self instance of the singleton \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_abc6f0c7a83921cf10e85fab3524e6cab}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getLayoutPath@{getLayoutPath}}
+\index{getLayoutPath@{getLayoutPath}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getLayoutPath}]{\setlength{\rightskip}{0pt plus 5cm}getLayoutPath (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_abc6f0c7a83921cf10e85fab3524e6cab}
+Return the layout path. Module directory / module name / temp.late 
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_anemo_1_1_controller_1_1_exception}{Exception}} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a484053c8cafaa864f7dff745f7eb1198}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getModuleDirectory@{getModuleDirectory}}
+\index{getModuleDirectory@{getModuleDirectory}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getModuleDirectory}]{\setlength{\rightskip}{0pt plus 5cm}getModuleDirectory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a484053c8cafaa864f7dff745f7eb1198}
+Return the module directory. ROOT / module directory 
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_anemo_1_1_controller_1_1_exception}{Exception}} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+string module directory 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a7e79740a77d43616dc9e0976f603fb7a}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getModuleName@{getModuleName}}
+\index{getModuleName@{getModuleName}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getModuleName}]{\setlength{\rightskip}{0pt plus 5cm}getModuleName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a7e79740a77d43616dc9e0976f603fb7a}
+Wrapper for getModuleName from the request class \begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_adf1a35ad20e475c59cc0967d5764aa22}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getRequest@{getRequest}}
+\index{getRequest@{getRequest}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getRequest}]{\setlength{\rightskip}{0pt plus 5cm}getRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_adf1a35ad20e475c59cc0967d5764aa22}
+Return the request object \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_aa2c1b8634bea77c8eb6a7d909511bd52}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getResource@{getResource}}
+\index{getResource@{getResource}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getResource}]{\setlength{\rightskip}{0pt plus 5cm}getResource (
+\begin{DoxyParamCaption}
+\item[{\$}]{resource}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_aa2c1b8634bea77c8eb6a7d909511bd52}
+Return the, if exists, given resource 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$resource} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a6c907e8af775e517a77037dd0164222f}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getResponse@{getResponse}}
+\index{getResponse@{getResponse}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getResponse}]{\setlength{\rightskip}{0pt plus 5cm}getResponse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a6c907e8af775e517a77037dd0164222f}
+Return the response object \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a392437718b3e58299cf673d44af6151e}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!getRouter@{getRouter}}
+\index{getRouter@{getRouter}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{getRouter}]{\setlength{\rightskip}{0pt plus 5cm}getRouter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a392437718b3e58299cf673d44af6151e}
+Return the router object \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_adb7ebaf24d4b5aa433136dc2117854fc}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!init@{init}}
+\index{init@{init}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}init (
+\begin{DoxyParamCaption}
+\item[{array \$}]{config}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_adb7ebaf24d4b5aa433136dc2117854fc}
+init the singleton frontcontroller. Loads the config files, and init the request, response and the router 
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$config} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_afe34a8388a83ac3d0404476c4ba2229f}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!initErrorHandling@{initErrorHandling}}
+\index{initErrorHandling@{initErrorHandling}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{initErrorHandling}]{\setlength{\rightskip}{0pt plus 5cm}initErrorHandling (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_afe34a8388a83ac3d0404476c4ba2229f}
+Init the error handling. Check if error controller \& action is set and set them as controller and action name 
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{class_anemo_1_1_controller_1_1_exception}{Exception}} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a3b9d4e3945e398b30382c80056b5083a}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!setActionName@{setActionName}}
+\index{setActionName@{setActionName}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{setActionName}]{\setlength{\rightskip}{0pt plus 5cm}setActionName (
+\begin{DoxyParamCaption}
+\item[{\$}]{action}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a3b9d4e3945e398b30382c80056b5083a}
+Wrapper for setActionName from the request class 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$action} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a4e3aa0a1a35106bea24cd0cff17a661e}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!setControllerName@{setControllerName}}
+\index{setControllerName@{setControllerName}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{setControllerName}]{\setlength{\rightskip}{0pt plus 5cm}setControllerName (
+\begin{DoxyParamCaption}
+\item[{\$}]{controller}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a4e3aa0a1a35106bea24cd0cff17a661e}
+Wrapper for setControllerName from the request class 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$controller} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_ab5c738994c3a2ff1df6fc5900462585a}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!setErrorAction@{setErrorAction}}
+\index{setErrorAction@{setErrorAction}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{setErrorAction}]{\setlength{\rightskip}{0pt plus 5cm}setErrorAction (
+\begin{DoxyParamCaption}
+\item[{\$}]{action}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_ab5c738994c3a2ff1df6fc5900462585a}
+Set the error action 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$action} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a7c94b5c43692cab27b603c08c2277d73}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!setErrorController@{setErrorController}}
+\index{setErrorController@{setErrorController}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{setErrorController}]{\setlength{\rightskip}{0pt plus 5cm}setErrorController (
+\begin{DoxyParamCaption}
+\item[{\$}]{controller}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a7c94b5c43692cab27b603c08c2277d73}
+Set the error controller 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$controller} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_a0e09b1e62bb6321aa1bd388e1a0766ef}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!setLayoutTemplate@{setLayoutTemplate}}
+\index{setLayoutTemplate@{setLayoutTemplate}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{setLayoutTemplate}]{\setlength{\rightskip}{0pt plus 5cm}setLayoutTemplate (
+\begin{DoxyParamCaption}
+\item[{\$}]{template}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_a0e09b1e62bb6321aa1bd388e1a0766ef}
+Set the layout template. An extension is required 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$template} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_abee94a656a5297cb451ff8fe95901e5a}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!setModuleDirectory@{setModuleDirectory}}
+\index{setModuleDirectory@{setModuleDirectory}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{setModuleDirectory}]{\setlength{\rightskip}{0pt plus 5cm}setModuleDirectory (
+\begin{DoxyParamCaption}
+\item[{\$}]{dir}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_abee94a656a5297cb451ff8fe95901e5a}
+Set the module directory 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$dir} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_1_1_frontcontroller_ace12d039551ac52a70b0629a519fae41}{
+\index{Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}!setModuleName@{setModuleName}}
+\index{setModuleName@{setModuleName}!Anemo::Controller::Frontcontroller@{Anemo::Controller::Frontcontroller}}
+\subsubsection[{setModuleName}]{\setlength{\rightskip}{0pt plus 5cm}setModuleName (
+\begin{DoxyParamCaption}
+\item[{\$}]{module}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_1_1_frontcontroller_ace12d039551ac52a70b0629a519fae41}
+Wrapper for setModuleName from the request class 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$module} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Controller/Frontcontroller.php\end{DoxyCompactItemize}
