@@ -29,6 +29,69 @@
  * 	or implied, of Vince.
  */
 
-/*
- * @todo all !
- */
+namespace Anemo;
+
+use Anemo\Validate\Exception;
+
+use Validate\Adapter;
+
+class Validate
+{
+	
+	
+	/**
+	 * Validate an input with one Validator
+	 * @param string $input
+	 * @param array $validator
+	 * @return boolean
+	 */
+	public static function check($input, array $validator) {
+		if(!is_array($validators))
+			throw new Validate\Exception('Validator is not an array');
+			
+		Validate::validate($input, $validatorName, $validatorParams);
+	}
+	
+	/**
+	 * Validate an input with one or more Validators
+	 * @param string $input
+	 * @param array $validators
+	 * @return boolean
+	 */
+	public static function chain($input, array $validators) {
+		
+		
+		foreach($validators as $v) {
+			
+		}
+	}
+	
+	
+	private static function validate($input, $validatorName, $validatorParams) {
+		$adapter = 'Anemo\Validate\Adapter\\' . $validatorName;
+		$validatorObject = Validate::factory($adapter);
+	}
+	
+	/**
+	 * The factory method implements the factory pattern and loads dynamically the given validate adapter
+	 * @param string $adapter
+	 * @param array $params
+	 * @throws Validate\Exception
+	 * @return Validate\Adapter\AdapterAbstract
+	 */
+	private static function factory($adapter, array $params) {
+		
+		if(!is_string($adapter) || !trim($adapter) )
+            throw new Validate\Exception('No valid adapter');
+         
+		if(!$adapter = new $adapter($params))
+			throw new Validate\Exception('Cannot instantiate the adapter');
+		
+		if(!$adapter instanceof Validate\Adapter\AdapterAbstract)
+			throw new Validate\Exception('Adapter must implementthe interface');
+		
+		return $adapter;
+	}
+	
+	
+}

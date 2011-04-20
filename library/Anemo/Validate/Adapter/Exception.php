@@ -29,3 +29,13 @@
  * 	or implied, of Vince.
  */
 
+namespace Anemo\Validate\Adapter;
+
+/**
+ * Validate adapter excption
+ * @author vince
+ * @version 1.0
+ */
+class Exception extends \Anemo\Runtime\Exception
+{
+}
