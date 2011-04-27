@@ -29,13 +29,31 @@
  * 	or implied, of Vince.
  */
 
-namespace Anemo\Validate\Adapter\LengthBetween;
+namespace Anemo\Validate\Adapter;
 
-/**
- * Validate adapter exception
- * @author vince
- * @version 1.0
- */
-class Exception extends \Anemo\Runtime\Exception
+
+class Email extends ValidateAbstract implements ValidateInterface
 {
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Validate\Adapter.ValidateInterface::validateInput()
+	 */
+	public function validateInput($input) {
+		
+		if($this->validatorParams[0] == true) {
+			if(filter_var($input, FILTER_VALIDATE_EMAIL) !== false)
+				return true;
+			return false;
+			
+		} else if($this->validatorParams[0] == false) {
+			if(filter_var($input, FILTER_VALIDATE_EMAIL) !== false)
+				return false;
+			return true;
+			
+		} else {
+			throw new Email\Exception('Non valid parameter in use. Only true or false allowed.');
+		}
+	}
+
 }

@@ -29,3 +29,27 @@
  * 	or implied, of Vince.
  */
 
+namespace Anemo\Validate\Adapter;
+
+/**
+ * Abstract validator class, which every validator must implements
+ * @abstract
+ * @author vince
+ * @version 1.0
+ */
+abstract class ValidateAbstract
+{
+	
+	protected $validatorParams = array();
+	
+	/**
+	 * Saves the parameter in a class var
+	 * @param array $validatorParams
+	 * @return void
+	 */
+	public function __construct(array $validatorParams) {
+		$this->validatorParams = $validatorParams;
+	}
+	
+
+}

@@ -29,13 +29,24 @@
  * 	or implied, of Vince.
  */
 
-namespace Anemo\Validate\Adapter\LengthBetween;
+namespace Anemo\Validate\Adapter;
 
-/**
- * Validate adapter exception
- * @author vince
- * @version 1.0
- */
-class Exception extends \Anemo\Runtime\Exception
+
+class MaxLength extends ValidateAbstract implements ValidateInterface
 {
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Validate\Adapter.ValidateInterface::validateInput()
+	 */
+	public function validateInput($input) {
+		if(!is_int($this->validatorParams[0]))
+			throw new MaxLength\Exception('Non valid parameter in use. Only integer expression is allowed.');
+		
+		if(strlen($input) > $this->validatorParams[0])
+			return false;
+	
+		return true;
+	}
+
 }

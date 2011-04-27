@@ -31,49 +31,71 @@
 
 namespace Anemo;
 
-use Anemo\Validate\Exception;
+use Anemo\Validate;
 
-use Validate\Adapter;
 
 class Validate
 {
 	
 	
 	/**
-	 * Validate an input with one Validator
+	 * Validate an input with one validator
+	 * @static
 	 * @param string $input
 	 * @param array $validator
 	 * @return boolean
 	 */
 	public static function check($input, array $validator) {
-		if(!is_array($validators))
+		if(is_array($input))
+			throw new Validate\Exception('Input, string expected');
+			
+		if(!is_array($validator))
 			throw new Validate\Exception('Validator is not an array');
 			
-		Validate::validate($input, $validatorName, $validatorParams);
+		$v = array_keys($validator); // get the Validator name (key)
+		
+		// converts param to an array
+		$validatorParams = $validator[$v[0]];
+		if(!is_array($validatorParams))
+			$validatorParams = array($validatorParams);
+			
+		return Validate::validateData($input, $v[0], $validatorParams);
 	}
 	
 	/**
-	 * Validate an input with one or more Validators
+	 * Validate an input with one or more validators. If one check fails, it will return false
+	 * @static
 	 * @param string $input
 	 * @param array $validators
 	 * @return boolean
 	 */
-	public static function chain($input, array $validators) {
-		
-		
-		foreach($validators as $v) {
-			
+	public static function chain($input='', array $validators) {
+		if(!is_array($validators))
+			throw new Validate\Exception('Validator is not an array');
+		foreach($validators as $vk=>$vv) {
+			if(!Validate::check($input,array($vk=>$vv)))
+				return false;
 		}
+		return true;
 	}
 	
-	
-	private static function validate($input, $validatorName, $validatorParams) {
+	/**
+	 * Instatiate the Adapter and calls the validate function
+	 * @static
+	 * @param string $input
+	 * @param string $validatorName
+	 * @param string $validatorParams
+	 * @return boolean
+	 */
+	private static function validateData($input, $validatorName, $validatorParams) {
 		$adapter = 'Anemo\Validate\Adapter\\' . $validatorName;
-		$validatorObject = Validate::factory($adapter);
+		$validatorObject = Validate::factory($adapter,$validatorParams);
+		return $validatorObject->validateInput($input);
 	}
 	
 	/**
 	 * The factory method implements the factory pattern and loads dynamically the given validate adapter
+	 * @static
 	 * @param string $adapter
 	 * @param array $params
 	 * @throws Validate\Exception
@@ -87,8 +109,8 @@ class Validate
 		if(!$adapter = new $adapter($params))
 			throw new Validate\Exception('Cannot instantiate the adapter');
 		
-		if(!$adapter instanceof Validate\Adapter\AdapterAbstract)
-			throw new Validate\Exception('Adapter must implementthe interface');
+		if(!$adapter instanceof Validate\Adapter\ValidateInterface)
+			throw new Validate\Exception('Adapter must implement the interface');
 		
 		return $adapter;
 	}

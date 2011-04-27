@@ -29,13 +29,20 @@
  * 	or implied, of Vince.
  */
 
-namespace Anemo\Validate\Adapter\LengthBetween;
+namespace Anemo\Validate\Adapter;
+
 
 /**
- * Validate adapter exception
+ * Validator interface, which every validator must implements
  * @author vince
  * @version 1.0
  */
-class Exception extends \Anemo\Runtime\Exception
+interface ValidateInterface
 {
+	/**
+	 * Validates the input with the spacified adapter
+	 * @param string $input
+	 * @return boolean
+	 */
+	public function validateInput($input);
 }

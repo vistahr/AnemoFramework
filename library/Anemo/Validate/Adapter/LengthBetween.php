@@ -29,13 +29,24 @@
  * 	or implied, of Vince.
  */
 
-namespace Anemo\Validate\Adapter\LengthBetween;
+namespace Anemo\Validate\Adapter;
 
-/**
- * Validate adapter exception
- * @author vince
- * @version 1.0
- */
-class Exception extends \Anemo\Runtime\Exception
+
+class LengthBetween extends ValidateAbstract implements ValidateInterface
 {
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Validate\Adapter.ValidateInterface::validateInput()
+	 */
+	public function validateInput($input) {
+		if(!is_int($this->validatorParams[0]) || !is_int($this->validatorParams[1]))
+			throw new LengthBetween\Exception('Non valid parameter in use. Only integer expressions are allowed.');
+		
+		if(strlen($input) >= $this->validatorParams[0] && strlen($input) <= $this->validatorParams[0])
+			return true;
+	
+		return false;
+	}
+
 }

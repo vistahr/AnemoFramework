@@ -29,13 +29,22 @@
  * 	or implied, of Vince.
  */
 
-namespace Anemo\Validate\Adapter\LengthBetween;
+namespace Anemo\Validate\Adapter;
 
-/**
- * Validate adapter exception
- * @author vince
- * @version 1.0
- */
-class Exception extends \Anemo\Runtime\Exception
+
+class MaxLength extends ValidateAbstract implements ValidateInterface
 {
+	
+	/**
+	 * (non-PHPdoc)
+	 * @see Anemo\Validate\Adapter.ValidateInterface::validateInput()
+	 */
+	public function validateInput($input) {
+		
+		if(preg_match($this->validatorParams[0],$input) === 0)
+			return false;
+	
+		return true;
+	}
+
 }

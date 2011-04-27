@@ -41,7 +41,8 @@ use Import\Adapter;
 class Import
 {
 	/**
-	 * Factory function to load dynamically different import adapter
+	 * Factory function to load dynamically different import adapters
+	 * @static
 	 * @param string $adapter
 	 * @param array $params
 	 * @throws Import\Exception
@@ -50,10 +51,10 @@ class Import
 	public static function factory($adapter, $params = array()) {
 		
 		if(!is_string($adapter) || !trim($adapter) )
-            throw new Import\Exception('No valid Adapter');
+            throw new Import\Exception('No valid adapter');
          
 		if(!$adapter = new $adapter($params))
-			throw new Import\Exception('Cannot instantiate the Adapter');
+			throw new Import\Exception('Cannot instantiate the adapter');
 		
 		if(!$adapter instanceof Import\Adapter\AdapterInterface)
 			throw new Import\Exception('Adapter must implementthe interface');
