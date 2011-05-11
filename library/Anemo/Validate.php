@@ -33,7 +33,11 @@ namespace Anemo;
 
 use Anemo\Validate;
 
-
+/**
+ * Validate class with single and multiple validate functions. Different apdater aqre called through the factory method.
+ * @author vince
+ * @version 1.0
+ */
 class Validate
 {
 	

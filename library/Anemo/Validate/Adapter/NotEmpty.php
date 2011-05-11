@@ -31,7 +31,11 @@
 
 namespace Anemo\Validate\Adapter;
 
-
+/**
+ * NotEmpty validates not empty input
+ * @author vince
+ * @version 1.0
+ */
 class NotEmpty extends ValidateAbstract implements ValidateInterface
 {
 	

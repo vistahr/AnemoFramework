@@ -31,7 +31,11 @@
 
 namespace Anemo\Validate\Adapter;
 
-
+/**
+ * LengthBetween validates all input with the given range
+ * @author vince
+ * @version 1.0
+ */
 class LengthBetween extends ValidateAbstract implements ValidateInterface
 {
 	

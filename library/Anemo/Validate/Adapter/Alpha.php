@@ -31,7 +31,11 @@
 
 namespace Anemo\Validate\Adapter;
 
-
+/**
+ * Alpha validates all alpha inputs
+ * @author vince
+ * @version 1.0
+ */
 class Alpha extends ValidateAbstract implements ValidateInterface
 {
 	

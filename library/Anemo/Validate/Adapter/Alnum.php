@@ -31,7 +31,11 @@
 
 namespace Anemo\Validate\Adapter;
 
-
+/**
+ * Alnum validates all alpha and numeric inputs
+ * @author vince
+ * @version 1.0
+ */
 class Alnum extends ValidateAbstract implements ValidateInterface
 {
 	

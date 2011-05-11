@@ -31,7 +31,11 @@
 
 namespace Anemo\Validate\Adapter;
 
-
+/**
+ * Digit validates all digit inputs
+ * @author vince
+ * @version 1.0
+ */
 class Alnum extends ValidateAbstract implements ValidateInterface
 {
 	

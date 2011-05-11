@@ -31,7 +31,11 @@
 
 namespace Anemo\Validate\Adapter;
 
-
+/**
+ * MaxLength validates all input with the given max length
+ * @author vince
+ * @version 1.0
+ */
 class MaxLength extends ValidateAbstract implements ValidateInterface
 {
 	

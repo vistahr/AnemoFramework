@@ -31,7 +31,11 @@
 
 namespace Anemo\Validate\Adapter;
 
-
+/**
+ * Email validates all email addresses
+ * @author vince
+ * @version 1.0
+ */
 class Email extends ValidateAbstract implements ValidateInterface
 {
 	

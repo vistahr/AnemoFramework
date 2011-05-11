@@ -31,8 +31,12 @@
 
 namespace Anemo\Validate\Adapter;
 
-
-class MaxLength extends ValidateAbstract implements ValidateInterface
+/**
+ * Regex validates input with the given egular expression
+ * @author vince
+ * @version 1.0
+ */
+class Regex extends ValidateAbstract implements ValidateInterface
 {
 	
 	/**
