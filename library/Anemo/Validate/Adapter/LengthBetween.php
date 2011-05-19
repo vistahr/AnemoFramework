@@ -46,8 +46,8 @@ class LengthBetween extends ValidateAbstract implements ValidateInterface
 	public function validateInput($input) {
 		if(!is_int($this->validatorParams[0]) || !is_int($this->validatorParams[1]))
 			throw new LengthBetween\Exception('Non valid parameter in use. Only integer expressions are allowed.');
-		
-		if(strlen($input) >= $this->validatorParams[0] && strlen($input) <= $this->validatorParams[0])
+			
+		if(strlen($input) >= $this->validatorParams[0] && strlen($input) <= $this->validatorParams[1])
 			return true;
 	
 		return false;
