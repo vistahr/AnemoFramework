@@ -34,7 +34,7 @@ namespace Anemo;
 use Anemo\ID;
 
 /**
- * The id class holds different user data in a session. Auth functions are also available.
+ * The id class holds different user dataof one user in a session. Auth functions are also available.
  * @author vince
  * @version 1.0
  */
