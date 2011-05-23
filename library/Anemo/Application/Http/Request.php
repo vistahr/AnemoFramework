@@ -217,17 +217,17 @@ class Request
   	 * @return boolean
   	 */
   	public function issetParam($key) {
-  		return (isset($this->param[$key]));
+  		return (isset($this->params[$key]));
   	}
   	
   	/**
   	 * Return the value of the key, from the param array
-  	 * @param unknown_type $key
+  	 * @param string $key
   	 * @return string
   	 */
   	public function getParam($key) {
     	if($this->issetParam($key)) {
-      		return $this->param[$key];
+      		return $this->params[$key];
     	}
     	return null;
   	} 
