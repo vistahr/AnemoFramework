@@ -83,6 +83,14 @@ class Module extends BootstrapAbstract
 	}
 	
 	/**
+	 * Return the request object
+	 * @return \Anemo\Application\Http\Request
+	 */
+	public function getRequest() {
+		return $this->getFrontcontroller()->getRequest();
+	}
+	
+	/**
 	 * Set the title from the config array
 	 * @return void
 	 */

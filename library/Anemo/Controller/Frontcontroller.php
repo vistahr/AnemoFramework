@@ -328,12 +328,18 @@ class Frontcontroller
 	}
 	
 	/**
-	 * The dispatch, routes the request, get the layout, execute the request, insert it into the layout, write the response object and return the whole response.
+	 * The dispatcher routes the request, run the modulebootstrap, get the layout, execute the request, insert it into the layout, write the response object and return the whole response
 	 * @return string
 	 */
 	public function dispatch() {
 		if($this->getModuleName() == "" || ($this->getModuleName() == "" && $this->getControllerName() == "" && $this->getActionName() == ""))
 			$this->route($this->getRequest(),$this->getResponse());
+		
+		// Modulebootstrap
+		include_once ROOT . $this->config['application']['moduleDirectory'] . $this->getModuleName() . '/Bootstrap.php';
+		$moduleBootstrapClassName = ucfirst($this->getModuleName()) . 'Bootstrap';
+		$moduleBootstrap 		  = new $moduleBootstrapClassName();
+		$moduleBootstrap->bootstrap();
 		
 		if(($bootstrap = \Anemo\Registry::get('bootstrap')) != null) {
 			$layout = $bootstrap->getResource('layout');
