@@ -55,14 +55,6 @@ abstract class ControllerAbstract
 	public function __construct() {
 		$this->froncontroller = Frontcontroller::getInstance();
 		
-		// ModuleBootstrap
-		$moduleBootstrap = $moduleConfigDir = $this->froncontroller->getModuleDirectory() . '/' . $this->froncontroller->getModuleName() . '/Bootstrap.php';
-		if(!@include_once $moduleBootstrap)
-			throw new \Anemo\Exception('Modulebootstrap ' . $moduleBootstrap . ' not found');
-			
-		$moduleBootstrapClass = $this->froncontroller->getModuleName() . 'Bootstrap';
-		$moduleBootstrap = new $moduleBootstrapClass();
-		
 		$this->getView()->assign('view',$this); // TODO
 		
 		if(method_exists($this,'init'))

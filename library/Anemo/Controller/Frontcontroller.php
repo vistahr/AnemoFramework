@@ -316,6 +316,16 @@ class Frontcontroller
 	 * @return string
 	 */
 	public function execute() {
+		
+		// ModuleBootstrap
+		$moduleBootstrap = $moduleConfigDir = $this->getModuleDirectory() . '/' . $this->getModuleName() . '/Bootstrap.php';
+		if(!@include_once $moduleBootstrap)
+			throw new \Anemo\Exception('Modulebootstrap ' . $moduleBootstrap . ' not found');
+			
+		$moduleBootstrapClass = $this->getModuleName() . 'Bootstrap';
+		$moduleBootstrap = new $moduleBootstrapClass();
+		$moduleBootstrap->bootstrap();
+		
 		$controllerClass = ucfirst(strtolower($this->getControllerName())) . 'Controller';
 		
 		if($controllerClass == '')
@@ -334,12 +344,6 @@ class Frontcontroller
 	public function dispatch() {
 		if($this->getModuleName() == "" || ($this->getModuleName() == "" && $this->getControllerName() == "" && $this->getActionName() == ""))
 			$this->route($this->getRequest(),$this->getResponse());
-		
-		// Modulebootstrap
-		include_once ROOT . $this->config['application']['moduleDirectory'] . $this->getModuleName() . '/Bootstrap.php';
-		$moduleBootstrapClassName = ucfirst($this->getModuleName()) . 'Bootstrap';
-		$moduleBootstrap 		  = new $moduleBootstrapClassName();
-		$moduleBootstrap->bootstrap();
 		
 		if(($bootstrap = \Anemo\Registry::get('bootstrap')) != null) {
 			$layout = $bootstrap->getResource('layout');
