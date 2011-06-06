@@ -84,6 +84,8 @@ class ID
 	 */
 	public function getUserData($key) {
 		$this->update();
+		if(!isset($this->IDObject['userData'][$key]))
+			throw new ID\Exception('Userdata wiht key ' . $key . ' does not exist');
 		return $this->IDObject['userData'][$key];
 	}
 	
@@ -104,6 +106,8 @@ class ID
 	 */
 	public function getUserModel() {
 		$this->update();
+		if(!isset($this->IDObject['userModel']))
+			throw new ID\Exception('User model not set');
 		return $this->IDObject['userModel'];
 	}
 	
