@@ -91,7 +91,28 @@ abstract class LayoutAbstract
 	}
 	
 	/**
+	 * A mapper for getting a assigned view var
+	 * @param string $key
+	 * @return string
+	 */
+	public function __get($key) {
+		//var_dump($this->view->getVariable($key)->value);
+		return $this->view->getVariable($key)->value;
+	}
+	
+	/**
+	 * A mapper for assigning a key-value pair to the view object
+	 * @param string $key
+	 * @param string $value
+	 * @return void
+	 */
+	public function assign($key, $value) {
+		$this->view->assign($key, $value);
+	}
+	
+	/**
 	 * Return the public directory (the base path)
+	 * @return string
 	 */
 	public function getPublicDirectory() {
 		return $this->getFrontcontroller()->getBasePath();
