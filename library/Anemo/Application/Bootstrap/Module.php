@@ -68,6 +68,16 @@ class Module extends BootstrapAbstract
 	
 	/**
 	 * (non-PHPdoc)
+	 * @see Anemo\Application\Bootstrap.BootstrapAbstract::getResource()
+	 * @override
+	 */
+	public function getResource($resource) {
+		$bootstrap = \Anemo\Registry::get('bootstrap');
+		return $bootstrap->getResource($resource);
+	}
+	
+	/**
+	 * (non-PHPdoc)
 	 * @see Anemo\Application\Bootstrap.BootstrapAbstract::getFrontcontroller()
 	 */
 	public function getFrontcontroller() {
