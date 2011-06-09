@@ -48,7 +48,7 @@ abstract class ControllerAbstract
 	
 	
 	/**
-	 * Create a new controller. Loads the module bootstrap and if exists call the init function of the parent class
+	 * Create a new controller and if exists, it calls the init function of the parent class
 	 * @throws \Anemo\Exception
 	 * @return void
 	 */
@@ -62,14 +62,14 @@ abstract class ControllerAbstract
 	}
 	
 	/**
-	 * Function is called, if a method does not exists
+	 * Function is called, if a method does not exist
 	 * @param string $name
 	 * @param mixed $args
 	 * @throws Exception
 	 * @return void
 	 */
 	public function __call($name,$args) {
-		throw new Exception('Method ' . $name . ' does not exists.');
+		throw new Exception('Method ' . $name . ' does not exist');
 	}
 	
 	/**
@@ -167,8 +167,8 @@ abstract class ControllerAbstract
 		$actionMethodName = $actionName . 'Action';
 		
 		if(!method_exists($this,$actionMethodName)) 
-			throw new Exception('Action ' . $actionMethodName . ' does not exists');
-			
+			throw new Exception('Action ' . $actionMethodName . ' does not exist');
+		
 		$methodOutput = call_user_func(array($this,$actionMethodName));
 		
 		if($this->isTemplateDisabled())
