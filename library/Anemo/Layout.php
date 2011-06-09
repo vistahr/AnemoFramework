@@ -139,7 +139,7 @@ class Layout extends Layout\LayoutAbstract
 	public function headStyle() {
 		$headStyle = "";
 		foreach($this->headStyle as $style) {
-			$headStyle .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"" . $style . "\"> \n\t\t";
+			$headStyle .= "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"" . $style . "\" /> \n\t\t";
 		}
 		return $headStyle;
 	}
@@ -160,9 +160,9 @@ class Layout extends Layout\LayoutAbstract
 		$headMeta = "";
 		foreach($this->headMeta as $metaName => $metaValue) {
 			if(strtolower($metaName) == "content-type" || strtolower($metaName) == "refresh" || strtolower($metaName) == "content-language") {
-				$headMeta .= "<meta http-equiv=\"" . $metaName . "\" content=\"" . $metaValue . "\"> \n\t\t";
+				$headMeta .= "<meta http-equiv=\"" . $metaName . "\" content=\"" . $metaValue . "\" /> \n\t\t";
 			} else {
-				$headMeta .= "<meta name=\"" . $metaName . "\" content=\"" . $metaValue . "\"> \n\t\t";
+				$headMeta .= "<meta name=\"" . $metaName . "\" content=\"" . $metaValue . "\" /> \n\t\t";
 			}
 		}
 		return $headMeta;
