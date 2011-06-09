@@ -42,6 +42,9 @@ use Anemo\ACL;
 class ACL
 {
 	
+	protected $resources  = array();
+	protected $subjects   = array();
+	
 	protected $parentSubjects  = array();
 	protected $parentResources = array();
 	
@@ -53,31 +56,80 @@ class ACL
 	public function __construct() {}
 	
 	/**
+	 * Return the resourc eobject by the given resourcekey
+	 * @param string $subject
+	 * @throws ACL\Exception
+	 * @return \Anemo\ACL\Subject
+	 */
+	public function getSubject($subject) {
+		if(!isset($this->subjects[$subject]))
+			throw new ACL\Exception('Subject ' . $subject . ' does not exist');
+		return $this->subjects[$subject];	
+	}
+	
+	/**
+	 * Return the subject object by the given subjectkey
+	 * @param string $resource
+	 * @throws ACL\Exception
+	 * @return \Anemo\ACL\Resource
+	 */
+	public function getResource($resource) {
+		if(!isset($this->resources[$resource]))
+			throw new ACL\Exception('Resource ' . $resource . ' does not exist');
+		return $this->resources[$resource];	
+	}
+	
+	/**
 	 * Adds a subject object to the ACL.  Optional one or more parents objects.
 	 * @param \Anemo\ACL\Subject $subject
-	 * @param array $parent
+	 * @param array $parents
 	 * @throws ACL\Exception
 	 * @return \Anemo\ACL\Subject $subject
 	 */
-	public function addSubject(\Anemo\ACL\Subject $subject, $parent = array()) {
-		if(!is_array($parent))
+	public function addSubject(\Anemo\ACL\Subject $subject, $parents = array()) {
+		if(!is_array($parents))
 			throw new ACL\Exception('Parent, expect array');
-		$this->parentSubjects[$subject->getSubject()] = $parent;
+			
+		$this->subjects[$subject->getSubject()] = $subject;
+		
+		$fparents = array();	
+		foreach($parents as $parent) {
+			if($parent instanceof \Anemo\ACL\Subject) {
+				$fparents[] = $parent;
+			} else {
+				$fparents[] = $this->getSubject($parent);
+			}	
+		}
+			
+		$this->parentSubjects[$subject->getSubject()] = $fparents;
+		
 		return $subject;
 	}
 	
 	/**
 	 * Adds a resource object to the ACL. Optional one or more parents objects.
 	 * @param \Anemo\ACL\Resource $resource
-	 * @param unknown_type $parent
+	 * @param array $parents
 	 * @throws ACL\Exception
 	 * @return \Anemo\ACL\Resource $resource
 	 */
-	public function addResource(\Anemo\ACL\Resource $resource, $parent = array()) {
-		if(!is_array($parent))
+	public function addResource(\Anemo\ACL\Resource $resource, $parents = array()) {
+		if(!is_array($parents))
 			throw new ACL\Exception('Parent, expect array');
 			
-		$this->parentResources[$resource->getResource()] = $parent;
+		$this->resources[$resource->getResource()] = $resource;
+		
+		$fparents = array();	
+		foreach($parents as $parent) {
+			if($parent instanceof \Anemo\ACL\Resource) {
+				$fparents[] = $parent;
+			} else {
+				$fparents[] = $this->getResource($parent);
+			}	
+		}
+		
+		$this->parentResources[$resource->getResource()] = $fparents;
+		
 		return $resource;
 	}
 	
@@ -98,12 +150,13 @@ class ACL
 			$resource = $resource->getResource();
 		
 		if(!is_array($action))
-			throw new ACL\Exception('Action, expect array');
+			throw new ACL\Exception('Action expect array');
+		
 		
 		if(!isset($this->acl[$subject]))
 			$this->acl[$subject] = null;
 		
-		// Alle Rechte setzen
+		// grant all rights
 		if(($resource == null && count($action) == 0) || $this->acl[$subject] == ACL::$GRANT_ALL_ACCESS)
 			return $this->acl[$subject] = ACL::$GRANT_ALL_ACCESS;
 			
@@ -166,7 +219,6 @@ class ACL
 	 * @return boolean
 	 */
 	public function isAllowed($subject, $resource, $action) {
-		 
 		if($subject instanceof \Anemo\ACL\Subject)
 			$subject = $subject->getSubject();
 			
@@ -191,11 +243,15 @@ class ACL
 		foreach($this->parentSubjects[$subject] as $parentSub) {
 			
 			if(count($this->parentResources[$resource])>0) {
-				foreach($this->parentResources[$resource] as $parentRes) {
+				
+				if($this->isAllowed($parentSub, $resource, $action) === true)
+					return true;
 					
-					if($this->isAllowed($parentSub, $parentRes, $action) === true)
-						return true;
-				}
+					foreach($this->parentResources[$resource] as $parentRes) {
+						if($this->isAllowed($parentSub, $parentRes, $action) === true)
+							return true;
+					}
+					
 			} else {
 				
 				if($this->isAllowed($parentSub, $resource, $action) === true)
