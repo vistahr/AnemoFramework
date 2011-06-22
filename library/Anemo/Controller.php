@@ -135,18 +135,35 @@ class Controller extends Controller\ControllerAbstract
 	 * @param string $module
 	 * @param string $controller
 	 * @param string $action
-	 * @param array $param
+	 * @param array $params
 	 * @return string $response
 	 */
-	public function forwardAndExit($module,$controller,$action,$param = array()) {
+	public function forwardAndExit($module,$controller,$action,$params = array()) {
 		$this->getRequest()->setModuleName($module)
 						   ->setControllerName($controller)
 						   ->setActionName($action)
-						   ->setParams($param);	
+						   ->setParams($params);	
 		$response = $this->getFrontcontroller()->execute();
-		//$response = $this->executeAction($action);
 		$this->disableTemplate(); 
 		return $response;
+	}
+	
+	/**
+	 * Redirect to the given module,controller, action with the params. 
+	 * The params are saved temporary in the session.
+	 * If module or controller are equal false, it wont be considered in the url
+	 * @param mixed $module
+	 * @param mixed $controller
+	 * @param string $action
+	 * @param array $params
+	 */
+	public function redirect($module,$controller,$action,$params = array()) {
+		$this->getRequest()->setModuleName($module)
+						   ->setControllerName($controller)
+						   ->setActionName($action)
+						   ->paramsToSession($params);		   				   
+		header("Location: " . $this->baseUrl() . $this->getRequest()->getUrl($module,$controller));
+		exit();
 	}
 	
 	/**

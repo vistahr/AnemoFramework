@@ -45,7 +45,7 @@ class Session
 	 * @return void
 	 */
 	public static function start() {
-		if(!session_start())
+		if(!@session_start())
 			throw new Session\Exception('Session could not start');
 	}
 	
@@ -80,6 +80,7 @@ class Session
 	 * @return void
 	 */
 	public static function setSession($key, $value) {
+		self::start();
 		$_SESSION[$key] = $value;
 	}
 	
@@ -89,6 +90,7 @@ class Session
 	 * @return string
 	 */
 	public static function getSession($key) {
+		self::start();
 		return $_SESSION[$key];
 	}
 	

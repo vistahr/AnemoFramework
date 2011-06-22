@@ -41,6 +41,8 @@ class Request
 
 	public static $instance = null;
 	
+	protected static $sessionKey = "AFInternalSessKey";
+	
 	protected $post;
   	protected $get;
   	protected $cookie;
@@ -79,6 +81,9 @@ class Request
     	
     	if($this->getHeader('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest')
     		$this->ajax = true;
+    	
+    	// Sessiondata with the sessionkey convert to params
+    	$this->sessionToParams();
   	}
 	
   	/**
@@ -356,6 +361,45 @@ class Request
   	 */
   	public function isAjax() {
   		return $this->ajax;
+  	}
+  	
+  	/**
+  	 * Return the request url. If module or controler equal false, it wont be considered
+  	 * @param boolean $module
+  	 * @param boolean $controller
+  	 */
+  	public function getUrl($module = true, $controller = true) {
+  		$seperator = "/";
+  		$url 	   = "";
+  		
+  		if($module!==false)
+  			$url .= $this->getModuleName() . $seperator;
+  		
+  		if($controller!==false)
+  			$url .= $this->getControllerName() . $seperator;
+  			
+  		$url .= $this->getActionName();
+  		
+  		return $url;
+  	}
+  	
+  	/**
+  	 * Save the array to the param session
+  	 * @param array $params
+  	 * @return void
+  	 */
+  	public function paramsToSession($params = array()) {
+  		\Anemo\Session::setSession(self::$sessionKey, $params);
+  	}
+  	
+  	/**
+  	 * Save the param session to the params and delete the session data
+  	 * @return void
+  	 */
+  	public function sessionToParams() {
+  		$params = \Anemo\Session::getSession(self::$sessionKey);
+  		$this->setParams($params);
+  		\Anemo\Session::setSession(self::$sessionKey, array());
   	}
 
 }
