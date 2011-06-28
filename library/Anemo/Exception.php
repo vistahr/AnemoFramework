@@ -55,11 +55,9 @@ class Exception extends \Exception
      * @see Anemo.Exception::getMessageByEnvironment()
      */
     public function getMessageByEnvironment() {
-    	if(APPLICATION_ENV == 'production') {
-    		preg_match("#.+: (.+)#", $this->message, $msg);
-    		return $msg[1];
-    	}
-    	return $this->message;
+    	if(APPLICATION_ENV == 'production')
+    		return $this->message;
+    	return $this;
     }
     
     /**
