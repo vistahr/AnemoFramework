@@ -292,7 +292,13 @@ class Frontcontroller
 		
 		if($this->getResponse()->getStatus() != 0)
 			$this->errorAction = 'error' . $this->getResponse()->getStatus();
-			
+		
+		if(($bootstrap = \Anemo\Registry::get('bootstrap')) != null) {
+			$view = $bootstrap->getResource('view');
+			if($view)
+				$view->assign('message',$this->getResponse()->getException()->getMessage());
+		}
+		
 		$this->setModuleName($this->getModuleName())
 			 ->setControllerName($this->errorController)
 			 ->setActionName($this->errorAction);

@@ -280,7 +280,8 @@ class Request
   	 * @return void
   	 */
   	public function setGet($key,$value) {
-  		$this->get[$key] = $value;
+  		if($key != '')
+  			$this->get[$key] = $value;
   	}
 
   	/**
@@ -364,7 +365,8 @@ class Request
   	}
   	
   	/**
-  	 * Return the request url. If module or controler equal false, it wont be considered
+  	 * Return the request url with the schema module/controller/action/getKey/getValue/...
+  	 * If module or controler equal false, it wont be considered.
   	 * @param boolean $module
   	 * @param boolean $controller
   	 */
@@ -378,7 +380,11 @@ class Request
   		if($controller!==false)
   			$url .= $this->getControllerName() . $seperator;
   			
-  		$url .= $this->getActionName();
+  		$url .= $this->getActionName() . $seperator;
+  		
+  		foreach($this->get as $gk => $gv) {
+  			$url .= $gk . $seperator . $gv . $seperator;
+  		}
   		
   		return $url;
   	}

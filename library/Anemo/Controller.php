@@ -149,19 +149,24 @@ class Controller extends Controller\ControllerAbstract
 	}
 	
 	/**
-	 * Redirect to the given module,controller, action with the params. 
+	 * Redirect to the given module,controller and action with the params. 
 	 * The params are saved temporary in the session.
-	 * If module or controller are equal false, it wont be considered in the url
+	 * If module or controller are equal false, it wont be considered in the url.
 	 * @param mixed $module
 	 * @param mixed $controller
 	 * @param string $action
 	 * @param array $params
 	 */
-	public function redirect($module,$controller,$action,$params = array()) {
+	public function redirect($module,$controller,$action,$getData = array(),$params = array()) {
 		$this->getRequest()->setModuleName($module)
 						   ->setControllerName($controller)
 						   ->setActionName($action)
-						   ->paramsToSession($params);		   				   
+						   ->paramsToSession($params);
+		
+		foreach($getData as $gk => $gv) {
+			$this->getRequest()->setGet($gk,$gv);
+		}	   		
+				   
 		header("Location: " . $this->baseUrl() . $this->getRequest()->getUrl($module,$controller));
 		exit();
 	}

@@ -47,9 +47,6 @@ class Exception extends \Exception
 	public function __construct($message = null, $code = 0){
         if (!$message)
             throw new $this('Unknown '. get_class($this));
-        
-        $message = get_class($this) . ': ' . $message;
-            
         parent::__construct($message, $code);
     }
     
@@ -63,6 +60,14 @@ class Exception extends \Exception
     		return $msg[1];
     	}
     	return $this->message;
+    }
+    
+    /**
+     * (non-PHPdoc)
+     * @see Exception::__toString()
+     */
+    public function __toString() {
+    	return get_class($this) . ': ' . $this->message;
     }
     
     
