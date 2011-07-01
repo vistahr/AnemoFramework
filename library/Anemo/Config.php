@@ -82,8 +82,11 @@ class Config
 	 * @return boolean
 	 */
 	protected function checkConfigFile() {
+		if(strtolower($this->fileInfoArray['extension']) == 'dist')
+			return false; 
+		
 		if(strtolower($this->fileInfoArray['extension']) != 'ini') 
-			throw new Config\Exception($this->file . 'is no valid configuration file. INI required.');
+			throw new Config\Exception($this->file . ' is no valid configuration file. INI required.');
 
 		if(!is_file($this->filePath . '/' . $this->file))
 			throw new Config\Exception('Configuration file ' . $this->file . ' not found.');
