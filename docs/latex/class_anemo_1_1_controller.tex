@@ -23,7 +23,9 @@ Inheritance diagram for Controller:\begin{figure}[H]
 \item 
 \hyperlink{class_anemo_1_1_controller_a6c907e8af775e517a77037dd0164222f}{getResponse} ()
 \item 
-\hyperlink{class_anemo_1_1_controller_ab2feca11fcd7ef394cad18a2ddca63f5}{forwardAndExit} (\$module, \$controller, \$action, \$param=array())
+\hyperlink{class_anemo_1_1_controller_ae4da108649cdc479a5c1a40b99c74ec7}{forwardAndExit} (\$module, \$controller, \$action, \$params=array())
+\item 
+\hyperlink{class_anemo_1_1_controller_a32270256b7eef05b5fcec92a7e3dd7e8}{redirect} (\$module, \$controller, \$action, \$getData=array(), \$params=array())
 \item 
 \hyperlink{class_anemo_1_1_controller_a30dd7fff4fec7a39f9be9d27d4b22a59}{getID} ()
 \end{DoxyCompactItemize}
@@ -67,7 +69,7 @@ string & {\em \$url} & \\
 \begin{DoxyReturn}{Returns}
 string 
 \end{DoxyReturn}
-\hypertarget{class_anemo_1_1_controller_ab2feca11fcd7ef394cad18a2ddca63f5}{
+\hypertarget{class_anemo_1_1_controller_ae4da108649cdc479a5c1a40b99c74ec7}{
 \index{Anemo::Controller@{Anemo::Controller}!forwardAndExit@{forwardAndExit}}
 \index{forwardAndExit@{forwardAndExit}!Anemo::Controller@{Anemo::Controller}}
 \subsubsection[{forwardAndExit}]{\setlength{\rightskip}{0pt plus 5cm}forwardAndExit (
@@ -75,10 +77,10 @@ string
 \item[{\$}]{module, }
 \item[{\$}]{controller, }
 \item[{\$}]{action, }
-\item[{\$}]{param = {\ttfamily array()}}
+\item[{\$}]{params = {\ttfamily array()}}
 \end{DoxyParamCaption}
 )}}
-\label{class_anemo_1_1_controller_ab2feca11fcd7ef394cad18a2ddca63f5}
+\label{class_anemo_1_1_controller_ae4da108649cdc479a5c1a40b99c74ec7}
 Forward the request, disable the current template 
 \begin{DoxyParams}[1]{Parameters}
 string & {\em \$module} & \\
@@ -87,7 +89,7 @@ string & {\em \$controller} & \\
 \hline
 string & {\em \$action} & \\
 \hline
-array & {\em \$param} & \\
+array & {\em \$params} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -199,6 +201,30 @@ string & {\em \$template} & \\
 \begin{DoxyReturn}{Returns}
 void 
 \end{DoxyReturn}
+\hypertarget{class_anemo_1_1_controller_a32270256b7eef05b5fcec92a7e3dd7e8}{
+\index{Anemo::Controller@{Anemo::Controller}!redirect@{redirect}}
+\index{redirect@{redirect}!Anemo::Controller@{Anemo::Controller}}
+\subsubsection[{redirect}]{\setlength{\rightskip}{0pt plus 5cm}redirect (
+\begin{DoxyParamCaption}
+\item[{\$}]{module, }
+\item[{\$}]{controller, }
+\item[{\$}]{action, }
+\item[{\$}]{getData = {\ttfamily array()}, }
+\item[{\$}]{params = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_controller_a32270256b7eef05b5fcec92a7e3dd7e8}
+Redirect to the given module,controller and action with the params. The params are saved temporary in the session. If module or controller are equal false, it wont be considered in the url. 
+\begin{DoxyParams}[1]{Parameters}
+mixed & {\em \$module} & \\
+\hline
+mixed & {\em \$controller} & \\
+\hline
+string & {\em \$action} & \\
+\hline
+array & {\em \$params} & \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_anemo_1_1_controller_a81d3d1fbaf410923367685f468766513}{
 \index{Anemo::Controller@{Anemo::Controller}!send@{send}}
 \index{send@{send}!Anemo::Controller@{Anemo::Controller}}
@@ -257,4 +283,4 @@ string
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-Controller.php\end{DoxyCompactItemize}
+library/Anemo/Controller.php\end{DoxyCompactItemize}

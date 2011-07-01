@@ -5,9 +5,17 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_anemo_1_1_a_c_l_a70b2e78ff162eff6413e3a4fee342692}{addSubject} ($\backslash$Anemo$\backslash$\hyperlink{class_anemo_1_1_a_c_l}{ACL}$\backslash$Subject \$subject, \$parent=array())
+\hyperlink{class_anemo_1_1_a_c_l_acfe6846338dbf5cf990a593d55cbdc4c}{getResources} ()
 \item 
-\hyperlink{class_anemo_1_1_a_c_l_a21012582653973087f10147151727198}{addResource} ($\backslash$Anemo$\backslash$\hyperlink{class_anemo_1_1_a_c_l}{ACL}$\backslash$Resource \$resource, \$parent=array())
+\hyperlink{class_anemo_1_1_a_c_l_af976af67c94935c7d509d444522c5657}{getSubjects} ()
+\item 
+\hyperlink{class_anemo_1_1_a_c_l_a756687b01e7b913c06b90f5dc7ccac06}{getSubject} (\$subject)
+\item 
+\hyperlink{class_anemo_1_1_a_c_l_aa2c1b8634bea77c8eb6a7d909511bd52}{getResource} (\$resource)
+\item 
+\hyperlink{class_anemo_1_1_a_c_l_a9c9043ddd329ac25a0cb42486f5f1c2e}{addSubject} ($\backslash$Anemo$\backslash$\hyperlink{class_anemo_1_1_a_c_l}{ACL}$\backslash$Subject \$subject, \$parents=array())
+\item 
+\hyperlink{class_anemo_1_1_a_c_l_ae76173d288dd82e68ed722cf412b8d5c}{addResource} ($\backslash$Anemo$\backslash$\hyperlink{class_anemo_1_1_a_c_l}{ACL}$\backslash$Resource \$resource, \$parents=array())
 \item 
 \hyperlink{class_anemo_1_1_a_c_l_a07bc8d3c0e088693858b0535f150d136}{allow} (\$subject, \$resource=null, \$action=array())
 \item 
@@ -17,6 +25,16 @@
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_anemo_1_1_a_c_l_ad57e7e99506ffd448d98e036b1a8da50}{
+{\bfseries \$resources} = array()}
+\label{class_anemo_1_1_a_c_l_ad57e7e99506ffd448d98e036b1a8da50}
+
+\item 
+\hypertarget{class_anemo_1_1_a_c_l_a1207745f75c7cc4155ecb82c6271e1b3}{
+{\bfseries \$subjects} = array()}
+\label{class_anemo_1_1_a_c_l_a1207745f75c7cc4155ecb82c6271e1b3}
+
 \item 
 \hypertarget{class_anemo_1_1_a_c_l_a24d761413df70e449c0f7aa0243ada47}{
 {\bfseries \$parentSubjects} = array()}
@@ -53,21 +71,21 @@ vince
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_anemo_1_1_a_c_l_a21012582653973087f10147151727198}{
+\hypertarget{class_anemo_1_1_a_c_l_ae76173d288dd82e68ed722cf412b8d5c}{
 \index{Anemo::ACL@{Anemo::ACL}!addResource@{addResource}}
 \index{addResource@{addResource}!Anemo::ACL@{Anemo::ACL}}
 \subsubsection[{addResource}]{\setlength{\rightskip}{0pt plus 5cm}addResource (
 \begin{DoxyParamCaption}
 \item[{$\backslash$Anemo$\backslash${\bf ACL}$\backslash$Resource \$}]{resource, }
-\item[{\$}]{parent = {\ttfamily array()}}
+\item[{\$}]{parents = {\ttfamily array()}}
 \end{DoxyParamCaption}
 )}}
-\label{class_anemo_1_1_a_c_l_a21012582653973087f10147151727198}
+\label{class_anemo_1_1_a_c_l_ae76173d288dd82e68ed722cf412b8d5c}
 Adds a resource object to the \hyperlink{class_anemo_1_1_a_c_l}{ACL}. Optional one or more parents objects. 
 \begin{DoxyParams}[1]{Parameters}
  & {\em $\backslash$Anemo$\backslash$ACL$\backslash$Resource} & \$resource \\
 \hline
-unknown\_\-type & {\em \$parent} & \\
+array & {\em \$parents} & \\
 \hline
 \end{DoxyParams}
 
@@ -78,21 +96,21 @@ unknown\_\-type & {\em \$parent} & \\
 \begin{DoxyReturn}{Returns}
 \$resource 
 \end{DoxyReturn}
-\hypertarget{class_anemo_1_1_a_c_l_a70b2e78ff162eff6413e3a4fee342692}{
+\hypertarget{class_anemo_1_1_a_c_l_a9c9043ddd329ac25a0cb42486f5f1c2e}{
 \index{Anemo::ACL@{Anemo::ACL}!addSubject@{addSubject}}
 \index{addSubject@{addSubject}!Anemo::ACL@{Anemo::ACL}}
 \subsubsection[{addSubject}]{\setlength{\rightskip}{0pt plus 5cm}addSubject (
 \begin{DoxyParamCaption}
 \item[{$\backslash$Anemo$\backslash${\bf ACL}$\backslash$Subject \$}]{subject, }
-\item[{\$}]{parent = {\ttfamily array()}}
+\item[{\$}]{parents = {\ttfamily array()}}
 \end{DoxyParamCaption}
 )}}
-\label{class_anemo_1_1_a_c_l_a70b2e78ff162eff6413e3a4fee342692}
+\label{class_anemo_1_1_a_c_l_a9c9043ddd329ac25a0cb42486f5f1c2e}
 Adds a subject object to the \hyperlink{class_anemo_1_1_a_c_l}{ACL}. Optional one or more parents objects. 
 \begin{DoxyParams}[1]{Parameters}
  & {\em $\backslash$Anemo$\backslash$ACL$\backslash$Subject} & \$subject \\
 \hline
-array & {\em \$parent} & \\
+array & {\em \$parents} & \\
 \hline
 \end{DoxyParams}
 
@@ -159,6 +177,74 @@ array & {\em \$action} & \\
 \begin{DoxyReturn}{Returns}
 boolean 
 \end{DoxyReturn}
+\hypertarget{class_anemo_1_1_a_c_l_aa2c1b8634bea77c8eb6a7d909511bd52}{
+\index{Anemo::ACL@{Anemo::ACL}!getResource@{getResource}}
+\index{getResource@{getResource}!Anemo::ACL@{Anemo::ACL}}
+\subsubsection[{getResource}]{\setlength{\rightskip}{0pt plus 5cm}getResource (
+\begin{DoxyParamCaption}
+\item[{\$}]{resource}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_a_c_l_aa2c1b8634bea77c8eb6a7d909511bd52}
+Return the subject object by the given subjectkey 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$resource} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em ACL$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_a_c_l_acfe6846338dbf5cf990a593d55cbdc4c}{
+\index{Anemo::ACL@{Anemo::ACL}!getResources@{getResources}}
+\index{getResources@{getResources}!Anemo::ACL@{Anemo::ACL}}
+\subsubsection[{getResources}]{\setlength{\rightskip}{0pt plus 5cm}getResources (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_a_c_l_acfe6846338dbf5cf990a593d55cbdc4c}
+Return all resources \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_a_c_l_a756687b01e7b913c06b90f5dc7ccac06}{
+\index{Anemo::ACL@{Anemo::ACL}!getSubject@{getSubject}}
+\index{getSubject@{getSubject}!Anemo::ACL@{Anemo::ACL}}
+\subsubsection[{getSubject}]{\setlength{\rightskip}{0pt plus 5cm}getSubject (
+\begin{DoxyParamCaption}
+\item[{\$}]{subject}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_a_c_l_a756687b01e7b913c06b90f5dc7ccac06}
+Return the resourc eobject by the given resourcekey 
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$subject} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em ACL$\backslash$Exception} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_a_c_l_af976af67c94935c7d509d444522c5657}{
+\index{Anemo::ACL@{Anemo::ACL}!getSubjects@{getSubjects}}
+\index{getSubjects@{getSubjects}!Anemo::ACL@{Anemo::ACL}}
+\subsubsection[{getSubjects}]{\setlength{\rightskip}{0pt plus 5cm}getSubjects (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_a_c_l_af976af67c94935c7d509d444522c5657}
+Return all subjects \begin{DoxyReturn}{Returns}
+array 
+\end{DoxyReturn}
 \hypertarget{class_anemo_1_1_a_c_l_a7dd7085d9ca64b04d068f3982d86c4b2}{
 \index{Anemo::ACL@{Anemo::ACL}!isAllowed@{isAllowed}}
 \index{isAllowed@{isAllowed}!Anemo::ACL@{Anemo::ACL}}
@@ -191,4 +277,4 @@ boolean
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-ACL.php\end{DoxyCompactItemize}
+library/Anemo/ACL.php\end{DoxyCompactItemize}

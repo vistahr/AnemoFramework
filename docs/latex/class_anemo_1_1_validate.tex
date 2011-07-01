@@ -1,0 +1,72 @@
+\hypertarget{class_anemo_1_1_validate}{
+\section{Validate Class Reference}
+\label{class_anemo_1_1_validate}\index{Anemo::Validate@{Anemo::Validate}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_anemo_1_1_validate_a6174d65a333308b67b3eda339c05ef3a}{check} (\$input, array \$validator)
+\item 
+static \hyperlink{class_anemo_1_1_validate_a798d784694d943f68cd0105ebd3197cd}{chain} (\$input='', array \$validators)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_anemo_1_1_validate}{Validate} class with single and multiple validate functions. Different apdater aqre called through the factory method. \begin{DoxyAuthor}{Author}
+vince 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_anemo_1_1_validate_a798d784694d943f68cd0105ebd3197cd}{
+\index{Anemo::Validate@{Anemo::Validate}!chain@{chain}}
+\index{chain@{chain}!Anemo::Validate@{Anemo::Validate}}
+\subsubsection[{chain}]{\setlength{\rightskip}{0pt plus 5cm}static chain (
+\begin{DoxyParamCaption}
+\item[{\$}]{input = {\ttfamily ''}, }
+\item[{array \$}]{validators}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_validate_a798d784694d943f68cd0105ebd3197cd}
+\hyperlink{class_anemo_1_1_validate}{Validate} an input with one or more validators. If one check fails, it will return false
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$input} & \\
+\hline
+array & {\em \$validators} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_validate_a6174d65a333308b67b3eda339c05ef3a}{
+\index{Anemo::Validate@{Anemo::Validate}!check@{check}}
+\index{check@{check}!Anemo::Validate@{Anemo::Validate}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}static check (
+\begin{DoxyParamCaption}
+\item[{\$}]{input, }
+\item[{array \$}]{validator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_anemo_1_1_validate_a6174d65a333308b67b3eda339c05ef3a}
+\hyperlink{class_anemo_1_1_validate}{Validate} an input with one validator
+
+
+\begin{DoxyParams}[1]{Parameters}
+string & {\em \$input} & \\
+\hline
+array & {\em \$validator} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+library/Anemo/Validate.php\end{DoxyCompactItemize}

@@ -89,13 +89,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- doxytag: class="Anemo::ACL" --><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#a70b2e78ff162eff6413e3a4fee342692">addSubject</a> (\Anemo\<a class="el" href="class_anemo_1_1_a_c_l.html">ACL</a>\Subject $subject, $parent=array())</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#a21012582653973087f10147151727198">addResource</a> (\Anemo\<a class="el" href="class_anemo_1_1_a_c_l.html">ACL</a>\Resource $resource, $parent=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#acfe6846338dbf5cf990a593d55cbdc4c">getResources</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#af976af67c94935c7d509d444522c5657">getSubjects</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#a756687b01e7b913c06b90f5dc7ccac06">getSubject</a> ($subject)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#aa2c1b8634bea77c8eb6a7d909511bd52">getResource</a> ($resource)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#a9c9043ddd329ac25a0cb42486f5f1c2e">addSubject</a> (\Anemo\<a class="el" href="class_anemo_1_1_a_c_l.html">ACL</a>\Subject $subject, $parents=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#ae76173d288dd82e68ed722cf412b8d5c">addResource</a> (\Anemo\<a class="el" href="class_anemo_1_1_a_c_l.html">ACL</a>\Resource $resource, $parents=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#a07bc8d3c0e088693858b0535f150d136">allow</a> ($subject, $resource=null, $action=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#acb2fb7d69d163b8f13c99492b402e471">deny</a> ($subject, $resource=null, $action=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_a_c_l.html#a7dd7085d9ca64b04d068f3982d86c4b2">isAllowed</a> ($subject, $resource, $action)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad57e7e99506ffd448d98e036b1a8da50"></a><!-- doxytag: member="Anemo::ACL::$resources" ref="ad57e7e99506ffd448d98e036b1a8da50" args="" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>$resources</b> = array()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1207745f75c7cc4155ecb82c6271e1b3"></a><!-- doxytag: member="Anemo::ACL::$subjects" ref="a1207745f75c7cc4155ecb82c6271e1b3" args="" -->
+&#160;</td><td class="memItemRight" valign="bottom"><b>$subjects</b> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24d761413df70e449c0f7aa0243ada47"></a><!-- doxytag: member="Anemo::ACL::$parentSubjects" ref="a24d761413df70e449c0f7aa0243ada47" args="" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>$parentSubjects</b> = array()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a230896d04cc88e5b5156e27a0daba158"></a><!-- doxytag: member="Anemo::ACL::$parentResources" ref="a230896d04cc88e5b5156e27a0daba158" args="" -->
@@ -112,7 +120,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$GRANT_ALL_ACCESS</
 <dl class="author"><dt><b>Author:</b></dt><dd>vince </dd></dl>
 <dl class="version"><dt><b>Version:</b></dt><dd>1.0 </dd></dl>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a21012582653973087f10147151727198"></a><!-- doxytag: member="Anemo::ACL::addResource" ref="a21012582653973087f10147151727198" args="(\Anemo\ACL\Resource $resource, $parent=array())" -->
+<a class="anchor" id="ae76173d288dd82e68ed722cf412b8d5c"></a><!-- doxytag: member="Anemo::ACL::addResource" ref="ae76173d288dd82e68ed722cf412b8d5c" args="(\Anemo\ACL\Resource $resource, $parents=array())" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -126,7 +134,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$GRANT_ALL_ACCESS</
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>array()</code>&#160;</td>
+          <td class="paramname"><em>parents</em> = <code>array()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -140,7 +148,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$GRANT_ALL_ACCESS</
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype"></td><td class="paramname">\Anemo\ACL\Resource</td><td>$resource </td></tr>
-    <tr><td class="paramtype">unknown_type</td><td class="paramname">$parent</td><td></td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$parents</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -154,7 +162,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$GRANT_ALL_ACCESS</
 
 </div>
 </div>
-<a class="anchor" id="a70b2e78ff162eff6413e3a4fee342692"></a><!-- doxytag: member="Anemo::ACL::addSubject" ref="a70b2e78ff162eff6413e3a4fee342692" args="(\Anemo\ACL\Subject $subject, $parent=array())" -->
+<a class="anchor" id="a9c9043ddd329ac25a0cb42486f5f1c2e"></a><!-- doxytag: member="Anemo::ACL::addSubject" ref="a9c9043ddd329ac25a0cb42486f5f1c2e" args="(\Anemo\ACL\Subject $subject, $parents=array())" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -168,7 +176,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$GRANT_ALL_ACCESS</
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>parent</em> = <code>array()</code>&#160;</td>
+          <td class="paramname"><em>parents</em> = <code>array()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -182,7 +190,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$GRANT_ALL_ACCESS</
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramtype"></td><td class="paramname">\Anemo\ACL\Subject</td><td>$subject </td></tr>
-    <tr><td class="paramtype">array</td><td class="paramname">$parent</td><td></td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$parents</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -294,6 +302,104 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$GRANT_ALL_ACCESS</
 
 </div>
 </div>
+<a class="anchor" id="aa2c1b8634bea77c8eb6a7d909511bd52"></a><!-- doxytag: member="Anemo::ACL::getResource" ref="aa2c1b8634bea77c8eb6a7d909511bd52" args="($resource)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getResource </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>resource</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Return the subject object by the given subjectkey </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$resource</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ACL\Exception</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acfe6846338dbf5cf990a593d55cbdc4c"></a><!-- doxytag: member="Anemo::ACL::getResources" ref="acfe6846338dbf5cf990a593d55cbdc4c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getResources </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Return all resources </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a756687b01e7b913c06b90f5dc7ccac06"></a><!-- doxytag: member="Anemo::ACL::getSubject" ref="a756687b01e7b913c06b90f5dc7ccac06" args="($subject)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getSubject </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>subject</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Return the resourc eobject by the given resourcekey </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$subject</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Exceptions:</b></dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">ACL\Exception</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="af976af67c94935c7d509d444522c5657"></a><!-- doxytag: member="Anemo::ACL::getSubjects" ref="af976af67c94935c7d509d444522c5657" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getSubjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Return all subjects </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>array </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a7dd7085d9ca64b04d068f3982d86c4b2"></a><!-- doxytag: member="Anemo::ACL::isAllowed" ref="a7dd7085d9ca64b04d068f3982d86c4b2" args="($subject, $resource, $action)" -->
 <div class="memitem">
 <div class="memproto">
@@ -344,7 +450,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$GRANT_ALL_ACCESS</
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>ACL.php</li>
+<li>library/Anemo/ACL.php</li>
 </ul>
 </div>
 </div>
@@ -352,7 +458,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$GRANT_ALL_ACCESS</
     <ul>
       <li class="navelem"><a class="el" href="namespace_anemo.html">Anemo</a>      </li>
       <li class="navelem"><a class="el" href="class_anemo_1_1_a_c_l.html">ACL</a>      </li>
-      <li class="footer">Generated on Tue Apr 19 2011 13:15:04 for AnemoFramework by&#160;
+      <li class="footer">Generated on Fri Jul 1 2011 14:44:40 for AnemoFramework by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

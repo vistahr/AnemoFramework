@@ -56,6 +56,12 @@
 \hyperlink{class_anemo_1_1_application_1_1_http_1_1_request_a5397dad675daf81256839b7fb70b8234}{getCookie} (\$key)
 \item 
 \hyperlink{class_anemo_1_1_application_1_1_http_1_1_request_aac147108d427123081cc91d8d9f32c8f}{isAjax} ()
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_request_a2de726ac3f927213a7d52a1fc7fc2aed}{getUrl} (\$module=true, \$controller=true)
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_request_a993e1c792c521b7dff3013c79c2d8b60}{paramsToSession} (\$params=array())
+\item 
+\hyperlink{class_anemo_1_1_application_1_1_http_1_1_request_ab8910e042466f2d8c34c6da8c993f90e}{sessionToParams} ()
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -126,6 +132,14 @@ static {\bfseries \$instance} = null}
 \hypertarget{class_anemo_1_1_application_1_1_http_1_1_request_aa698a3e72116e8e778be0e95d908ee30}{
 {\bfseries \$action} = ''}
 \label{class_anemo_1_1_application_1_1_http_1_1_request_aa698a3e72116e8e778be0e95d908ee30}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_request_a60306df197e087e71bad6a3a2eb813d4}{
+static {\bfseries \$sessionKey} = \char`\"{}AFInternalSessKey\char`\"{}}
+\label{class_anemo_1_1_application_1_1_http_1_1_request_a60306df197e087e71bad6a3a2eb813d4}
 
 \end{DoxyCompactItemize}
 
@@ -267,7 +281,7 @@ string
 \label{class_anemo_1_1_application_1_1_http_1_1_request_ac30e143829b81d81c9fa0f6d6c8542fe}
 Return the value of the key, from the param array 
 \begin{DoxyParams}[1]{Parameters}
-unknown\_\-type & {\em \$key} & \\
+string & {\em \$key} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -319,6 +333,23 @@ string
 Return the whole array \begin{DoxyReturn}{Returns}
 array 
 \end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_request_a2de726ac3f927213a7d52a1fc7fc2aed}{
+\index{Anemo::Application::Http::Request@{Anemo::Application::Http::Request}!getUrl@{getUrl}}
+\index{getUrl@{getUrl}!Anemo::Application::Http::Request@{Anemo::Application::Http::Request}}
+\subsubsection[{getUrl}]{\setlength{\rightskip}{0pt plus 5cm}getUrl (
+\begin{DoxyParamCaption}
+\item[{\$}]{module = {\ttfamily true}, }
+\item[{\$}]{controller = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_request_a2de726ac3f927213a7d52a1fc7fc2aed}
+Return the request url with the schema module/controller/action/getKey/getValue/... If module or controler equal false, it wont be considered. 
+\begin{DoxyParams}[1]{Parameters}
+boolean & {\em \$module} & \\
+\hline
+boolean & {\em \$controller} & \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_anemo_1_1_application_1_1_http_1_1_request_a4be4055f3361d4800e16bc2e2e38cda6}{
 \index{Anemo::Application::Http::Request@{Anemo::Application::Http::Request}!init@{init}}
 \index{init@{init}!Anemo::Application::Http::Request@{Anemo::Application::Http::Request}}
@@ -462,6 +493,35 @@ string & {\em \$key} & \\
 \begin{DoxyReturn}{Returns}
 boolean 
 \end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_request_a993e1c792c521b7dff3013c79c2d8b60}{
+\index{Anemo::Application::Http::Request@{Anemo::Application::Http::Request}!paramsToSession@{paramsToSession}}
+\index{paramsToSession@{paramsToSession}!Anemo::Application::Http::Request@{Anemo::Application::Http::Request}}
+\subsubsection[{paramsToSession}]{\setlength{\rightskip}{0pt plus 5cm}paramsToSession (
+\begin{DoxyParamCaption}
+\item[{\$}]{params = {\ttfamily array()}}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_request_a993e1c792c521b7dff3013c79c2d8b60}
+Save the array to the param session 
+\begin{DoxyParams}[1]{Parameters}
+array & {\em \$params} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\hypertarget{class_anemo_1_1_application_1_1_http_1_1_request_ab8910e042466f2d8c34c6da8c993f90e}{
+\index{Anemo::Application::Http::Request@{Anemo::Application::Http::Request}!sessionToParams@{sessionToParams}}
+\index{sessionToParams@{sessionToParams}!Anemo::Application::Http::Request@{Anemo::Application::Http::Request}}
+\subsubsection[{sessionToParams}]{\setlength{\rightskip}{0pt plus 5cm}sessionToParams (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_anemo_1_1_application_1_1_http_1_1_request_ab8910e042466f2d8c34c6da8c993f90e}
+Save the param session to the params and delete the session data \begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
 \hypertarget{class_anemo_1_1_application_1_1_http_1_1_request_a3b9d4e3945e398b30382c80056b5083a}{
 \index{Anemo::Application::Http::Request@{Anemo::Application::Http::Request}!setActionName@{setActionName}}
 \index{setActionName@{setActionName}!Anemo::Application::Http::Request@{Anemo::Application::Http::Request}}
@@ -571,4 +631,4 @@ string
 
 The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
 \item 
-Application/Http/Request.php\end{DoxyCompactItemize}
+library/Anemo/Application/Http/Request.php\end{DoxyCompactItemize}

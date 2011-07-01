@@ -82,7 +82,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a>  </div>
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pro-static-attribs">Static Protected Attributes</a>  </div>
   <div class="headertitle">
 <div class="title">Request Class Reference</div>  </div>
 </div>
@@ -116,6 +117,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_application_1_1_http_1_1_request.html#a1e1772d143ce952d1ad3931942b676ba">issetCookie</a> ($key)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_application_1_1_http_1_1_request.html#a5397dad675daf81256839b7fb70b8234">getCookie</a> ($key)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_application_1_1_http_1_1_request.html#aac147108d427123081cc91d8d9f32c8f">isAjax</a> ()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_application_1_1_http_1_1_request.html#a2de726ac3f927213a7d52a1fc7fc2aed">getUrl</a> ($module=true, $controller=true)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_application_1_1_http_1_1_request.html#a993e1c792c521b7dff3013c79c2d8b60">paramsToSession</a> ($params=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_application_1_1_http_1_1_request.html#ab8910e042466f2d8c34c6da8c993f90e">sessionToParams</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_application_1_1_http_1_1_request.html#ac93fbec81f07e5d15f80db907e63dc10">getInstance</a> ()</td></tr>
@@ -147,6 +151,10 @@ Protected Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>$controller</b> = ''</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa698a3e72116e8e778be0e95d908ee30"></a><!-- doxytag: member="Anemo::Application::Http::Request::$action" ref="aa698a3e72116e8e778be0e95d908ee30" args="" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>$action</b> = ''</td></tr>
+<tr><td colspan="2"><h2><a name="pro-static-attribs"></a>
+Static Protected Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a60306df197e087e71bad6a3a2eb813d4"></a><!-- doxytag: member="Anemo::Application::Http::Request::$sessionKey" ref="a60306df197e087e71bad6a3a2eb813d4" args="" -->
+static&#160;</td><td class="memItemRight" valign="bottom"><b>$sessionKey</b> = &quot;AFInternalSessKey&quot;</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_anemo_1_1_application_1_1_http_1_1_request.html">Request</a> is a singleton and represent the incoming request </p>
@@ -342,7 +350,7 @@ Protected Attributes</h2></td></tr>
 <p>Return the value of the key, from the param array </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramtype">unknown_type</td><td class="paramname">$key</td><td></td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$key</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -415,6 +423,41 @@ Protected Attributes</h2></td></tr>
 <div class="memdoc">
 <p>Return the whole array </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>array </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2de726ac3f927213a7d52a1fc7fc2aed"></a><!-- doxytag: member="Anemo::Application::Http::Request::getUrl" ref="a2de726ac3f927213a7d52a1fc7fc2aed" args="($module=true, $controller=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">getUrl </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>module</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>controller</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Return the request url with the schema module/controller/action/getKey/getValue/... If module or controler equal false, it wont be considered. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">boolean</td><td class="paramname">$module</td><td></td></tr>
+    <tr><td class="paramtype">boolean</td><td class="paramname">$controller</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -629,6 +672,49 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a993e1c792c521b7dff3013c79c2d8b60"></a><!-- doxytag: member="Anemo::Application::Http::Request::paramsToSession" ref="a993e1c792c521b7dff3013c79c2d8b60" args="($params=array())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">paramsToSession </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>params</em> = <code>array()</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Save the array to the param session </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$params</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ab8910e042466f2d8c34c6da8c993f90e"></a><!-- doxytag: member="Anemo::Application::Http::Request::sessionToParams" ref="ab8910e042466f2d8c34c6da8c993f90e" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">sessionToParams </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Save the param session to the params and delete the session data </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a3b9d4e3945e398b30382c80056b5083a"></a><!-- doxytag: member="Anemo::Application::Http::Request::setActionName" ref="a3b9d4e3945e398b30382c80056b5083a" args="($action)" -->
 <div class="memitem">
 <div class="memproto">
@@ -791,7 +877,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Application/Http/Request.php</li>
+<li>library/Anemo/Application/Http/Request.php</li>
 </ul>
 </div>
 </div>
@@ -801,7 +887,7 @@ Protected Attributes</h2></td></tr>
       <li class="navelem"><a class="el" href="namespace_anemo_1_1_application.html">Application</a>      </li>
       <li class="navelem"><a class="el" href="namespace_anemo_1_1_application_1_1_http.html">Http</a>      </li>
       <li class="navelem"><a class="el" href="class_anemo_1_1_application_1_1_http_1_1_request.html">Request</a>      </li>
-      <li class="footer">Generated on Tue Apr 19 2011 13:15:04 for AnemoFramework by&#160;
+      <li class="footer">Generated on Fri Jul 1 2011 14:44:41 for AnemoFramework by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

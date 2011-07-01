@@ -102,6 +102,8 @@ Inheritance diagram for LayoutAbstract:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_layout_1_1_layout_abstract.html#ae1df4c5075648a2e07aed057d8787f92">init</a> ($view)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_layout_1_1_layout_abstract.html#af231e86ad32039b9573ae228db5a29fa">__call</a> ($name, $args)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_layout_1_1_layout_abstract.html#a4537dad3b44254124991341cc91b28fb">__get</a> ($key)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_layout_1_1_layout_abstract.html#a4aa62b003ad9bade1760bb1f729a9cf0">assign</a> ($key, $value)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_layout_1_1_layout_abstract.html#a2b499b838eaae57e7d79a0619336d93f">getPublicDirectory</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_layout_1_1_layout_abstract.html#a04a5eddb7c3abc7bf31fa25b58f046bf">setContent</a> ($content)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_layout_1_1_layout_abstract.html#a58e43f09a06ce4e29b192c4e17ce7915">getContent</a> ()</td></tr>
@@ -185,6 +187,31 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 
 </div>
 </div>
+<a class="anchor" id="a4537dad3b44254124991341cc91b28fb"></a><!-- doxytag: member="Anemo::Layout::LayoutAbstract::__get" ref="a4537dad3b44254124991341cc91b28fb" args="($key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__get </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>A mapper for getting a assigned view var </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$key</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a7516ca30af0db3cdbf9a7739b48ce91d"></a><!-- doxytag: member="Anemo::Layout::LayoutAbstract::__toString" ref="a7516ca30af0db3cdbf9a7739b48ce91d" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -200,6 +227,42 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 <div class="memdoc">
 <p>Return the response. Wrapper for getResponse. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>string </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4aa62b003ad9bade1760bb1f729a9cf0"></a><!-- doxytag: member="Anemo::Layout::LayoutAbstract::assign" ref="a4aa62b003ad9bade1760bb1f729a9cf0" args="($key, $value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">assign </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>A mapper for assigning a key-value pair to the view object </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$key</td><td></td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$value</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>void </dd></dl>
 
 </div>
 </div>
@@ -289,6 +352,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 </div>
 <div class="memdoc">
 <p>Return the public directory (the base path) </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>string </dd></dl>
 
 </div>
 </div>
@@ -386,7 +450,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Layout/Abstract.php</li>
+<li>library/Anemo/Layout/Abstract.php</li>
 </ul>
 </div>
 </div>
@@ -395,7 +459,7 @@ static&#160;</td><td class="memItemRight" valign="bottom"><b>$instance</b> = nul
       <li class="navelem"><a class="el" href="namespace_anemo.html">Anemo</a>      </li>
       <li class="navelem"><a class="el" href="namespace_anemo_1_1_layout.html">Layout</a>      </li>
       <li class="navelem"><a class="el" href="class_anemo_1_1_layout_1_1_layout_abstract.html">LayoutAbstract</a>      </li>
-      <li class="footer">Generated on Tue Apr 19 2011 13:15:04 for AnemoFramework by&#160;
+      <li class="footer">Generated on Fri Jul 1 2011 14:44:41 for AnemoFramework by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>

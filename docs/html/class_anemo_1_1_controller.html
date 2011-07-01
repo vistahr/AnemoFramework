@@ -103,7 +103,8 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_controller.html#a5c316721766e9cd8ad5d0085e64048ed">getLayout</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_controller.html#adf1a35ad20e475c59cc0967d5764aa22">getRequest</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_controller.html#a6c907e8af775e517a77037dd0164222f">getResponse</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_controller.html#ab2feca11fcd7ef394cad18a2ddca63f5">forwardAndExit</a> ($module, $controller, $action, $param=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_controller.html#ae4da108649cdc479a5c1a40b99c74ec7">forwardAndExit</a> ($module, $controller, $action, $params=array())</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_controller.html#a32270256b7eef05b5fcec92a7e3dd7e8">redirect</a> ($module, $controller, $action, $getData=array(), $params=array())</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_anemo_1_1_controller.html#a30dd7fff4fec7a39f9be9d27d4b22a59">getID</a> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -142,7 +143,7 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ab2feca11fcd7ef394cad18a2ddca63f5"></a><!-- doxytag: member="Anemo::Controller::forwardAndExit" ref="ab2feca11fcd7ef394cad18a2ddca63f5" args="($module, $controller, $action, $param=array())" -->
+<a class="anchor" id="ae4da108649cdc479a5c1a40b99c74ec7"></a><!-- doxytag: member="Anemo::Controller::forwardAndExit" ref="ae4da108649cdc479a5c1a40b99c74ec7" args="($module, $controller, $action, $params=array())" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -168,7 +169,7 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">$&#160;</td>
-          <td class="paramname"><em>param</em> = <code>array()</code>&#160;</td>
+          <td class="paramname"><em>params</em> = <code>array()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -184,7 +185,7 @@ Protected Member Functions</h2></td></tr>
     <tr><td class="paramtype">string</td><td class="paramname">$module</td><td></td></tr>
     <tr><td class="paramtype">string</td><td class="paramname">$controller</td><td></td></tr>
     <tr><td class="paramtype">string</td><td class="paramname">$action</td><td></td></tr>
-    <tr><td class="paramtype">array</td><td class="paramname">$param</td><td></td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$params</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -334,6 +335,61 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a32270256b7eef05b5fcec92a7e3dd7e8"></a><!-- doxytag: member="Anemo::Controller::redirect" ref="a32270256b7eef05b5fcec92a7e3dd7e8" args="($module, $controller, $action, $getData=array(), $params=array())" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">redirect </td>
+          <td>(</td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>module</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>controller</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>action</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>getData</em> = <code>array()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">$&#160;</td>
+          <td class="paramname"><em>params</em> = <code>array()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Redirect to the given module,controller and action with the params. The params are saved temporary in the session. If module or controller are equal false, it wont be considered in the url. </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">mixed</td><td class="paramname">$module</td><td></td></tr>
+    <tr><td class="paramtype">mixed</td><td class="paramname">$controller</td><td></td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$action</td><td></td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$params</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a81d3d1fbaf410923367685f468766513"></a><!-- doxytag: member="Anemo::Controller::send" ref="a81d3d1fbaf410923367685f468766513" args="($result, $type)" -->
 <div class="memitem">
 <div class="memproto">
@@ -421,7 +477,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Controller.php</li>
+<li>library/Anemo/Controller.php</li>
 </ul>
 </div>
 </div>
@@ -429,7 +485,7 @@ Protected Member Functions</h2></td></tr>
     <ul>
       <li class="navelem"><a class="el" href="namespace_anemo.html">Anemo</a>      </li>
       <li class="navelem"><a class="el" href="class_anemo_1_1_controller.html">Controller</a>      </li>
-      <li class="footer">Generated on Tue Apr 19 2011 13:15:04 for AnemoFramework by&#160;
+      <li class="footer">Generated on Fri Jul 1 2011 14:44:41 for AnemoFramework by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.4 </li>
     </ul>
