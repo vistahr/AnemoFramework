@@ -55,6 +55,23 @@ class ACL
 	
 	public function __construct() {}
 	
+	
+	/**
+	 * Return all resources
+	 * @return array
+	 */
+	public function getResources() {
+		return $this->resources;
+	}
+	
+	/**
+	 * Return all subjects
+	 * @return array
+	 */
+	public function getSubjects() {
+		return $this->subjects;
+	}
+	
 	/**
 	 * Return the resourc eobject by the given resourcekey
 	 * @param string $subject
